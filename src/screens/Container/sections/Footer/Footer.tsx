@@ -1,4 +1,3 @@
-import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Separator } from "../../../../components/ui/separator";
 
@@ -31,58 +30,31 @@ export const FooterByAnima = (): JSX.Element => {
 
               {/* Scrolling contact section */}
               <div className="relative max-w-screen-xl w-full h-32 overflow-hidden border-r-[0.8px] border-l-[0.8px] border-white">
-                <div className="relative w-[3848px] h-32 left-[-1534px]">
-                  {/* First set of contact elements */}
-                  <div className="inline-flex h-32 items-center pl-0 pr-[1.28px] py-0 absolute top-0 left-0">
-                    <div className="relative w-[454.25px] h-32" />
-                    <div className="w-[184px] relative h-[72px]" />
-                    <div className="relative w-[454.25px] h-32" />
-                    <div className="w-[182.72px] relative h-[72px]" />
-                    <div className="inline-flex flex-col items-start pl-0 pr-[1.28px] py-0 relative flex-[0_0_auto]">
-                      <div className="text-white text-9xl tracking-[-3.00px] leading-[128px] relative w-fit mt-[-1.00px] font-normal whitespace-nowrap">
-                        Contact
-                      </div>
-                    </div>
-                    <div className="flex flex-col w-[184px] items-start px-14 py-0 relative h-[72px]">
-                      <div className="flex w-[72px] h-[72px] items-center justify-center pl-[20.32px] pr-[22.88px] py-0 relative bg-white rounded-[72px] overflow-hidden">
-                        <div className="relative flex-1 grow h-7">
-                          <img
-                            className="absolute w-[27px] h-7 top-0 -left-1"
-                            alt="Svg"
-                            src="/svg.svg"
-                          />
+                <div className="flex animate-conveyor-belt whitespace-nowrap">
+                  {[...Array(2)].map((_, groupIndex) => (
+                    <div key={groupIndex} className="flex space-x-10">
+                      {[...Array(4)].map((_, itemIndex) => (
+                        <div key={itemIndex} className="inline-flex h-32 items-center py-0">
+                          <div className="inline-flex flex-col items-start pl-0 pr-[1.28px] py-0 relative flex-[0_0_auto]">
+                            <div className="text-white text-9xl tracking-[-3.00px] leading-[128px] relative w-fit mt-[-1.00px] font-normal whitespace-nowrap">
+                              Contact
+                            </div>
+                          </div>
+                          <div className="flex flex-col w-[184px] items-start px-14 py-0 relative h-[72px]">
+                            <div className="flex w-[72px] h-[72px] items-center justify-center pl-[28.32px] pr-[22.88px] py-0 bg-white rounded-[72px] overflow-hidden">
+                              <div className="relative flex-1 grow h-7">
+                                <img
+                                  className="absolute w-[27px] h-7 top-0 -left-1"
+                                  alt="Svg"
+                                  src="/svg.svg"
+                                />
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      ))}
                     </div>
-                  </div>
-
-                  {/* Second set of contact elements */}
-                  <div className="inline-flex h-32 items-center pl-0 pr-[1.28px] py-0 absolute top-0 left-[1913px]">
-                    <div className="inline-flex flex-col items-start pl-0 pr-[1.28px] py-0 relative flex-[0_0_auto]">
-                      <div className="text-white text-9xl tracking-[-3.00px] leading-[128px] relative w-fit mt-[-1.00px] font-normal whitespace-nowrap">
-                        Contact
-                      </div>
-                    </div>
-                    <div className="flex flex-col w-[182.72px] items-start pl-14 pr-[54.72px] py-0 relative h-[72px]">
-                      <div className="flex w-[72px] h-[72px] items-center justify-center pl-[20.32px] pr-[22.88px] py-0 relative bg-white rounded-[72px] overflow-hidden">
-                        <div className="relative flex-1 grow h-7">
-                          <img
-                            className="absolute w-[27px] h-7 top-0 -left-1"
-                            alt="Svg"
-                            src="/svg.svg"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="inline-flex flex-col items-start pl-0 pr-[1.28px] py-0 relative flex-[0_0_auto]">
-                      <div className="text-white text-9xl tracking-[-3.00px] leading-[128px] relative w-fit mt-[-1.00px] font-normal whitespace-nowrap">
-                        Contact
-                      </div>
-                    </div>
-                    <div className="w-[184px] relative h-[72px]" />
-                    <div className="relative w-[454.25px] h-32" />
-                    <div className="w-[184px] relative h-[72px]" />
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -195,6 +167,6 @@ export const FooterByAnima = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };

@@ -1,0 +1,56 @@
+.button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: white;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    width: 180px;
+    height: 50px;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(0.97);
+}
+
+.button-text-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button-text {
+    display: inline-block;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    text-align: center;
+}
+
+.button-text.absolute {
+    position: absolute;
+    top: -20%;
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    text-align: center;
+}
+
+.button:hover .button-text {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+}
+
+.button:hover .button-text.absolute {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}

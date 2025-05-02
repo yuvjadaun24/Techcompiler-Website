@@ -1,16 +1,13 @@
-import React from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../../../../components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "../../../../components/ui/accordion";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { FadeIn } from "../../../../components/animations/FadeIn";
 import { ParallaxImage } from "../../../../components/animations/ParallaxImage";
-import { motion } from "framer-motion";
+import "./Main.css";
+import { motion} from "framer-motion";
+
+
 
 export const MainByAnima = (): JSX.Element => {
   // Portfolio projects data
@@ -43,10 +40,35 @@ export const MainByAnima = (): JSX.Element => {
 
   // Services data
   const services = [
-    { name: "Branding" },
-    { name: "Design" },
-    { name: "Development" },
-    { name: "Motion" },
+    {
+      name: "Branding",
+      subtitle: "Defining your unique identity",
+      description:
+        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      image: "/images/branding-sample.png",
+    },
+    {
+      name: "Design",
+      subtitle: "Defining your unique identity",
+      description:
+        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      image: "/images/branding-sample.png",
+    },
+    {
+      name: "Development",
+      subtitle: "Defining your unique identity",
+      description:
+        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      image: "/images/branding-sample.png",
+    },
+    {
+      name: "Motion",
+      subtitle: "Defining your unique identity",
+      description:
+        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      image: "/images/branding-sample.png",
+    },
+
   ];
 
   // Statistics data
@@ -128,7 +150,7 @@ export const MainByAnima = (): JSX.Element => {
       <section className="w-full flex flex-col items-center px-8 py-12">
         <div className="flex flex-col max-w-screen-xl w-full items-start pt-0 pb-20 px-0">
           <div className="flex flex-col md:flex-row items-start justify-center gap-8 lg:gap-[124px] w-full">
-            <div className="flex flex-col w-full md:w-1/2 lg:w-[632px] items-start justify-end gap-6 self-stretch">
+            <div className="flex flex-col w-full md:w-1/2 lg:w-[632px] items-start justify-center gap-6 self-stretch">
               <FadeIn>
                 <Badge
                   variant="outline"
@@ -173,11 +195,20 @@ export const MainByAnima = (): JSX.Element => {
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.6}>
-                <Button className="bg-black text-white px-8 py-4 rounded hover:bg-gray-800 transition-colors">
-                  Get in touch
-                </Button>
+              <FadeIn delay={0.4}>
+                <div
+                  className="animate-fadeIn"
+                  style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
+                >
+                  <a href="/contact" className="button w-inline-block">
+                    <div className="button-text-wrap">
+                      <div className="button-text">Get in touch</div>
+                      <div className="button-text absolute">Get in touch</div>
+                    </div>
+                  </a>
+                </div>
               </FadeIn>
+
             </div>
 
             <div className="w-full md:w-1/2 lg:w-[524px] h-[672px]">
@@ -206,7 +237,7 @@ export const MainByAnima = (): JSX.Element => {
                   <Card
                     className="flex items-center justify-center px-8 py-16 bg-white rounded-[6.08px]"
                   >
-                    <CardContent className="flex items-center justify-center p-0">
+                    <CardContent className="flex items-center justify-center p-0 h-10">
                       <img
                         className="w-auto h-auto"
                         alt={logo.alt}
@@ -263,52 +294,59 @@ export const MainByAnima = (): JSX.Element => {
       </section>
 
       {/* Services Section */}
-      <section className="w-full flex flex-col items-center px-8 py-0">
-        <div className="flex flex-col max-w-screen-xl w-full items-start px-0 py-20">
-          <div className="w-full flex flex-col md:flex-row gap-4">
-            <FadeIn>
-              <div className="w-full md:w-[308px]">
-                <h2 className="font-medium text-black text-[32px] tracking-[-1.50px] leading-8">
-                  Services we provide
-                </h2>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="w-full md:w-[308px]">
-                <p className="font-normal text-black text-base leading-[20.8px]">
-                  Empowering brands to grow and share
-                  <br />
-                  their stories since &apos;18.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-
-          <div className="w-full md:ml-[324px] mt-[106px]">
+      <div className="container mx-auto px-4 py-16">
+        {/* Top Section: Title + Subtext */}
+        <div className="flex flex-col md:flex-row md:items-center gap-5 mb-12">
+          <h2 className="text-2xl md:text-3xl font-semibold text-black">
+            Services we provide
+          </h2>
+          <p className="text-sm text-gray-600 max-w-md w-80">
+            Empowering brands to grow and share their stories since '18.
+          </p>
+        </div>
+        {/* Accordion Section */}
+        <div className="w-full flex justify-end">
+          <div className="w-[80%]">
             <Accordion type="single" collapsible className="w-full">
               {services.map((service, index) => (
-                <FadeIn key={index} delay={index * 0.1}>
-                  <AccordionItem
-                    value={`service-${index}`}
-                    className="border-b border-[#0000001a]"
-                  >
-                    <AccordionTrigger className="py-4 flex justify-between">
-                      <span className="font-medium text-black text-8xl tracking-[-5.00px] leading-[86.4px]">
-                        {service.name}
-                      </span>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="pb-16">
-                        {/* Service content would go here */}
+                <AccordionItem
+                  key={index}
+                  value={`service-${index}`}
+                  className="border-b border-gray-200"
+                >
+                  <AccordionTrigger className="py-8 px-2 sm:px-4 flex justify-between items-center group">
+                    <span className="text-3xl sm:text-4xl md:text-6xl font-medium text-black">
+                      {service.name}
+                    </span>
+                    <span className="text-4xl text-black transition-transform group-data-[state=open]:rotate-45">
+                      +
+                    </span>
+                  </AccordionTrigger>
+
+                  <AccordionContent className="px-2 sm:px-4 pb-8">
+                    <div className="flex flex-col md:flex-row gap-6 mt-4">
+                      <img
+                        src={service.image}
+                        alt={`${service.name} preview`}
+                        className="lg:w-[400] sm:w-[200px] h-auto object-contain"
+                      />
+                      <div>
+                        <h3 className="text-base font-medium text-gray-700">
+                          {service.subtitle}
+                        </h3>
+                        <p className="text-base text-black mt-2 leading-relaxed">
+                          {service.description}
+                        </p>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </FadeIn>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
             </Accordion>
           </div>
         </div>
-      </section>
+      </div>
+
 
       {/* About Section */}
       <section className="w-full flex flex-col items-start gap-16 pt-36 pb-0">
