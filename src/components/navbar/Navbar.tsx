@@ -3,13 +3,15 @@ import { Menu } from 'lucide-react';
 import logo from "@/assets/TC-Logo-Main.png";
 import './Navbar.css';
 import ServicesDropdown from './ServicesDropdown';
-import TechnologiesDropdown from './TechnologiesDropdown';
+import { useNavigate } from 'react-router-dom';
+// import TechnologiesDropdown from './TechnologiesDropdown';
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [technologiesDropdownOpen, setTechnologiesDropdownOpen] = useState(false);
+  // const [technologiesDropdownOpen, setTechnologiesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +29,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`py-6 px-6 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm' : ''}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <img className='navbar-logo' src={logo} alt="Techcom Logo" />
+        <img className='navbar-logo' src={logo} alt="Techcom Logo" onClick={() => navigate("/")} />
         <div className="hidden md:flex space-x-10">
           <a href="/" className="hover:opacity-70 transition-opacity">Home</a>
 
@@ -50,7 +52,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Technologies Dropdown */}
-          <div
+          {/* <div
             className="relative"
             onMouseEnter={() => setTechnologiesDropdownOpen(true)}
             onMouseLeave={() => setTechnologiesDropdownOpen(false)}
@@ -65,14 +67,14 @@ const Navbar: React.FC = () => {
               </div>
             </div>
             )}
-          </div>
+          </div> */}
 
-          <a href="/about" className="hover:opacity-70 transition-opacity">About</a>
+          <a href="/about" className="hover:opacity-70 transition-opacity">Clients</a>
           <a href="/about" className="hover:opacity-70 transition-opacity">Careers</a>
-          <a href="/work" className="hover:opacity-70 transition-opacity">Work (6)</a>
+          {/* <a href="/work" className="hover:opacity-70 transition-opacity">Work (6)</a> */}
         </div>
 
-        <a href="/contact" className="border-b-2 border-black pb-1 hover:opacity-70 transition-opacity">Contact</a>
+        <a className="border-b-2 border-black pb-1 hover:opacity-70 transition-opacity cursor-pointer " onClick={() => navigate("/Contact-Us")}>Contact</a>
 
         {/* Mobile Navigation Toggle */}
         <div className="md:hidden">
@@ -92,7 +94,7 @@ const Navbar: React.FC = () => {
             <a href="/" className="hover:opacity-70 transition-opacity">Home</a>
             <a href="/about" className="hover:opacity-70 transition-opacity">About</a>
             <a href="/work" className="hover:opacity-70 transition-opacity">Work (6)</a>
-            <a href="/contact" className="border-b-2 border-black inline-block pb-1 hover:opacity-70 transition-opacity">Contact</a>
+            <a href="/contact" className="border-b-2 border-black inline-block pb-1 hover:opacity-70 transition-opacity">Contact </a>
           </div>
         </div>
       )}

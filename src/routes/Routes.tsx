@@ -2,6 +2,7 @@ import Container from "@/layout/Container"
 import { MainByAnima } from "@/screens/Container/sections/Hero Element";
 import ServicePage from "@/screens/Services Page";
 import { Route, Routes } from "react-router-dom"
+import ContactUs from "@/screens/ContactUs/ContactUs";
 
 const AllRoutes = () => {
     return (
@@ -20,13 +21,13 @@ const AllRoutes = () => {
                         children=<ServicePage />
                     />}
                 />
-
+                
                 <Route
-                    path="/services/test"
-                    element={<Container
-                        children=<ServicePage />
-                    />}
-                />
+                path="/Contact-Us"
+                element={<Container
+                    children=<ContactUs />
+                />}
+            />
             </Route>
         </Routes>
     )

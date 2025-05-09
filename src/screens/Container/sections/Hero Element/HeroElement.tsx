@@ -6,6 +6,7 @@ import { FadeIn } from "../../../../components/animations/FadeIn";
 import { ParallaxImage } from "../../../../components/animations/ParallaxImage";
 import "./Main.css";
 import { motion} from "framer-motion";
+import ScrollToTop from "../../../../../ScrollToTop";
 
 
 

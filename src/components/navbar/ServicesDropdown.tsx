@@ -2,24 +2,45 @@ import web from "@/assets/web-development.svg";
 import design from "@/assets/designing.svg";
 import marketing from "@/assets/marketing.svg";
 import mobile from "@/assets/mobile.svg";
-import maintenance from "@/assets/maintenance.svg";
+import { useNavigate } from "react-router-dom";
 
 const ServicesDropdown = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-white shadow-[0px_50px_69px_-10px_rgba(0,0,0,0.1)] border-t border-gray-200 animate-dropdown-open flex flex-row justify-between">
             <div className="p-6 w-full">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {/* Web Development */}
                     <div>
                         <div className="flex items-center gap-2 mb-3">
                             <span><img src={web} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
-                            <h3 className="text-sm font-semibold">Web Development</h3>
+                            <h3 className="text-sm font-semibold">Web & Application Development</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6">
-                            <li>Templated Website Development</li>
-                            <li>Custom Website Development</li>
-                            <li>Ecommerce Store Development</li>
-                            <li>SaaS Application Development</li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={()=> navigate("/services/web-dev")}>Application Services</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300">Full Stack Development</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* IT Management */}
+                    <div>
+                        <div className="flex items-center gap-2 mb-3">
+                            <span><img src={marketing} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
+                            <h3 className="text-sm font-semibold">Infrastructure & IT Management</h3>
+                        </div>
+                        <ul className="space-y-2 text-sm text-gray-600 ml-6">
+                            {["Infrastructure Service", "Managed IT Services", "IT Outsourcing", "DevOps"].map((item, idx) => (
+                                <li key={idx} className="relative group cursor-pointer w-fit">
+                                    <span className="group-hover:text-gray-800 transition-colors duration-300">{item}</span>
+                                    <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -30,67 +51,45 @@ const ServicesDropdown = () => {
                             <h3 className="text-sm font-semibold">Design</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6">
-                            <li>UI/UX Design</li>
-                            <li>Graphic Design</li>
-                            <li>3D Rendering</li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300">UI/UX Design</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
                         </ul>
                     </div>
 
-                    {/* Marketing */}
+                    {/* Data & Intelligence */}
                     <div>
-                        <div className="flex items-center gap-2 mb-3">
-                            <span><img src={marketing} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
-                            <h3 className="text-sm font-semibold">Marketing</h3>
-                        </div>
-                        <ul className="space-y-2 text-sm text-gray-600 ml-6">
-                            <li>Technical SEO Optimization</li>
-                            <li>Ad Creation (Search and Display)</li>
-                        </ul>
-                    </div>
-
-                    <div className="md:col-span-1">
-                        <div className="flex items-center gap-2 mt-8">
-                            <span>👤</span>
-                            <h3 className="text-sm font-semibold">Hire Dedicated Resources</h3>
-                        </div>
-                    </div>
-
-                    {/* Mobile App Development */}
-                    <div className="md:col-span-2">
                         <div className="flex items-center gap-2 mt-8">
                             <span><img src={mobile} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
-                            <h3 className="text-sm font-semibold pb-1">Mobile Application Development</h3>
+                            <h3 className="text-sm font-semibold pb-1">Data & Intelligence</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6 mt-2">
-                            <li>Native iOS and Android App Development</li>
-                            <li>Cross-platform Mobile App Development</li>
+                            {["Business Intelligence", "Data Analytics", "Database Migration"].map((item, idx) => (
+                                <li key={idx} className="relative group cursor-pointer w-fit">
+                                    <span className="group-hover:text-gray-800 transition-colors duration-300">{item}</span>
+                                    <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Website Maintenance */}
-                    <div className="md:col-span-1">
+                    {/* Embedded */}
+                    <div>
                         <div className="flex items-center gap-2 mt-8">
-                            <span><img src={maintenance} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
-                            <h3 className="text-sm font-semibold">Website Maintenance</h3>
+                            <span><img src={mobile} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
+                            <h3 className="text-sm font-semibold pb-1">Embedded & Specialized Solutions</h3>
                         </div>
-                    </div>
-
-                    {/* Ad Hoc */}
-                    <div className="md:col-span-1">
-                        <div className="flex items-center gap-2 mt-8">
-                            <span>🔁</span>
-                            <h3 className="text-sm font-semibold">Ad Hoc</h3>
-                        </div>
-                    </div>
-
-                    {/* Hosting */}
-                    <div className="md:col-span-1">
-                        <div className="flex items-center gap-2 mt-8">
-                            <span>☁️</span>
-                            <h3 className="text-sm font-semibold">Hosting</h3>
-                        </div>
+                        <ul className="space-y-2 text-sm text-gray-600 ml-6 mt-2">
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300">Embedded Product</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+
+
             </div>
             <div className="w-2/5 bg-slate-200 p-10 gap-3 flex flex-col justify-end">
                 <h1 className="text-2xl font-semibold">Our Offerings</h1>

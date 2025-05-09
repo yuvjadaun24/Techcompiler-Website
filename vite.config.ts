@@ -1,14 +1,15 @@
 import react from "@vitejs/plugin-react";
-import tailwind from "tailwindcss";
-import { defineConfig } from "vite";
-import path from "path"
+import path from "path";
 import dotenv from 'dotenv';
+import { defineConfig } from "vite";
+import tailwindcss from "tailwindcss";  // Import tailwindcss correctly
+import autoprefixer from "autoprefixer"; // You might also want to add autoprefixer
 
 dotenv.config();
-// https://vite.dev/config/
+
 export default defineConfig({
   plugins: [react()],
-  define: { 'process.env': process.env, },
+  define: { 'process.env': process.env },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -23,7 +24,10 @@ export default defineConfig({
   },
   css: {
     postcss: {
-      plugins: [tailwind()],
+      plugins: [
+        tailwindcss,   // Use tailwindcss as a PostCSS plugin
+        autoprefixer,  // Optionally, add autoprefixer for better CSS compatibility
+      ],
     },
   },
-})
+});

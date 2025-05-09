@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import TempWebDev from "./components/TempWebDev";
+import TempWebDev from "./components/UiUxDesigning/TempWebDev";
 
 const ServicePage = () => {
 
