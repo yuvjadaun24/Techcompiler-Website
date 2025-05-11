@@ -1,4 +1,4 @@
-import { Badge } from "../../../../components/ui/badge";
+import logo from "@/assets/TC-Logo-Main.png"
 import { Separator } from "../../../../components/ui/separator";
 
 export const FooterByAnima = (): JSX.Element => {
@@ -15,18 +15,6 @@ export const FooterByAnima = (): JSX.Element => {
         <div className="flex flex-col max-w-screen-xl w-full items-start pt-24 pb-0 px-0 relative">
           <div className="flex flex-col items-start relative self-stretch w-full">
             <div className="flex flex-col items-center justify-center gap-[16px] relative self-stretch w-full">
-              {/* Status badge */}
-              <Badge
-                variant="outline"
-                className="bg-white flex items-center gap-[7px] px-[8.8px] py-[5.6px]"
-              >
-                <div className="relative w-[4.8px] h-[4.8px] bg-[#44e246] rounded-[4.8px]" />
-                <div className="inline-flex flex-col items-start relative">
-                  <div className="relative w-fit mt-[-1.00px] font-normal text-black text-xs tracking-[0] leading-[15.6px] whitespace-nowrap">
-                    Available from May&apos;25
-                  </div>
-                </div>
-              </Badge>
 
               {/* Scrolling contact section */}
               <div className="relative max-w-screen-xl w-full h-32 overflow-hidden border-r-[0.8px] border-l-[0.8px] border-white">
@@ -65,11 +53,11 @@ export const FooterByAnima = (): JSX.Element => {
               <div className="inline-flex flex-col max-w-64 items-start gap-4 relative">
                 <div className="flex flex-col max-w-64 w-[104px] items-start relative">
                   <div className="flex flex-col max-w-[104px] items-start relative w-full">
-                    <div className="flex flex-col w-[104px] h-[26px] items-center justify-center relative">
+                    <div className="flex flex-col w-full max-w-[200px] p-5 items-center justify-center relative bg-white rounded-xl">
                       <img
-                        className="relative w-[104px] h-[26px]"
+                        className="relative w-full max-w-[200px]" 
                         alt="Logo"
-                        src="/67d166ef8bbb68582c3026ae-group-201000004919-svg.svg"
+                        src={logo}
                       />
                     </div>
                   </div>
@@ -149,17 +137,17 @@ export const FooterByAnima = (): JSX.Element => {
             <div className="flex items-center justify-between pt-[24.31px] pb-[23.83px] px-0 relative self-stretch w-full">
               <div className="inline-flex flex-col items-start relative">
                 <div className="relative w-fit mt-[-1.00px] font-normal text-white text-[12.8px] tracking-[0] leading-[16.6px] whitespace-nowrap">
-                  © 2025
+                  TechCompiler Data Systems Pvt. Ltd.
                 </div>
               </div>
 
               <div className="inline-flex items-start relative">
-                <div className="relative w-fit mt-[-1.00px] font-normal text-white text-[12.8px] tracking-[0] leading-[16.6px] whitespace-nowrap">
-                  Powered by
+                <div className="relative w-fit mt-[-1.00px] mr-4 font-normal text-white text-[12.8px] tracking-[0] leading-[16.6px] whitespace-nowrap">
+                  © 2024
                 </div>
                 <div className="inline-flex items-start pt-0 pb-[0.8px] px-0 relative ml-[-1.42e-13px] border-b-[0.8px] border-white">
                   <div className="relative w-fit mt-[-0.80px] font-normal text-white text-[12.8px] tracking-[0] leading-[16.6px] whitespace-nowrap">
-                    webflow
+                    All Rights Reserved
                   </div>
                 </div>
               </div>

@@ -4,7 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-// import './services.css'
+
+import appServices from "../../../assets/app-services.png"
 
 const TempWebDev = () => {
   const services = [
@@ -91,22 +92,22 @@ const TempWebDev = () => {
       {/* Featured Image */}
       <div className="mb-12">
         <img
-          src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+          src={appServices}
           alt="Delivery hero"
-          className="rounded-xl w-full object-cover shadow-lg transition-transform duration-500 hover:scale-105"
+          className="rounded-3xl w-5/7 object-cover shadow-[0px_4px_100px_16px_rgba(149,_157,_165,_0.2)] transition-transform duration-500 hover:scale-105"
         />
       </div>
 
       {/* Overview Section */}
       <div className="mb-16 opacity-1 translate-y-6 animate-fade-up animation-delay-300">
         <h2 className="text-2xl font-semibold text-black mb-4">
-          Pureat is redefining food delivery with a focus on fresh, high-quality meals made from natural ingredients.
+          What is an application development service?
         </h2>
         <p className="text-gray-700 text-base leading-7">
-          We started by crafting a strong visual identity, designing a modern yet organic logo, warm typography, and a fresh, inviting color palette. For the app design, we focused on a seamless ordering experience. Clean layouts, intuitive navigation, and smooth interactions make browsing and checking out effortless.
+          Application improvement offerings discuss with the complete manner of conceptualizing, designing, constructing, checking out, and deploying software programs tailor-made to satisfy specific business needs. These services are provided by skilled professionals who leverage their expertise in software engineering, programming languages, and development methodologies to create robust and scalable applications.
         </p>
         <p className="text-gray-700 text-base leading-7 mt-4">
-          The interface is optimized to enhance user engagement while keeping the focus on Pureat’s delicious, healthy offerings. The result is a brand and app that make healthy eating accessible, convenient, and enjoyable.
+          The software improvement procedure normally starts with a detailed evaluation of the customer's requirements, business objectives, and target audience. This preliminary phase includes gathering information, figuring out pain points, and defining the desired capability and functions. Once the necessities are defined, the development team proceeds with the design phase, creating wireframes, user interface mockups, and architectural blueprints.
         </p>
       </div>
 
@@ -162,6 +163,140 @@ const TempWebDev = () => {
           </div>
         </div>
       </div>
+
+      {/* Better Styled Section: Why Application Services Matter */}
+      <div className="mb-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-8 animate-fade-up">Why Application Services Matter</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              title: "Tailored Business Solutions",
+              desc: "We don’t offer cookie-cutter apps. Every product is built specifically for your business model and goals.",
+            },
+            {
+              title: "Speed, Security, Scale",
+              desc: "Optimized performance, top-tier data security, and room to grow — all built into every layer of your app.",
+            },
+            {
+              title: "Intelligent Interfaces",
+              desc: "We merge clean UI with AI to make smart, adaptive applications that users love to interact with.",
+            },
+            {
+              title: "Future-Proof Tech",
+              desc: "We use scalable stacks and modular architecture, so your application keeps up with tomorrow’s needs.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <h3 className="text-xl font-semibold text-black mb-2">{item.title}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Modern Timeline for Workflow */}
+      {/* Enhanced Workflow Timeline */}
+      <div className="mb-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 animate-fade-up text-center">
+          Our Proven Workflow
+        </h2>
+
+        <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-6 relative px-4 md:px-0">
+          <div className="absolute md:left-1/2 md:-translate-x-1/2 md:top-10 md:bottom-10 left-5 w-1 bg-zinc-200 md:w-0.5 md:h-full md:absolute md:flex md:flex-col md:justify-between z-0"></div>
+
+          {[
+            {
+              step: "Discovery & Planning",
+              desc: "We begin by understanding your business objectives and outlining the technical architecture needed.",
+            },
+            {
+              step: "Design & Prototyping",
+              desc: "Crafting intuitive user interfaces with wireframes and interactive mockups for feedback-driven iteration.",
+            },
+            {
+              step: "Agile Development",
+              desc: "We execute in sprints using scalable, modular code and constant integration to ensure on-time delivery.",
+            },
+            {
+              step: "Testing & QA",
+              desc: "Comprehensive manual and automated testing ensures your app is bug-free, fast, and production-ready.",
+            },
+            {
+              step: "Launch & Support",
+              desc: "We deploy, monitor performance, and offer continuous improvements based on real user feedback.",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="relative bg-white/80 backdrop-blur-md shadow-md rounded-2xl p-6 md:w-1/5 w-full z-10 transition-transform duration-300 hover:scale-[1.02]"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm text-gray-400 font-medium">
+                  Step {idx + 1}
+                </span>
+                <div className="w-6 h-6 rounded-full bg-zinc-800 text-white text-xs flex items-center justify-center font-bold">
+                  {idx + 1}
+                </div>
+              </div>
+              <h3 className="text-lg font-semibold text-black mb-2">
+                {item.step}
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Elevated Tech Stack Display */}
+      <div className="mb-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-8 animate-fade-up">Our Tech Stack</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-sm text-gray-700">
+          {[
+            "React.js",
+            "Next.js",
+            "Node.js",
+            "Spring Boot",
+            "Tailwind CSS",
+            "MongoDB",
+            "MySQL",
+            "Firebase",
+            "Figma",
+            "AWS",
+            "Framer Motion",
+            "RESTful APIs",
+          ].map((tech, i) => (
+            <div
+              key={i}
+              className="bg-zinc-50 rounded-xl p-4 text-center font-medium shadow hover:scale-105 transition-transform"
+            >
+              {tech}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Strong Closing: Why Work With Us */}
+      <div className="mb-28">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-10 animate-fade-up">Why Work With Us?</h2>
+        <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+          <div className="bg-zinc-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+            <h4 className="text-xl font-semibold text-black mb-2">We Think Like Partners</h4>
+            <p className="text-sm leading-relaxed">
+              Collaboration is key. We align closely with your team and vision to ensure every sprint adds value.
+            </p>
+          </div>
+          <div className="bg-zinc-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+            <h4 className="text-xl font-semibold text-black mb-2">Design x Engineering</h4>
+            <p className="text-sm leading-relaxed">
+              Our process is where design and development go hand-in-hand, delivering experiences that look and perform beautifully.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };
