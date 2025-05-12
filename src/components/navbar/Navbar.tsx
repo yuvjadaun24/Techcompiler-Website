@@ -4,14 +4,14 @@ import logo from "@/assets/TC-Logo-Main.png";
 import './Navbar.css';
 import ServicesDropdown from './ServicesDropdown';
 import { useNavigate } from 'react-router-dom';
-// import TechnologiesDropdown from './TechnologiesDropdown';
+import TechnologiesDropdown from './TechnologiesDropdown';
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  // const [technologiesDropdownOpen, setTechnologiesDropdownOpen] = useState(false);
+  const [technologiesDropdownOpen, setTechnologiesDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Technologies Dropdown */}
-          {/* <div
+          <div
             className="relative"
             onMouseEnter={() => setTechnologiesDropdownOpen(true)}
             onMouseLeave={() => setTechnologiesDropdownOpen(false)}
@@ -63,14 +63,14 @@ const Navbar: React.FC = () => {
             {technologiesDropdownOpen && (
               <div className="absolute top-full left-[130%] transform -translate-x-1/2 z-50">
               <div className="w-[1100px] max-w-[90vw]">
-                <TechnologiesDropdown />
+                <TechnologiesDropdown setTechnologiesDropdownOpen={setTechnologiesDropdownOpen} />
               </div>
             </div>
             )}
-          </div> */}
+          </div>
 
-          <a href="/about" className="hover:opacity-70 transition-opacity">Clients</a>
-          <a href="/about" className="hover:opacity-70 transition-opacity">Careers</a>
+          <a className="hover:opacity-70 transition-opacity" onClick={() => navigate("/Our-Clients")}>Clients</a>
+          <a className="hover:opacity-70 transition-opacity" onClick={() => navigate("/Careers")}>Careers</a>
           {/* <a href="/work" className="hover:opacity-70 transition-opacity">Work (6)</a> */}
         </div>
 

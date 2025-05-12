@@ -17,6 +17,21 @@ import DatabaseMigration from "@/screens/Services Page/components/DatabaseMigrat
 import DataAnalytics from "@/screens/Services Page/components/DataAnalytics";
 import FullStackDevelopment from "@/screens/Services Page/components/FullStackDevelopment";
 import CareersPage from "@/screens/Careers/Careers"
+import AngularJS from "@/screens/Technologies/AngularJS";
+import ReactJS from "@/screens/Technologies/ReactJS";
+import VueJS from "@/screens/Technologies/VueJS";
+import JavaScript from "@/screens/Technologies/JavaScript";
+import TypeScript from "@/screens/Technologies/TypeScript";
+import CSS3 from "@/screens/Technologies/CSS3";
+import HTML5 from "@/screens/Technologies/HTML5";
+import DotNet from "@/screens/Technologies/DotNet";
+import PHP from "@/screens/Technologies/PHP";
+import Java from "@/screens/Technologies/Java";
+import NodeJS from "@/screens/Technologies/NodeJS";
+import DotNetCore from "@/screens/Technologies/DotNerCore";
+import Ios from "@/screens/Technologies/Ios";
+import Android from "@/screens/Technologies/Android";
+import ReactNative from "@/screens/Technologies/ReactNative";
 
 const AllRoutes = () => {
     return (
@@ -106,6 +121,81 @@ const AllRoutes = () => {
                 <Route
                     path="/Careers"
                     element={<Container children={<CareersPage />} />}
+                />
+
+                <Route
+                    path="/Technologies/Angular-JS"
+                    element={<Container children={<AngularJS />} />}
+                />
+
+                <Route
+                    path="/Technologies/React-JS"
+                    element={<Container children={<ReactJS />} />}
+                />
+
+                <Route
+                    path="/Technologies/Vue-JS"
+                    element={<Container children={<VueJS />} />}
+                />
+
+                <Route
+                    path="/Technologies/JavaScript"
+                    element={<Container children={<JavaScript />} />}
+                />
+
+                <Route
+                    path="/Technologies/TypeScript"
+                    element={<Container children={<TypeScript />} />}
+                />
+
+                <Route
+                    path="/Technologies/CSS-3"
+                    element={<Container children={<CSS3 />} />}
+                />
+
+                <Route
+                    path="/Technologies/HTML-5"
+                    element={<Container children={<HTML5 />} />}
+                />
+
+                <Route
+                    path="/Technologies/Dot-Net"
+                    element={<Container children={<DotNet />} />}
+                />
+
+                <Route
+                    path="/Technologies/PHP"
+                    element={<Container children={<PHP />} />}
+                />
+
+                <Route
+                    path="/Technologies/Java"
+                    element={<Container children={<Java />} />}
+                />
+
+                <Route
+                    path="/Technologies/Node-Js"
+                    element={<Container children={<NodeJS />} />}
+                />
+
+                <Route
+                    path="/Technologies/Dot-Net-Core"
+                    element={<Container children={<DotNetCore />} />}
+                />
+
+                <Route
+                    path="/Technologies/IOS"
+                    element={<Container children={<Ios />} />}
+                />
+
+                <Route
+                    path="/Technologies/Android"
+                    element={<Container children={<Android />} />}
+                />
+
+                <Route
+                    path="/Technologies/React-Native"
+                    element={<Container children={<ReactNative />} />}
                 />
             </Route>
         </Routes>

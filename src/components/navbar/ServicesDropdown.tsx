@@ -18,11 +18,11 @@ const ServicesDropdown = () => {
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6">
                             <li className="relative group cursor-pointer w-fit">
-                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={()=> navigate("/services/web-dev")}>Application Services</span>
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/web-dev")}>Application Services</span>
                                 <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
                             </li>
                             <li className="relative group cursor-pointer w-fit">
-                                <span className="group-hover:text-gray-800 transition-colors duration-300">Full Stack Development</span>
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/Full-Stack-Development")}>Full Stack Development</span>
                                 <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
                             </li>
                         </ul>
@@ -31,18 +31,31 @@ const ServicesDropdown = () => {
                     {/* IT Management */}
                     <div>
                         <div className="flex items-center gap-2 mb-3">
-                            <span><img src={marketing} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
+                            <span>
+                                <img src={marketing} className="h-[26px] border-b-2 border-blue-300 pb-1" />
+                            </span>
                             <h3 className="text-sm font-semibold">Infrastructure & IT Management</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6">
-                            {["Infrastructure Service", "Managed IT Services", "IT Outsourcing", "DevOps"].map((item, idx) => (
-                                <li key={idx} className="relative group cursor-pointer w-fit">
-                                    <span className="group-hover:text-gray-800 transition-colors duration-300">{item}</span>
-                                    <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
-                                </li>
-                            ))}
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/Infrastructure-Services")}>Infrastructure Service</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/Managed-IT-Services")}>Managed IT Services</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/IT-Outsourcing")}>IT Outsourcing</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/DevOps")}>DevOps</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
                         </ul>
                     </div>
+
 
                     {/* Design */}
                     <div>
@@ -52,7 +65,7 @@ const ServicesDropdown = () => {
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6">
                             <li className="relative group cursor-pointer w-fit">
-                                <span className="group-hover:text-gray-800 transition-colors duration-300">UI/UX Design</span>
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/UI-UX-Designing")}>UI/UX Design</span>
                                 <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
                             </li>
                         </ul>
@@ -61,32 +74,43 @@ const ServicesDropdown = () => {
                     {/* Data & Intelligence */}
                     <div>
                         <div className="flex items-center gap-2 mt-8">
-                            <span><img src={mobile} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
+                            <span>
+                                <img src={mobile} className="h-[26px] border-b-2 border-blue-300 pb-1" />
+                            </span>
                             <h3 className="text-sm font-semibold pb-1">Data & Intelligence</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6 mt-2">
-                            {["Business Intelligence", "Data Analytics", "Database Migration"].map((item, idx) => (
-                                <li key={idx} className="relative group cursor-pointer w-fit">
-                                    <span className="group-hover:text-gray-800 transition-colors duration-300">{item}</span>
-                                    <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
-                                </li>
-                            ))}
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/Business-Intelligence")}>Business Intelligence</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/Data-Analytics")}>Data Analytics</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
+                            <li className="relative group cursor-pointer w-fit">
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/Database-Migration")}>Database Migration</span>
+                                <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
+                            </li>
                         </ul>
                     </div>
 
                     {/* Embedded */}
                     <div>
                         <div className="flex items-center gap-2 mt-8">
-                            <span><img src={mobile} className="h-[26px] border-b-2 border-blue-300 pb-1" /></span>
+                            <span>
+                                <img src={mobile} className="h-[26px] border-b-2 border-blue-300 pb-1" />
+                            </span>
                             <h3 className="text-sm font-semibold pb-1">Embedded & Specialized Solutions</h3>
                         </div>
                         <ul className="space-y-2 text-sm text-gray-600 ml-6 mt-2">
                             <li className="relative group cursor-pointer w-fit">
-                                <span className="group-hover:text-gray-800 transition-colors duration-300">Embedded Product</span>
+                                <span className="group-hover:text-gray-800 transition-colors duration-300" onClick={() => navigate("/services/Embedded-Product")}>Embedded Product</span>
                                 <span className="absolute left-0 -bottom-0.5 h-0.5 w-0 bg-gray-800 transition-all duration-300 group-hover:w-full"></span>
                             </li>
                         </ul>
                     </div>
+
                 </div>
 
 

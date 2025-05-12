@@ -115,30 +115,35 @@ export const MainByAnima = (): JSX.Element => {
       alt: "Client logo",
       width: "127px",
       height: "6",
+      name: "Product Engineering"
     },
     {
       src: "/clip-path-group-1.png",
       alt: "Client logo",
       width: "16",
       height: "39px",
+      name: "Mobile Solutions"
     },
     {
       src: "/clip-path-group-2.png",
       alt: "Client logo",
       width: "69px",
       height: "27px",
+      name: "Big Data Analytics"
     },
     {
       src: "/67cf8bb0523b7ab5b4150a3f-group-201000004849-svg.svg",
       alt: "Client logo",
       width: "113px",
       height: "21px",
+      name: "Google Apps For Businesses"
     },
     {
       src: "/clip-path-group-3.png",
       alt: "Client logo",
       width: "72px",
       height: "39px",
+      name: "Social Integration"
     },
   ];
 
@@ -225,7 +230,7 @@ export const MainByAnima = (): JSX.Element => {
           <div className="flex flex-col items-center gap-6 w-full">
             <FadeIn>
               <h2 className="font-normal text-black text-base leading-[20.8px]">
-                Trusted by
+                Our Optimal Silutions
               </h2>
             </FadeIn>
 
@@ -233,15 +238,18 @@ export const MainByAnima = (): JSX.Element => {
               {clientLogos.map((logo, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
                   <Card
-                    className="flex items-center justify-center px-8 py-16 bg-white rounded-[6.08px]"
+                    className="flex items-center justify-center px-2 py-16 bg-white rounded-[6.08px]"
                   >
-                    <CardContent className="flex items-center justify-center p-0 h-10">
+                    <CardContent className="flex flex-col items-center justify-center p-0 h-10 gap-6">
                       <img
                         className="w-auto h-auto"
                         alt={logo.alt}
                         src={logo.src}
                         style={{ width: logo.width, height: logo.height }}
                       />
+                      <p className="text-[#283841] font-light text-xs">
+                        {logo.name}
+                      </p>
                     </CardContent>
                   </Card>
                 </FadeIn>
