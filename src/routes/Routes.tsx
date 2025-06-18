@@ -32,6 +32,9 @@ import DotNetCore from "@/screens/Technologies/DotNerCore";
 import Ios from "@/screens/Technologies/Ios";
 import Android from "@/screens/Technologies/Android";
 import ReactNative from "@/screens/Technologies/ReactNative";
+import WooCommerce from "@/screens/Technologies/WooCommerce";
+import Magento from "@/screens/Technologies/Magento";
+import ProdEng from "@/screens/Solution Pages/ProdEng";
 
 const AllRoutes = () => {
     return (
@@ -196,6 +199,21 @@ const AllRoutes = () => {
                 <Route
                     path="/Technologies/React-Native"
                     element={<Container children={<ReactNative />} />}
+                />
+
+                <Route
+                    path="/Technologies/Woo-Commerce"
+                    element={<Container children={<WooCommerce />} />}
+                />
+
+                 <Route
+                    path="/Technologies/Magento"
+                    element={<Container children={<Magento />} />}
+                />
+
+                <Route
+                    path="/Product-Engineering"
+                    element={<Container children={<ProdEng />} />}
                 />
             </Route>
         </Routes>

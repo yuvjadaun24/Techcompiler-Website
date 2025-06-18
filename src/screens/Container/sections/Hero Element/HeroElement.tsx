@@ -5,10 +5,17 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { FadeIn } from "../../../../components/animations/FadeIn";
 import { ParallaxImage } from "../../../../components/animations/ParallaxImage";
 import "./Main.css";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
+import ProdEng from "@/assets/ProdEng.png";
+import MobileSol from "@/assets/MobileSol.png"
+import BigData from "@/assets/BigData.png"
+import GoogleApps from "@/assets/GoogleApps.png"
+import SocialIntegration from "@/assets/SocialIntegration.png"
+import { useNavigate } from "react-router-dom";
 
 export const MainByAnima = (): JSX.Element => {
   // Portfolio projects data
+  const navigate = useNavigate();
   const portfolioProjects = [
     {
       name: "Outshift",
@@ -111,38 +118,42 @@ export const MainByAnima = (): JSX.Element => {
   // Client logos data
   const clientLogos = [
     {
-      src: "/clip-path-group.png",
+      src: ProdEng,
       alt: "Client logo",
-      width: "127px",
-      height: "6",
-      name: "Product Engineering"
+      width: "40px",
+      height: "40px",
+      name: "Product Engineering",
+      onClick: () => {
+        console.log("Product Engineering clicked, navigating...");
+        navigate("/Product-Engineering");
+      }
     },
     {
-      src: "/clip-path-group-1.png",
+      src: MobileSol,
       alt: "Client logo",
-      width: "16",
-      height: "39px",
+      width: "40px",
+      height: "40px",
       name: "Mobile Solutions"
     },
     {
-      src: "/clip-path-group-2.png",
+      src: BigData,
       alt: "Client logo",
-      width: "69px",
-      height: "27px",
+      width: "40px",
+      height: "40px",
       name: "Big Data Analytics"
     },
     {
-      src: "/67cf8bb0523b7ab5b4150a3f-group-201000004849-svg.svg",
+      src: GoogleApps,
       alt: "Client logo",
-      width: "113px",
-      height: "21px",
+      width: "40px",
+      height: "40px",
       name: "Google Apps For Businesses"
     },
     {
-      src: "/clip-path-group-3.png",
+      src: SocialIntegration,
       alt: "Client logo",
-      width: "72px",
-      height: "39px",
+      width: "40px",
+      height: "40px",
       name: "Social Integration"
     },
   ];
@@ -229,20 +240,46 @@ export const MainByAnima = (): JSX.Element => {
         <div className="flex flex-col max-w-screen-lg w-full items-start px-0 py-20">
           <div className="flex flex-col items-center gap-6 w-full">
             <FadeIn>
-              <h2 className="font-normal text-black text-base leading-[20.8px]">
+              <h1 className="font-medium text-2xl text-black leading-[20.8px]">
                 Our Optimal Silutions
-              </h2>
+              </h1>
             </FadeIn>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
               {clientLogos.map((logo, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
                   <Card
-                    className="flex items-center justify-center px-2 py-16 bg-white rounded-[6.08px]"
-                  >
+                    className="group relative flex items-center justify-center px-2 py-16 bg-white rounded-[6.08px] transition-transform duration-200 hover:scale-[1.03] hover:shadow-[0px_4px_49px_-34px_rgba(0,_0,_0,_0.1)] active:scale-95 cursor-pointer">
+                    {/* Top border (from left) */}
+                    <span className="
+          pointer-events-none absolute top-0 left-0 h-0.5 bg-slate-600
+          w-0 group-hover:w-full transition-all duration-300
+          rounded-tl-[6.08px]
+        " />
+                    {/* Right border (from top) */}
+                    <span className="
+          pointer-events-none absolute top-0 right-0 w-0.5 bg-slate-600
+          h-0 group-hover:h-full transition-all duration-300
+          rounded-tr-[6.08px]
+          delay-150
+        " />
+                    {/* Bottom border (from right) */}
+                    <span className="
+          pointer-events-none absolute bottom-0 right-0 h-0.5 bg-slate-600
+          w-0 group-hover:w-full transition-all duration-300
+          rounded-br-[6.08px]
+          delay-300
+        " />
+                    {/* Left border (from bottom) */}
+                    <span className="
+          pointer-events-none absolute bottom-0 left-0 w-0.5 bg-slate-600
+          h-0 group-hover:h-full transition-all duration-300
+          rounded-bl-[6.08px]
+          delay-450
+        " />
                     <CardContent className="flex flex-col items-center justify-center p-0 h-10 gap-6">
                       <img
-                        className="w-auto h-auto"
+                        className="w-auto h-auto transition-transform duration-200"
                         alt={logo.alt}
                         src={logo.src}
                         style={{ width: logo.width, height: logo.height }}
@@ -255,6 +292,8 @@ export const MainByAnima = (): JSX.Element => {
                 </FadeIn>
               ))}
             </div>
+
+
           </div>
         </div>
       </section>
