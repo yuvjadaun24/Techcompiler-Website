@@ -35,6 +35,7 @@ import ReactNative from "@/screens/Technologies/ReactNative";
 import WooCommerce from "@/screens/Technologies/WooCommerce";
 import Magento from "@/screens/Technologies/Magento";
 import ProdEng from "@/screens/Solution Pages/ProdEng";
+import WhirlpoolMerch from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/WhirlpoolMerch";
 
 const AllRoutes = () => {
     return (
@@ -214,6 +215,11 @@ const AllRoutes = () => {
                 <Route
                     path="/Product-Engineering"
                     element={<Container children={<ProdEng />} />}
+                />
+
+                <Route
+                    path="/Whirlpool-Merch"
+                    element={<Container children={<WhirlpoolMerch />} />}
                 />
             </Route>
         </Routes>

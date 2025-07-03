@@ -37,6 +37,37 @@ const steps = [
     },
 ];
 
+let prodEngInnerLinks = [
+    {
+        text: 'Whirlpool Merch Migration Application',
+        link: "/Whirlpool-Merch"
+    },
+    {
+        text: "Shopper DrugMart's Resource Management Application",
+        link: "/test"
+    },
+    {
+        text: "Jones Lang Lasalle's Collaboration Platform",
+        link: "/test"
+    },
+    {
+        text: "Yepme's Online Brand E-commerce Application",
+        link: "/test"
+    },
+    {
+        text: "Perfect Wedding Guide's Online Platform",
+        link: "/test"
+    },
+    {
+        text: "ISAWeb Application",
+        link: "/test"
+    },
+    {
+        text: "Newsbeen Application",
+        link: "/test"
+    }
+]
+
 const ProdEng: React.FC = () => {
     return (
         <div className="bg-gray-50 text-gray-900">
@@ -123,39 +154,36 @@ const ProdEng: React.FC = () => {
                 {/* Left Section */}
                 <div className="max-w-xl">
                     <h2 className="text-5xl font-extrabold uppercase underline decoration-black decoration-4 mb-6">
-                        UI UX Design
+                        What we have cooked!
                     </h2>
                     <p className="text-lg text-black leading-relaxed mb-8">
-                        Our UI/UX design services ensure your users have a seamless, engaging, and memorable experience.
+                        Explore how our product engineering expertise has delivered seamless, innovative, and impactful solutions for real-world challenges.
                     </p>
-                    <button className="bg-[#3F21FF] text-white font-medium px-6 py-3 rounded-full flex items-center gap-2 hover:bg-[#341bcc] transition">
-                        Contact Us <span className="text-sm">↗</span>
-                    </button>
+                    <div className="animate-fadeIn w-[50%]" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+                        <a href="/contact" className="button w-inline-block">
+                            <div className="button-text-wrap">
+                                <div className="button-text">Get in touch</div>
+                                <div className="button-text absolute">Get in touch</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
                 {/* Right Section */}
                 <div className="w-full max-w-xl">
-                    <h3 className="text-xl font-semibold uppercase text-black mb-6">
-                        UI/UX Design Services
-                    </h3>
                     <ul className="divide-y divide-gray-200">
-                        {[
-                            'User Research',
-                            'Wireframe & Prototyping',
-                            'Data-Driven Design',
-                            'Mobile Fast & Responsive Design',
-                            'Design System',
-                        ].map((item, index) => (
-                            <li
+                        {prodEngInnerLinks.map((item, index) => (
+                            <a
+                                href={item.link}
                                 key={index}
                                 className="flex items-center justify-between py-4 text-lg font-medium text-black hover:opacity-80 cursor-pointer"
                             >
                                 <div className="flex items-center gap-4">
                                     <span className="text-gray-400 font-mono w-6">{`0${index + 1}`}</span>
-                                    <span>{item}</span>
+                                    <span>{item.text}</span>
                                 </div>
                                 <span className="text-black">↗</span>
-                            </li>
+                            </a>
                         ))}
                     </ul>
                 </div>
