@@ -1,8 +1,22 @@
 import wp1 from "@/assets/wp-1.png"
 import wp2 from "@/assets/wp-2.png"
 import wp3 from "@/assets/wp-3.png"
+import * as ReactIcons from "react-icons/fa";
+import {
+  SiHibernate,
+  SiGooglecloud,
+  SiApachetomcat,
+  SiXml,
+} from "react-icons/si";
+import { FaProjectDiagram } from "react-icons/fa";
+import { IconType } from "react-icons/lib";
 
 const WhirlpoolMerch = () => {
+  const FaJava: any = ReactIcons.FaJava;
+  const FaProjectDiagram: any = ReactIcons.FaProjectDiagram;
+  const FaDatabase: any = ReactIcons.FaDatabase;
+  const FaFlask: any = ReactIcons.FaFlask;
+
   return (
     <div className="container mx-auto p-8 rounded-lg">
       <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Whirlpool Merch Migration</h1>
@@ -35,31 +49,114 @@ const WhirlpoolMerch = () => {
         </ul>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
-        <p className="text-gray-700 leading-relaxed text-lg">Enterprise Applications:</p>
-        <ul className="list-disc list-inside text-gray-700 mt-4 text-lg">
-          <li>J2EE frameworks like Spring, Strut, and JSF</li>
-          <li>J2EE Design Patterns</li>
-          <li>Java Persistence API frameworks like Hibernate</li>
-          <li>JSP, JSPX, Servlets, Custom Tags, JDBC, XML/XSL, and JUnit</li>
-          <li>Google Apps Engine</li>
-          <li>Cloud MySQL</li>
-          <li>JIRA bug tracking tool</li>
-        </ul>
+
+       <section className="mb-16">
+      <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
+      <p className="text-gray-700 leading-relaxed text-lg mb-6">Enterprise Applications:</p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700">
+        <div className="flex items-center gap-3">
+          <FaJava className="text-2xl text-orange-500" />
+          <span>J2EE frameworks: Spring, Struts, JSF</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <FaProjectDiagram className="text-2xl text-blue-500" />
+          <span>J2EE Design Patterns</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <SiHibernate className="text-2xl text-green-600" />
+          <span>Hibernate (JPA Framework)</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <SiApachetomcat className="text-2xl text-red-500" />
+          <span>JSP, Servlets, Custom Tags, JDBC</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <SiXml className="text-2xl text-indigo-500" />
+          <span>XML, XSL</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <FaFlask className="text-2xl text-purple-600" />
+          <span>JUnit</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <SiGooglecloud className="text-2xl text-blue-400" />
+          <span>Google App Engine</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <FaDatabase className="text-2xl text-teal-600" />
+          <span>Cloud MySQL</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <FaBug className="text-2xl text-red-400" />
+          <span>JIRA Bug Tracking Tool</span>
+        </div>
+      </div>
+    </section>
+
+      <section className="mb-16">
+        <h2 className="text-4xl font-light text-gray-800 mb-10 text-left">How it Works</h2>
+
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 relative">
+
+          {/* Step 1 */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-gray-400 text-white text-2xl font-bold flex items-center justify-center shadow-md">
+              1
+            </div>
+            <h3 className="text-xl font-semibold text-gray-700 mt-4 mb-2">Workflow Limit</h3>
+            <p className="text-gray-600 max-w-xs text-base">
+              Each workflow can have a <span className="font-medium text-gray-600">maximum of 4 approval phases</span>.
+            </p>
+          </div>
+
+          {/* Arrow */}
+          <div className="hidden md:block w-10 h-10">
+            <svg className="w-full h-full text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4" />
+            </svg>
+          </div>
+
+          {/* Step 2 */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-gray-400 text-white text-2xl font-bold flex items-center justify-center shadow-md">
+              2
+            </div>
+            <h3 className="text-xl font-semibold text-gray-700 mt-4 mb-2">Phase Composition</h3>
+            <p className="text-gray-600 max-w-xs text-base">
+              Each phase can include <span className="font-medium text-gray-600">one or more approvers</span>.
+            </p>
+          </div>
+
+          {/* Arrow */}
+          <div className="hidden md:block w-10 h-10">
+            <svg className="w-full h-full text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m0 0l-4-4m4 4l-4 4" />
+            </svg>
+          </div>
+
+          {/* Step 3 */}
+          <div className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 rounded-full bg-gray-400 text-white text-2xl font-bold flex items-center justify-center shadow-md">
+              3
+            </div>
+            <h3 className="text-xl font-semibold text-gray-700 mt-4 mb-2">Approval Mode</h3>
+            <p className="text-gray-600 max-w-xs text-base">
+              Approval logic per phase can be set to <span className="font-medium text-gray-600">ALL</span> or <span className="font-medium text-gray-600">ANY</span> approvers.
+            </p>
+          </div>
+
+        </div>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-4xl font-light text-gray-800 mb-6">How it Works</h2>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          This application allows a Business Owner to create their own workflow application, as long as it falls within the following constraints:
-        </p>
-        <ul className="list-disc list-inside text-gray-700 mt-4 text-lg">
-          <li>Each workflow can have a maximum of 4 approval phases</li>
-          <li>Each approval phase can contain 1 or more approvers</li>
-          <li>Within each approval phase, approvals can only be set to ALL or ANY</li>
-        </ul>
-      </section>
 
       <section>
         <h2 className="text-4xl font-light text-gray-800 mb-6">How it Looks</h2>
@@ -86,4 +183,3 @@ const WhirlpoolMerch = () => {
 };
 
 export default WhirlpoolMerch;
- 
