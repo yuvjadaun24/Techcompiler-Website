@@ -34,8 +34,15 @@ import Android from "@/screens/Technologies/Android";
 import ReactNative from "@/screens/Technologies/ReactNative";
 import WooCommerce from "@/screens/Technologies/WooCommerce";
 import Magento from "@/screens/Technologies/Magento";
-import ProdEng from "@/screens/Solution Pages/ProdEng";
+import ProdEng from "@/screens/Solution Pages/Solutio-Inner-Pages/ProdEng";
 import WhirlpoolMerch from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/WhirlpoolMerch";
+import ShoppersDrugMart from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/ShoppersDrugmart";
+import JLLPresentation from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/JLL";
+import YepmeEcommerce from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/YepMeEcommerce";
+import PerfectWeddingGuide from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/PerfectWedding";
+import ISAApplication from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/ISAA";
+import NewsBeenMedia from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/NewsBeen";
+import MobileAppDev from "@/screens/Solution Pages/Solutio-Inner-Pages/MobileApp";
 
 const AllRoutes = () => {
     return (
@@ -220,6 +227,42 @@ const AllRoutes = () => {
                 <Route
                     path="/Whirlpool-Merch"
                     element={<Container children={<WhirlpoolMerch />} />}
+                />
+
+                <Route
+                    path="/Shopper-Drug-Mart"
+                    element={<Container children={<ShoppersDrugMart />} />}
+                />
+
+                <Route
+                    path="/Jll-Presentation"
+                    element={<Container children={<JLLPresentation />} />}
+                />
+
+                <Route
+                    path="/YepMe-Ecommerce"
+                    element={<Container children={<YepmeEcommerce />} />}
+                />
+
+                <Route
+                    path="/Perfect-Wedding-Guide"
+                    element={<Container children={<PerfectWeddingGuide />} />}
+                />
+
+                <Route
+                    path="/ISAA-Web-Application"
+                    element={<Container children={<ISAApplication />} />}
+                />
+
+                <Route
+                    path="/Newsbeen-Application"
+                    element={<Container children={<NewsBeenMedia />} />}
+                />
+
+                
+                <Route
+                    path="/Mobile-Applications"
+                    element={<Container children={<MobileAppDev />} />}
                 />
             </Route>
         </Routes>

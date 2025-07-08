@@ -4,6 +4,7 @@ import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { FadeIn } from "../../../../components/animations/FadeIn";
 import { ParallaxImage } from "../../../../components/animations/ParallaxImage";
+// import HeroImage from '@/assets/IMG-20220905-WA0008 (1).jpg'
 import "./Main.css";
 import { motion } from "framer-motion";
 import ProdEng from "@/assets/ProdEng.png";
@@ -227,7 +228,7 @@ export const MainByAnima = (): JSX.Element => {
 
             <div className="w-full md:w-1/2 lg:w-[524px] h-[672px]">
               <ParallaxImage
-                src="/67ce9ed56c8e587d30496fa6-2f67ceb73b686dbb71573fca2f-18069235-uhd.png"
+                src={"/HeroImage.jpg"}
                 className="w-full h-full"
               />
             </div>
@@ -249,7 +250,7 @@ export const MainByAnima = (): JSX.Element => {
               {clientLogos.map((logo, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
                   <Card
-                    className="group relative flex items-center justify-center px-2 py-16 bg-white rounded-[6.08px] transition-transform duration-200 hover:scale-[1.03] hover:shadow-[0px_4px_49px_-34px_rgba(0,_0,_0,_0.1)] active:scale-95 cursor-pointer">
+                    className="group relative flex items-center justify-center px-2 py-16 bg-white rounded-[6.08px] transition-transform duration-200 hover:scale-[1.03] hover:shadow-[0px_4px_49px_-34px_rgba(0,_0,_0,_0.1)] active:scale-95 cursor-pointer" onClick={() => navigate("/Product-Engineering")}>
                     {/* Top border (from left) */}
                     <span className="
           pointer-events-none absolute top-0 left-0 h-0.5 bg-slate-600
