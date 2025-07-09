@@ -43,6 +43,14 @@ import PerfectWeddingGuide from "@/screens/Solution Pages/Solutio-Inner-Pages/Pr
 import ISAApplication from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/ISAA";
 import NewsBeenMedia from "@/screens/Solution Pages/Solutio-Inner-Pages/Prod-Eng Inner Pages/NewsBeen";
 import MobileAppDev from "@/screens/Solution Pages/Solutio-Inner-Pages/MobileApp";
+import GoEmerge from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/GoEmerge";
+import WeddingGuide from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/WeddingGuide";
+import ImaginativeMinds from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/ImaginativeMinds";
+import Blogmint from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/BlogMint";
+import AbscbnNews from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/AbscbnNews";
+import TeenbeenMedia from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/TeenBeenMedia";
+import PruneDigital from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/PruneDigital";
+import IntegratedSoftwareApplications from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/ISAWebApplication";
 
 const AllRoutes = () => {
     return (
@@ -214,7 +222,7 @@ const AllRoutes = () => {
                     element={<Container children={<WooCommerce />} />}
                 />
 
-                 <Route
+                <Route
                     path="/Technologies/Magento"
                     element={<Container children={<Magento />} />}
                 />
@@ -259,10 +267,50 @@ const AllRoutes = () => {
                     element={<Container children={<NewsBeenMedia />} />}
                 />
 
-                
+
                 <Route
                     path="/Mobile-Applications"
                     element={<Container children={<MobileAppDev />} />}
+                />
+
+                <Route
+                    path="/GoEmerge-Application"
+                    element={<Container children={<GoEmerge />} />}
+                />
+
+                <Route
+                    path="/PWG-Mobile"
+                    element={<Container children={<WeddingGuide />} />}
+                />
+
+                <Route
+                    path="/IWIGT-iPad"
+                    element={<Container children={<ImaginativeMinds />} />}
+                />
+
+                <Route
+                    path="/Blogmint-Application"
+                    element={<Container children={<Blogmint />} />}
+                />
+
+                <Route
+                    path="/Abscbn-News"
+                    element={<Container children={<AbscbnNews />} />}
+                />
+
+                <Route
+                    path="/Teenbeen-Media"
+                    element={<Container children={<TeenbeenMedia />} />}
+                />
+
+                <Route
+                    path="/Prune-Digital"
+                    element={<Container children={<PruneDigital />} />}
+                />
+
+                <Route
+                    path="/ISAWeb-Application"
+                    element={<Container children={<IntegratedSoftwareApplications />} />}
                 />
             </Route>
         </Routes>

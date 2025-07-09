@@ -40,7 +40,7 @@ const steps = [
 let mobileAppInnerLinks = [
     {
         text: 'Active8 - iPhone Fitness Application',
-        link: "/Active8-iPhone"
+        link: "/GoEmerge-Application"
     },
     {
         text: "PWG Mobile Application",
@@ -52,23 +52,23 @@ let mobileAppInnerLinks = [
     },
     {
         text: "The Loudest Cheer - Application for Cricket Fans",
-        link: "/Loudest-Cheer"
+        link: "/Blogmint-Application"
     },
     {
         text: "ABS-CBN's TFC TV iPhone Application",
-        link: "/TFC-TV-iPhone"
+        link: "/Abscbn-News"
     },
     {
         text: "Newsbeen Android & iPhone Application",
-        link: "/Newsbeen-App"
+        link: "/Teenbeen-Media"
     },
     {
         text: "Prune Android Application",
-        link: "/Prune-Android"
+        link: "/Prune-Digital"
     },
     {
         text: "ISAWeb Android & iPhone Application",
-        link: "/ISAWeb-App"
+        link: "/ISAWeb-Application"
     }
 ]
 

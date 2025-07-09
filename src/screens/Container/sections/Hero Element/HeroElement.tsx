@@ -124,38 +124,39 @@ export const MainByAnima = (): JSX.Element => {
       width: "40px",
       height: "40px",
       name: "Product Engineering",
-      onClick: () => {
-        console.log("Product Engineering clicked, navigating...");
-        navigate("/Product-Engineering");
-      }
+      url: "/Product-Engineering",
     },
     {
       src: MobileSol,
       alt: "Client logo",
       width: "40px",
       height: "40px",
-      name: "Mobile Solutions"
+      name: "Mobile Solutions",
+      url: "/Mobile-Applications",
     },
     {
       src: BigData,
       alt: "Client logo",
       width: "40px",
       height: "40px",
-      name: "Big Data Analytics"
+      name: "Big Data Analytics",
+      url: "/Big-Data-Analytics",
     },
     {
       src: GoogleApps,
       alt: "Client logo",
       width: "40px",
       height: "40px",
-      name: "Google Apps For Businesses"
+      name: "Google Apps For Businesses",
+      url: "/Google-Apps-For-Businesses",
     },
     {
       src: SocialIntegration,
       alt: "Client logo",
       width: "40px",
       height: "40px",
-      name: "Social Integration"
+      name: "Social Integration",
+      url: "/Social-Integration",
     },
   ];
 
@@ -242,7 +243,7 @@ export const MainByAnima = (): JSX.Element => {
           <div className="flex flex-col items-center gap-6 w-full">
             <FadeIn>
               <h1 className="font-medium text-2xl text-black leading-[20.8px]">
-                Our Optimal Silutions
+                Our Optimal Solutions
               </h1>
             </FadeIn>
 
@@ -250,7 +251,9 @@ export const MainByAnima = (): JSX.Element => {
               {clientLogos.map((logo, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
                   <Card
-                    className="group relative flex items-center justify-center px-2 py-16 bg-white rounded-[6.08px] transition-transform duration-200 hover:scale-[1.03] hover:shadow-[0px_4px_49px_-34px_rgba(0,_0,_0,_0.1)] active:scale-95 cursor-pointer" onClick={() => navigate("/Product-Engineering")}>
+                    className="group relative flex items-center justify-center px-2 py-16 bg-white rounded-[6.08px] transition-transform duration-200 hover:scale-[1.03] hover:shadow-[0px_4px_49px_-34px_rgba(0,_0,_0,_0.1)] active:scale-95 cursor-pointer"
+                    onClick={() => navigate(logo.url)}
+                  >
                     {/* Top border (from left) */}
                     <span className="
           pointer-events-none absolute top-0 left-0 h-0.5 bg-slate-600
