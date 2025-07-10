@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "../../../../components/ui/accordion";
-import { Badge } from "../../../../components/ui/badge";
+// import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { FadeIn } from "../../../../components/animations/FadeIn";
@@ -19,59 +19,72 @@ export const MainByAnima = (): JSX.Element => {
   const navigate = useNavigate();
   const portfolioProjects = [
     {
-      name: "Outshift",
-      category: "Branding/UI Design",
-      backgroundImage:
-        "/67d02a29b38588fe0a411ef1-outshift-thumbnail-min-p-2000-jpg.png",
+      name: "YepMe E-Commerce",
+      category: "Product Engineering",
+      backgroundImage: "https://via.placeholder.com/600x400",
+      url: "/YepMe-Ecommerce",
     },
     {
-      name: "Pureat",
-      category: "Branding/UI Design",
-      backgroundImage:
-        "/67d0196a35781c2d19cde014-pureat-thumbnail-min-p-2000-jpg.png",
+      name: "GoEmerge Application",
+      category: "Mobile Application",
+      backgroundImage: "https://via.placeholder.com/600x400",
+      url: "/GoEmerge-Application",
     },
     {
-      name: "Anaro",
-      category: "Branding/UI Design",
-      backgroundImage:
-        "/67d02ace7e0f85d807df2538-anaro-thumbnail-min-p-2000-jpg.png",
+      name: "JLL Presentation",
+      category: "Product Engineering",
+      backgroundImage: "https://via.placeholder.com/600x400",
+      url: "/Jll-Presentation",
     },
     {
-      name: "TheoFolio",
-      category: "Branding/UI Design",
-      backgroundImage:
-        "/67d02af1896a5352c3de9053-theo-thumbnail-min-p-2000-jpg.png",
+      name: "Shoppers Drug Mart",
+      category: "Product Engineering",
+      backgroundImage: "https://via.placeholder.com/600x400",
+      url: "/Shopper-Drug-Mart",
     },
   ];
 
   // Services data
   const services = [
     {
-      name: "Branding",
+      name: "Who we are?",
       subtitle: "Defining your unique identity",
-      description:
-        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      description: [
+        "Our offerings span application development, technology consulting, custom software, and testing services. By providing valuable insights from analytics, advanced technology, and premium consulting services, we drive optimal outcomes. We assist clients in making informed decisions through impactful recommendations grounded in research and expertise.",
+        "At TechCompiler, we lead the charge in leveraging technology and innovation to transform businesses and lives. As custom enterprise software solutions developers, we turn ideas into reality.",
+      ],
       image: "/images/branding-sample.png",
     },
     {
-      name: "Design",
+      name: "Our core values",
       subtitle: "Defining your unique identity",
-      description:
-        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      description: [
+          "At TechCompiler, our core values contribute significantly to our office culture and drive excellence in everything we do—from working passionately, and hiring new teammates to our interactions with our colleagues, partners, and customers. These values include the following:",
+          "Quality in everything we do.",
+          "Open communication with everyone.",
+          "An environment where great people work together to contribute to the overall direction of the company.",
+          "Honesty, respect, and humility with each other, our partners and our customers.",
+          "Mindset to continually think ahead, while ensuring backwards compatibility.",
+        ],
       image: "/images/branding-sample.png",
     },
     {
-      name: "Development",
+      name: "Why choose us?",
       subtitle: "Defining your unique identity",
-      description:
-        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      description: [
+        "With quality service at the forefront of our business, TechCompiler has rich domain knowledge, technological excellence, and proven success managing complex projects. This enables us to address any challenge our clients face.",
+        "Our professionals have diverse platform skills and industry backgrounds. Meanwhile, our project leaders employ robust methods to ensure flawless execution. By integrating our consultants with clients’ staff, we promote skill transfer and unified vision.",
+      ],
       image: "/images/branding-sample.png",
     },
     {
-      name: "Motion",
+      name: "What we do best?",
       subtitle: "Defining your unique identity",
-      description:
-        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      description: [
+        "We start by identifying strengths and gaps in your existing custom business applications and operations to gain an understanding of your enterprise, market sector, and competitors, as we make it our priority to truly understand your business goals and challenges before making recommendations for custom software solutions.",
+        "We kick off every new client relationship by having in-depth conversations to comprehend your unique situation, objectives, and pain points. Only once we feel we have a solid grasp of the context do we shift our focus to potential technology development solutions. Leveraging our decades of combined experience across industries, we conduct thorough research into your market landscape, competitors, and customers. We analyze where opportunities may exist to save costs, boost efficiency, increase sales, or otherwise propel your business forward with enterprise application solutions.",
+        "We explore various custom software options, weighing the pros and cons of each to determine the best course of action that moves you toward your goals while fitting within your budget. With creativity and care, we integrate the optimal blend of services, software development, and strategy tailored specifically to drive your organization's next phase of growth. Our attentive approach consistently uncovers unexpected ways for our clients to accomplish more with custom technology solutions.",
+      ],
       image: "/images/branding-sample.png",
     },
 
@@ -148,7 +161,7 @@ export const MainByAnima = (): JSX.Element => {
       width: "40px",
       height: "40px",
       name: "Google Apps For Businesses",
-      url: "/Google-Apps-For-Businesses",
+      url: "/Google-Apps-for-Business",
     },
     {
       src: SocialIntegration,
@@ -160,6 +173,13 @@ export const MainByAnima = (): JSX.Element => {
     },
   ];
 
+  const handleScrollToSolutions = () => {
+    const section = document.getElementById("optimal-solutions");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="flex flex-col w-full items-start">
       {/* Hero Section */}
@@ -167,7 +187,7 @@ export const MainByAnima = (): JSX.Element => {
         <div className="flex flex-col max-w-screen-xl w-full items-start pt-0 pb-20 px-0">
           <div className="flex flex-col md:flex-row items-start justify-center gap-8 lg:gap-[124px] w-full">
             <div className="flex flex-col w-full md:w-1/2 lg:w-[632px] items-start justify-center gap-6 self-stretch">
-              <FadeIn>
+              {/* <FadeIn>
                 <Badge
                   variant="outline"
                   className="bg-white flex items-center gap-[7.04px] px-[8.8px] py-[5.6px]"
@@ -177,7 +197,7 @@ export const MainByAnima = (): JSX.Element => {
                     Available from May&apos;25
                   </span>
                 </Badge>
-              </FadeIn>
+              </FadeIn> */}
 
               <FadeIn delay={0.2}>
                 <div className="w-full">
@@ -238,7 +258,10 @@ export const MainByAnima = (): JSX.Element => {
       </section>
 
       {/* Trusted By Section */}
-      <section className="w-full flex flex-col items-center px-8 py-0 bg-[#f4f4f4]">
+      <section
+        id="optimal-solutions"
+        className="w-full flex flex-col items-center px-8 py-0 bg-[#f4f4f4]"
+      >
         <div className="flex flex-col max-w-screen-lg w-full items-start px-0 py-20">
           <div className="flex flex-col items-center gap-6 w-full">
             <FadeIn>
@@ -302,10 +325,15 @@ export const MainByAnima = (): JSX.Element => {
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Our Work Section */}
       <section className="w-full flex flex-col items-center px-8 py-0">
         <div className="flex flex-col max-w-screen-xl w-full items-start px-0 py-20">
           <div className="flex flex-col items-center gap-12 w-full">
+            <FadeIn>
+              <h1 className="font-medium text-2xl text-black leading-[20.8px]">
+                Our Work
+              </h1>
+            </FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
               {portfolioProjects.map((project, index) => (
                 <FadeIn key={index} delay={index * 0.2}>
@@ -313,6 +341,7 @@ export const MainByAnima = (): JSX.Element => {
                     whileHover={{ scale: 0.98 }}
                     transition={{ duration: 0.3 }}
                     className="flex flex-col w-full h-[442px] items-start cursor-pointer"
+                    onClick={() => navigate(project.url)}
                   >
                     <div className="flex flex-col w-full items-start gap-3">
                       <div className="flex items-center justify-between w-full">
@@ -334,7 +363,10 @@ export const MainByAnima = (): JSX.Element => {
             </div>
 
             <FadeIn>
-              <Button className="bg-black text-white px-8 py-4 rounded hover:bg-gray-800 transition-colors">
+              <Button
+                className="bg-black text-white px-8 py-4 rounded hover:bg-gray-800 transition-colors"
+                onClick={handleScrollToSolutions}
+              >
                 View all works
               </Button>
             </FadeIn>
@@ -347,10 +379,10 @@ export const MainByAnima = (): JSX.Element => {
         {/* Top Section: Title + Subtext */}
         <div className="flex flex-col md:flex-row md:items-center gap-5 mb-12">
           <h2 className="text-2xl md:text-3xl font-semibold text-black">
-            Services we provide
+          About us
           </h2>
-          <p className="text-sm text-gray-600 max-w-md w-80">
-            Empowering brands to grow and share their stories since '18.
+          <p className="text-sm text-gray-600 max-w-4xl w-100">
+          At TechCompiler, we pioneer change through technology and innovation. As a global enterprise technology solutions provider headquartered in Rochester, NY, we empower organizations and professionals to adapt to the digital landscape. With deep technical expertise and industry experience, we unlock our clients’ full potential.
           </p>
         </div>
         {/* Accordion Section */}
@@ -383,9 +415,33 @@ export const MainByAnima = (): JSX.Element => {
                         <h3 className="text-base font-medium text-gray-700">
                           {service.subtitle}
                         </h3>
-                        <p className="text-base text-black mt-2 leading-relaxed">
-                          {service.description}
-                        </p>
+                        {Array.isArray(service.description) ? (
+                          service.name === "Our core values" ? (
+                            <>
+                              <p className="text-base text-black mt-2 leading-relaxed">
+                                {service.description[0]}
+                              </p>
+                              <ul className="list-disc list-inside text-base text-black mt-4 leading-relaxed space-y-2">
+                                {service.description.slice(1).map((point, i) => (
+                                  <li key={i}>{point}</li>
+                                ))}
+                              </ul>
+                            </>
+                          ) : (
+                            service.description.map((paragraph, i) => (
+                              <p
+                                key={i}
+                                className="text-base text-black mt-2 leading-relaxed"
+                              >
+                                {paragraph}
+                              </p>
+                            ))
+                          )
+                        ) : (
+                          <p className="text-base text-black mt-2 leading-relaxed">
+                            {service.description}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </AccordionContent>

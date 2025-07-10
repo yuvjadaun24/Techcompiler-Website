@@ -51,6 +51,14 @@ import AbscbnNews from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Appl
 import TeenbeenMedia from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/TeenBeenMedia";
 import PruneDigital from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/PruneDigital";
 import IntegratedSoftwareApplications from "@/screens/Solution Pages/Solutio-Inner-Pages/Mobile Application Inner Pages/ISAWebApplication";
+import BigDataAnalytics from "@/screens/Solution Pages/Solutio-Inner-Pages/BigDataAnalytics";
+import GoogleApps from "@/screens/Solution Pages/Solutio-Inner-Pages/GoogleApps";
+import KrispyKreme from "@/screens/Solution Pages/Solutio-Inner-Pages/Google-Apps-For-Business-Pages/KrispyKreme";
+import AtlasRoofing from "@/screens/Solution Pages/Solutio-Inner-Pages/Google-Apps-For-Business-Pages/AtlasRoofing";
+import Onix from "@/screens/Solution Pages/Solutio-Inner-Pages/Google-Apps-For-Business-Pages/Onix";
+import SocialIntegration from "@/screens/Solution Pages/Solutio-Inner-Pages/SocialIntegration";
+import GeorgiaEconomic from "@/screens/Solution Pages/Solutio-Inner-Pages/Social-Integration-Pages/GeorgiaEconomic";
+import KLM from "@/screens/Solution Pages/Solutio-Inner-Pages/Social-Integration-Pages/KLM";
 
 const AllRoutes = () => {
     return (
@@ -312,7 +320,46 @@ const AllRoutes = () => {
                     path="/ISAWeb-Application"
                     element={<Container children={<IntegratedSoftwareApplications />} />}
                 />
-            </Route>
+
+                <Route
+                    path="/Big-Data-Analytics"
+                    element={<Container children={<BigDataAnalytics />} />}
+                />
+
+                <Route
+                    path="/Google-Apps-for-Business"
+                    element={<Container children={<GoogleApps />} />}
+                />
+
+                <Route
+                    path="/Krispy-Kreme-Hangout"
+                    element={<Container children={<KrispyKreme />} />}
+                />
+
+                <Route
+                    path="/ATLAS-Roofing-Stock-Audit"
+                    element={<Container children={<AtlasRoofing />} />}
+                />
+                <Route
+                    path="/Onix-Application-Manager"
+                    element={<Container children={<Onix />} />}
+                />
+
+                <Route
+                    path="/Social-Integration"
+                    element={<Container children={<SocialIntegration />} />}
+                />
+
+                <Route
+                    path="/Georgia-Department-of-Economic-Development"
+                    element={<Container children={<GeorgiaEconomic />} />}
+                />
+
+                <Route
+                    path="/KLM-Clear-for-Boarding"
+                    element={<Container children={<KLM  />} />}
+                />
+            </Route>    
         </Routes>
     );
 };

@@ -22,7 +22,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "ScrollToTop.tsx"],
+  "include": ["src", "ScrollToTop.tsx", "src/screens/Solution Pages/Solutio-Inner-Pages/Social-Integration-Pages/GeorgiaEconomic.tsx"],
   "files": [],
   "references": [
     {
