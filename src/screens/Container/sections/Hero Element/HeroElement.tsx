@@ -5,6 +5,11 @@ import { Card, CardContent } from "../../../../components/ui/card";
 import { FadeIn } from "../../../../components/animations/FadeIn";
 import { ParallaxImage } from "../../../../components/animations/ParallaxImage";
 // import HeroImage from '@/assets/IMG-20220905-WA0008 (1).jpg'
+import YepMeEcommerce from "@/assets/yepme-hero-img.png";
+import goEmgreHero from "@/assets/goemerge-hero-img.png";
+import jllPresentation from "@/assets/jll-hero-img.png";
+import shopDrugMart from "@/assets/drug-mart-hero-img.png";
+
 import "./Main.css";
 import { motion } from "framer-motion";
 import ProdEng from "@/assets/ProdEng.png";
@@ -21,25 +26,25 @@ export const MainByAnima = (): JSX.Element => {
     {
       name: "YepMe E-Commerce",
       category: "Product Engineering",
-      backgroundImage: "https://via.placeholder.com/600x400",
+      backgroundImage: YepMeEcommerce,
       url: "/YepMe-Ecommerce",
     },
     {
       name: "GoEmerge Application",
       category: "Mobile Application",
-      backgroundImage: "https://via.placeholder.com/600x400",
+      backgroundImage: goEmgreHero,
       url: "/GoEmerge-Application",
     },
     {
       name: "JLL Presentation",
       category: "Product Engineering",
-      backgroundImage: "https://via.placeholder.com/600x400",
+      backgroundImage: jllPresentation,
       url: "/Jll-Presentation",
     },
     {
       name: "Shoppers Drug Mart",
       category: "Product Engineering",
-      backgroundImage: "https://via.placeholder.com/600x400",
+      backgroundImage: shopDrugMart,
       url: "/Shopper-Drug-Mart",
     },
   ];
