@@ -4,7 +4,7 @@ import { Separator } from "../../../../components/ui/separator";
 export const FooterByAnima = (): JSX.Element => {
   // Footer navigation links data
   const footerLinks = {
-    links: ["Home", "About", "Work", "Contact"],
+    links: ["Home", "Services", "Technologies", "Clients", "Careers", "Contact Us"],
     utility: ["Styleguide", "Changelog", "Instructions", "Licensing"],
     socials: ["Twitter (X)", "Linkedin", "Instagram", "Dribbble"],
   };
@@ -93,7 +93,7 @@ export const FooterByAnima = (): JSX.Element => {
                 </div>
 
                 {/* Utility column */}
-                <div className="inline-flex flex-col items-start gap-4 relative">
+                {/* <div className="inline-flex flex-col items-start gap-4 relative">
                   <div className="flex flex-col items-start relative self-stretch w-full opacity-70">
                     <div className="relative w-fit mt-[-1.00px] font-normal text-white text-base tracking-[0] leading-[20.8px] whitespace-nowrap">
                       Utility
@@ -109,10 +109,10 @@ export const FooterByAnima = (): JSX.Element => {
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
 
                 {/* Socials column */}
-                <div className="inline-flex flex-col items-start gap-4 relative">
+                {/* <div className="inline-flex flex-col items-start gap-4 relative">
                   <div className="flex flex-col items-start relative self-stretch w-full opacity-70">
                     <div className="relative w-fit mt-[-1.00px] font-normal text-white text-base tracking-[0] leading-[20.8px] whitespace-nowrap">
                       Socials
@@ -128,7 +128,7 @@ export const FooterByAnima = (): JSX.Element => {
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
 
