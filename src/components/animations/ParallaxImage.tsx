@@ -22,7 +22,7 @@ export const ParallaxImage = ({ src, className = "" }: ParallaxImageProps) => {
         className="w-full h-full bg-cover bg-center"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
       >
         <div
           className="w-full h-full bg-cover bg-center transform scale-110"

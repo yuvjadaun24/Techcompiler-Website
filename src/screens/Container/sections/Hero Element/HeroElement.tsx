@@ -17,6 +17,7 @@ import MobileSol from "@/assets/MobileSol.png"
 import BigData from "@/assets/BigData.png"
 import GoogleApps from "@/assets/GoogleApps.png"
 import SocialIntegration from "@/assets/SocialIntegration.png"
+import HeroLandscapeImage from "@/assets/hero-landscape-image.jpg";
 import { useNavigate } from "react-router-dom";
 
 export const MainByAnima = (): JSX.Element => {
@@ -462,14 +463,14 @@ export const MainByAnima = (): JSX.Element => {
       <section className="w-full flex flex-col items-start gap-16 pt-36 pb-0">
         <div className="w-full h-[800px] flex items-center justify-center py-8 relative">
           <ParallaxImage
-            src="/67d2415f18d8235742ab1f98-samantha-gades-gkjlln1t8hq-unsplash-min.png"
-            className="absolute w-full h-[800px] top-0 left-0"
+            src={HeroLandscapeImage}
+            className="absolute w-full h-full top-0 left-0"
           />
 
           <div className="flex flex-col items-center justify-center px-8 py-0 relative w-full h-full">
             <div className="flex flex-col max-w-screen-xl w-full items-start justify-center h-full">
               <FadeIn>
-                <Card className="max-w-[480px] w-full flex flex-col items-start justify-between p-4 bg-[#ffffff4c] rounded backdrop-blur-sm">
+                <Card className="max-w-[480px] w-full flex flex-col items-start justify-between p-4 bg-[#ffffff4d] rounded-lg backdrop-blur-sm">
                   <CardContent className="flex flex-col items-start gap-6 p-0">
                     <div
                       className="w-[104px] h-[120.84px] rounded bg-cover bg-center"
@@ -478,7 +479,7 @@ export const MainByAnima = (): JSX.Element => {
                           "url(/67d1062057f006731fe68023-image-small-avif.png)",
                       }}
                     />
-                    <p className="font-normal text-black text-xl leading-[26px]">
+                    <p className="font-normal text-white text-xl leading-[26px]">
                       We are a forward-thinking design
                       <br />
                       agency dedicated to crafting compelling
@@ -490,10 +491,10 @@ export const MainByAnima = (): JSX.Element => {
                   </CardContent>
 
                   <div className="relative mt-auto">
-                    <span className="font-normal text-black text-base leading-[20.8px]">
+                    <span className="font-normal text-white text-base leading-[20.8px] mt-6">
                       Get to know us
                     </span>
-                    <div className="w-[114px] h-0.5 absolute top-[25px] left-0 bg-black" />
+                    <div className="w-[114px] h-0.5 absolute top-[25px] left-0 bg-white" />
                   </div>
                 </Card>
               </FadeIn>
