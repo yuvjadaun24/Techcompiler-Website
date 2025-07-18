@@ -1,15 +1,19 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import './index.css';
-import AllRoutes from "./routes/Routes";
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import ScrollToTop from "../ScrollToTop"; 
+import ScrollToTop from "../ScrollToTop";
+import { DropdownProvider } from "./context/DropdownContext";
+import { Toaster } from "react-hot-toast";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <BrowserRouter>
-      <ScrollToTop />
-      <AllRoutes />
+      <DropdownProvider>
+        <ScrollToTop />
+        <Toaster />
+        <App />
+      </DropdownProvider>
     </BrowserRouter>
   </StrictMode>,
 );

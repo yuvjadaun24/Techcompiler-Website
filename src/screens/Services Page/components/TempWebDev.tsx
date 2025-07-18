@@ -4,57 +4,55 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-import appServices from "../../../assets/app-services.png"
+import { useNavigate } from "react-router-dom";
+import appServices from "../../../assets/app-services.png";
 
 const TempWebDev = () => {
+  const navigate = useNavigate();
   const services = [
     {
       name: "Branding",
       subtitle: "Defining your unique identity",
-      description:
-        "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
+      description: "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.",
       image: "/images/branding-sample.png",
     },
     {
       name: "Design",
       subtitle: "Creating intuitive and stunning visuals",
-      description:
-        "We design sleek and engaging interfaces that combine aesthetics with usability to elevate your product’s experience.",
+      description: "We design sleek and engaging interfaces that combine aesthetics with usability to elevate your product’s experience.",
       image: "/images/branding-sample.png",
     },
     {
       name: "Development",
       subtitle: "Building scalable solutions",
-      description:
-        "From frontend to backend, we craft fast, secure, and responsive web applications tailored to your goals.",
+      description: "From frontend to backend, we craft fast, secure, and responsive web applications tailored to your goals.",
       image: "/images/branding-sample.png",
     },
     {
       name: "Motion",
       subtitle: "Adding life to your brand",
-      description:
-        "With captivating animations and transitions, we help your digital presence come alive in meaningful ways.",
+      description: "With captivating animations and transitions, we help your digital presence come alive in meaningful ways.",
       image: "/images/branding-sample.png",
     },
   ];
 
   return (
-    <div className="bg-white text-black px-4 md:px-16 py-12 max-w-6xl mx-auto animate-fadeIn">
+    <div className="bg-white text-black px-4 sm:px-8 md:px-16 py-12 max-w-6xl mx-auto animate-fadeIn">
       {/* Top Section */}
-      <div className="flex flex-col md:flex-row justify-between mb-12 gap-6 transition-all duration-700 ease-in-out hover:scale-[1.01]">
+      <div className="flex flex-col md:flex-row justify-between mb-12 gap-8 md:gap-6 transition-all duration-700 ease-in-out hover:scale-[1.01]">
         <div className="md:w-2/3">
-          <h1 className="text-4xl font-bold mb-4">Application Services</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Application Services</h1>
           <h3 className="text-lg font-bold mb-4 text-gray-400">Transforming ideas into reality with our futuristic applications development</h3>
-          <p className="text-gray-700 text-sm">
+          <p className="text-gray-700 text-sm leading-relaxed">
             Elevate your business to new heights with TechCompiler's advanced application development services. Our skilled team harnesses the power of cutting-edge artificial intelligence to craft tailored solutions that cater to your unique requirements. From initial consultation to seamless migration, meticulous implementation, and ongoing support, we meticulously optimize every facet of your custom application for unparalleled success. With a steadfast commitment to addressing your business challenges, we synergize creativity and technical prowess to deliver solutions that catalyze growth and surpass expectations. Collaborate with TechCompiler and embark on a transformative digital odyssey that propels your business to the forefront of innovation.
           </p>
         </div>
-        <div className="md:w-1/3 text-sm space-y-4 flex flex-col justify-evenly">
-          <p className="text-lg font-bold text-gray-600">45 <br /><span className="text-sm font-thin text-gray-800">Satisfiead Clients</span></p>
+        <div className="md:w-1/3 text-sm space-y-6 flex flex-col justify-start md:justify-evenly">
+          <p className="text-lg font-bold text-gray-600">45+ <br /><span className="text-sm font-thin text-gray-800">Satisfied Clients</span></p>
           <p className="text-lg font-bold text-gray-600">100%<br /><span className="text-sm font-thin text-gray-800">Delivery Rate</span></p>
-          <p className="text-lg font-bold text-gray-600">190+<br /><span className="text-sm font-thin text-gray-800">Google</span></p>
+          <p className="text-lg font-bold text-gray-600">190+<br /><span className="text-sm font-thin text-gray-800">Projects Completed</span></p>
           <button
+            onClick={() => navigate("/Contact-Us")}
             className="bg-zinc-800 text-center w-48 rounded-2xl h-14 relative text-white text-sm font-light group"
             type="button"
           >
@@ -94,13 +92,13 @@ const TempWebDev = () => {
         <img
           src={appServices}
           alt="Delivery hero"
-          className="rounded-3xl w-5/7 object-cover shadow-[0px_4px_100px_16px_rgba(149,_157,_165,_0.2)] transition-transform duration-500 hover:scale-105"
+          className="rounded-3xl w-full object-cover shadow-[0px_4px_100px_16px_rgba(149,_157,_165,_0.2)] transition-transform duration-500 hover:scale-105"
         />
       </div>
 
       {/* Overview Section */}
       <div className="mb-16 opacity-1 translate-y-6 animate-fade-up animation-delay-300">
-        <h2 className="text-2xl font-semibold text-black mb-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4">
           What is an application development service?
         </h2>
         <p className="text-gray-700 text-base leading-7">
@@ -117,13 +115,13 @@ const TempWebDev = () => {
           <h2 className="text-2xl md:text-3xl font-semibold text-black">
             Services we provide
           </h2>
-          <p className="text-sm text-gray-600 max-w-md w-80">
+          <p className="text-sm text-gray-600 max-w-md">
             Empowering brands to grow and share their stories since '18.
           </p>
         </div>
 
-        <div className="w-full flex justify-end">
-          <div className="w-[80%]">
+        <div className="w-full flex justify-center md:justify-end">
+          <div className="w-full md:w-[80%]">
             <Accordion type="single" collapsible className="w-full">
               {services.map((service, index) => (
                 <AccordionItem
@@ -132,22 +130,22 @@ const TempWebDev = () => {
                   className="border-b border-gray-200"
                 >
                   <AccordionTrigger className="py-8 px-2 sm:px-4 flex justify-between items-center group transition-all duration-500 hover:text-grey-700">
-                    <span className="text-3xl sm:text-4xl md:text-6xl font-medium text-black group-hover:text-grey-600 transition-all duration-300">
+                    <span className="text-2xl sm:text-3xl md:text-5xl font-medium text-black group-hover:text-grey-600 transition-all duration-300">
                       {service.name}
                     </span>
-                    <span className="text-4xl text-black transition-transform duration-300 group-data-[state=open]:rotate-45 group-hover:text-grey-500">
+                    <span className="text-3xl sm:text-4xl text-black transition-transform duration-300 group-data-[state=open]:rotate-45 group-hover:text-grey-500">
                       +
                     </span>
                   </AccordionTrigger>
 
                   <AccordionContent className="px-2 sm:px-4 pb-8 transition-opacity duration-700 ease-in-out">
-                    <div className="flex flex-col md:flex-row gap-6 mt-4">
+                    <div className="flex flex-col md:flex-row gap-6 mt-4 items-center">
                       <img
                         src={service.image}
                         alt={`${service.name} preview`}
-                        className="w-[300px] h-auto object-contain rounded-lg shadow-md transition-transform duration-500 hover:scale-105"
+                        className="w-full md:w-[300px] h-auto object-contain rounded-lg shadow-md transition-transform duration-500 hover:scale-105"
                       />
-                      <div>
+                      <div className="text-center md:text-left">
                         <h3 className="text-base font-medium text-gray-700">
                           {service.subtitle}
                         </h3>
@@ -198,14 +196,13 @@ const TempWebDev = () => {
       </div>
 
       {/* Modern Timeline for Workflow */}
-      {/* Enhanced Workflow Timeline */}
       <div className="mb-20">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-12 animate-fade-up text-center">
           Our Proven Workflow
         </h2>
 
         <div className="flex flex-col md:flex-row items-start justify-between gap-10 md:gap-6 relative px-4 md:px-0">
-          <div className="absolute md:left-1/2 md:-translate-x-1/2 md:top-10 md:bottom-10 left-5 w-1 bg-zinc-200 md:w-0.5 md:h-full md:absolute md:flex md:flex-col md:justify-between z-0"></div>
+          <div className="absolute md:left-1/2 md:-translate-x-1/2 md:top-10 md:bottom-10 left-5 w-1 bg-zinc-200 md:w-0.5 md:h-auto md:absolute z-0"></div>
 
           {[
             {

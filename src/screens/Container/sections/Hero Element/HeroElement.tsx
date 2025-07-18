@@ -50,6 +50,46 @@ export const MainByAnima = (): JSX.Element => {
     },
   ];
 
+  // AI services data
+  const aiServices = [
+    {
+      title: "Machine Learning Solutions",
+      description:
+        "Develop custom models to uncover insights, automate processes, and make data-driven predictions.",
+      icon: "/67d29ecfd7bf82db4bbb6fd9-group-201000004925-svg.svg",
+    },
+    {
+      title: "Natural Language Processing (NLP)",
+      description:
+        "Enable applications to understand, interpret, and respond to human language with advanced NLP.",
+      icon: "/67d29ed0a2221b34971ec6b2-group-201000004926-svg.svg",
+    },
+    {
+      title: "Computer Vision Systems",
+      description:
+        "Build powerful systems that can analyze and understand visual information from images and videos.",
+      icon: "/67d29ecf84b51ee8386d47de-group-201000004924-svg.svg",
+    },
+    {
+      title: "Generative AI Development",
+      description:
+        "Leverage large language models (LLMs) and diffusion models to create novel content, from text to images.",
+      icon: "/67d29ecfac89b1f40a8f8365-group-201000004923-svg.svg",
+    },
+    {
+      title: "AI-Powered Chatbots",
+      description:
+        "Create intelligent, human-like chatbots to enhance customer engagement and support.",
+      icon: "/67d29ecfd7bf82db4bbb6fd9-group-201000004925-svg.svg",
+    },
+    {
+      title: "Predictive Analytics",
+      description:
+        "Utilize historical data to forecast future trends, behaviors, and outcomes with high accuracy.",
+      icon: "/67d29ed0a2221b34971ec6b2-group-201000004926-svg.svg",
+    },
+  ];
+
   // Services data
   const services = [
     {
@@ -59,20 +99,20 @@ export const MainByAnima = (): JSX.Element => {
         "Our offerings span application development, technology consulting, custom software, and testing services. By providing valuable insights from analytics, advanced technology, and premium consulting services, we drive optimal outcomes. We assist clients in making informed decisions through impactful recommendations grounded in research and expertise.",
         "At TechCompiler, we lead the charge in leveraging technology and innovation to transform businesses and lives. As custom enterprise software solutions developers, we turn ideas into reality.",
       ],
-      image: "/images/branding-sample.png",
+      image: "/67d29ecfd7bf82db4bbb6fd9-group-201000004925-svg.svg",
     },
     {
       name: "Our core values",
       subtitle: "Defining your unique identity",
       description: [
-          "At TechCompiler, our core values contribute significantly to our office culture and drive excellence in everything we do—from working passionately, and hiring new teammates to our interactions with our colleagues, partners, and customers. These values include the following:",
-          "Quality in everything we do.",
-          "Open communication with everyone.",
-          "An environment where great people work together to contribute to the overall direction of the company.",
-          "Honesty, respect, and humility with each other, our partners and our customers.",
-          "Mindset to continually think ahead, while ensuring backwards compatibility.",
-        ],
-      image: "/images/branding-sample.png",
+        "At TechCompiler, our core values contribute significantly to our office culture and drive excellence in everything we do—from working passionately, and hiring new teammates to our interactions with our colleagues, partners, and customers. These values include the following:",
+        "Quality in everything we do.",
+        "Open communication with everyone.",
+        "An environment where great people work together to contribute to the overall direction of the company.",
+        "Honesty, respect, and humility with each other, our partners and our customers.",
+        "Mindset to continually think ahead, while ensuring backwards compatibility.",
+      ],
+      image: "/67d29ed0a2221b34971ec6b2-group-201000004926-svg.svg",
     },
     {
       name: "Why choose us?",
@@ -81,7 +121,7 @@ export const MainByAnima = (): JSX.Element => {
         "With quality service at the forefront of our business, TechCompiler has rich domain knowledge, technological excellence, and proven success managing complex projects. This enables us to address any challenge our clients face.",
         "Our professionals have diverse platform skills and industry backgrounds. Meanwhile, our project leaders employ robust methods to ensure flawless execution. By integrating our consultants with clients’ staff, we promote skill transfer and unified vision.",
       ],
-      image: "/images/branding-sample.png",
+      image: "/67d29ecf84b51ee8386d47de-group-201000004924-svg.svg",
     },
     {
       name: "What we do best?",
@@ -91,7 +131,7 @@ export const MainByAnima = (): JSX.Element => {
         "We kick off every new client relationship by having in-depth conversations to comprehend your unique situation, objectives, and pain points. Only once we feel we have a solid grasp of the context do we shift our focus to potential technology development solutions. Leveraging our decades of combined experience across industries, we conduct thorough research into your market landscape, competitors, and customers. We analyze where opportunities may exist to save costs, boost efficiency, increase sales, or otherwise propel your business forward with enterprise application solutions.",
         "We explore various custom software options, weighing the pros and cons of each to determine the best course of action that moves you toward your goals while fitting within your budget. With creativity and care, we integrate the optimal blend of services, software development, and strategy tailored specifically to drive your organization's next phase of growth. Our attentive approach consistently uncovers unexpected ways for our clients to accomplish more with custom technology solutions.",
       ],
-      image: "/images/branding-sample.png",
+      image: "/67d29ecfac89b1f40a8f8365-group-201000004923-svg.svg",
     },
 
   ];
@@ -207,18 +247,18 @@ export const MainByAnima = (): JSX.Element => {
 
               <FadeIn delay={0.2}>
                 <div className="w-full">
-                  <h1 className="font-medium text-[64px] tracking-[-3.00px] leading-[64px]">
-                    <span className="text-black tracking-[-1.92px]">
+                  <h1 className="font-medium text-4xl sm:text-5xl lg:text-[64px] tracking-tight sm:tracking-tighter lg:tracking-[-3.00px] leading-tight sm:leading-snug lg:leading-[64px]">
+                    <span className="text-black">
                       Creating bold digital
                       <br />
                       experiences that
                       <br />
                     </span>
-                    <span className="text-[#8d8d8d] tracking-[-1.92px]">
+                    <span className="text-[#8d8d8d]">
                       redefine
                     </span>
-                    <span className="text-black tracking-[-1.92px]">&nbsp;</span>
-                    <span className="text-[#8d8d8d] tracking-[-1.92px]">
+                    <span className="text-black">&nbsp;</span>
+                    <span className="text-[#8d8d8d]">
                       brands
                     </span>
                   </h1>
@@ -242,9 +282,9 @@ export const MainByAnima = (): JSX.Element => {
                   className="animate-fadeIn"
                   style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
                 >
-                  <a href="/contact" className="button w-inline-block">
+                  <a className="button w-inline-block" onClick={() => navigate("/Contact-Us")}>
                     <div className="button-text-wrap">
-                      <div className="button-text">Get in touch</div>
+                      <div className="button-text" >Get in touch</div>
                       <div className="button-text absolute">Get in touch</div>
                     </div>
                   </a>
@@ -317,7 +357,7 @@ export const MainByAnima = (): JSX.Element => {
                         src={logo.src}
                         style={{ width: logo.width, height: logo.height }}
                       />
-                      <p className="text-[#283841] font-light text-xs">
+                      <p className="text-[#283841] font-normal text-xs">
                         {logo.name}
                       </p>
                     </CardContent>
@@ -380,15 +420,75 @@ export const MainByAnima = (): JSX.Element => {
         </div>
       </section>
 
+      {/* AI Services Section */}
+      <section className="w-full flex flex-col items-center px-8 py-0 bg-[#f4f4f4]">
+        <div className="flex flex-col max-w-screen-xl w-full items-start px-0 py-10">
+          <div className="flex flex-col items-center gap-12 w-full">
+            <div className="flex flex-col items-center gap-4 text-center">
+              <FadeIn>
+                <h1 className="font-medium text-2xl text-black leading-[20.8px]">
+                  Embrace the Future with Cutting-Edge AI
+                </h1>
+              </FadeIn>
+              <FadeIn delay={0.2}>
+                <p className="font-normal text-gray-600 text-base leading-relaxed max-w-3xl">
+                  In an era defined by artificial intelligence, we deliver
+                  state-of-the-art AI services to keep you ahead of the curve.
+                  From machine learning models to intelligent automation, we
+                  build solutions that drive innovation and efficiency.
+                </p>
+              </FadeIn>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+              {aiServices.map((service, index) => (
+                <FadeIn key={index} delay={index * 0.1}>
+                  <Card className="group relative flex flex-col items-start p-8 bg-white rounded-lg h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    {/* Animated borders */}
+                    <span className="pointer-events-none absolute top-0 left-0 h-0.5 bg-slate-600 w-0 group-hover:w-full transition-all duration-300 rounded-tl-lg" />
+                    <span className="pointer-events-none absolute top-0 right-0 w-0.5 bg-slate-600 h-0 group-hover:h-full transition-all duration-300 rounded-tr-lg delay-100" />
+                    <span className="pointer-events-none absolute bottom-0 right-0 h-0.5 bg-slate-600 w-0 group-hover:w-full transition-all duration-300 rounded-br-lg delay-200" />
+                    <span className="pointer-events-none absolute bottom-0 left-0 w-0.5 bg-slate-600 h-0 group-hover:h-full transition-all duration-300 rounded-bl-lg delay-300" />
+
+                    {/* Content */}
+                    <img
+                      src={service.icon}
+                      alt={`${service.title} icon`}
+                      className="h-10 w-10 mb-6"
+                    />
+                    <h3 className="font-semibold text-black text-xl leading-snug mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="font-normal text-gray-600 text-base leading-relaxed">
+                      {service.description}
+                    </p>
+                  </Card>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+          <div className="w-full flex justify-center mt-6">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-black text-white rounded-full px-6 sm:px-8 py-2 sm:py-3 font-medium hover:bg-gray-800 transition-colors duration-300"
+              onClick={() => navigate("/Contact-Us")}
+            >
+              Get In Touch
+            </motion.button>
+          </div>
+        </div>
+
+      </section>
+
       {/* Services Section */}
       <div className="container mx-auto px-4 py-16">
         {/* Top Section: Title + Subtext */}
         <div className="flex flex-col md:flex-row md:items-center gap-5 mb-12">
           <h2 className="text-2xl md:text-3xl font-semibold text-black">
-          About us
+            About us
           </h2>
           <p className="text-sm text-gray-600 max-w-4xl w-100">
-          At TechCompiler, we pioneer change through technology and innovation. As a global enterprise technology solutions provider headquartered in Rochester, NY, we empower organizations and professionals to adapt to the digital landscape. With deep technical expertise and industry experience, we unlock our clients’ full potential.
+            At TechCompiler, we pioneer change through technology and innovation. As a global enterprise technology solutions provider headquartered in Rochester, NY, we empower organizations and professionals to adapt to the digital landscape. With deep technical expertise and industry experience, we unlock our clients’ full potential.
           </p>
         </div>
         {/* Accordion Section */}
@@ -415,7 +515,7 @@ export const MainByAnima = (): JSX.Element => {
                       <img
                         src={service.image}
                         alt={`${service.name} preview`}
-                        className="lg:w-[400] sm:w-[200px] h-auto object-contain"
+                        className="h-24 w-auto object-contain"
                       />
                       <div>
                         <h3 className="text-base font-medium text-gray-700">
@@ -503,23 +603,23 @@ export const MainByAnima = (): JSX.Element => {
         </div>
 
         {/* Statistics Section */}
-        <div className="w-full flex flex-col items-center px-8 py-0">
+        <div className="w-full flex flex-col items-center px-4 sm:px-8 py-12 sm:py-0">
           <div className="flex flex-col max-w-screen-xl w-full items-start">
-            <div className="flex flex-col md:flex-row items-start justify-between w-full">
+            <div className="flex flex-col lg:flex-row items-start justify-between w-full gap-8 lg:gap-0">
               <FadeIn>
-                <h2 className="font-medium text-black text-[32px] tracking-[-1.50px] leading-8">
+                <h2 className="font-medium text-black text-3xl lg:text-[32px] tracking-tight lg:tracking-[-1.50px] leading-tight lg:leading-8">
                   By the numbers
                 </h2>
               </FadeIn>
 
-              <div className="flex flex-col md:flex-row items-start justify-between w-full md:pl-8 gap-8">
+              <div className="flex flex-col sm:flex-row items-start justify-between w-full lg:pl-8 gap-8">
                 {statistics.map((stat, index) => (
                   <FadeIn key={index} delay={index * 0.2}>
                     <div className="flex flex-col items-start gap-3">
                       <span className="font-normal text-black text-base leading-[20.8px]">
                         {stat.label}
                       </span>
-                      <span className="font-medium text-black text-8xl tracking-[-5.00px] leading-[86.4px]">
+                      <span className="font-medium text-black text-8xl lg:text-8xl tracking-tighter lg:tracking-[-5.00px] leading-none lg:leading-[86.4px]">
                         {stat.value}
                       </span>
                     </div>

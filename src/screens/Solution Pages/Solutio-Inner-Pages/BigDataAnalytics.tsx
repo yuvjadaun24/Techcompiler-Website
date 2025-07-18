@@ -8,6 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 import BigDataImg from '@/assets/BigDataAnalyticsImg.png';
+import { useNavigate } from 'react-router-dom';
 
 const steps = [
     {
@@ -61,11 +62,12 @@ let bigDataInnerLinks = [
 ];
 
 const BigDataAnalytics: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-gray-50 text-gray-900">
             {/* Header Section */}
-            <header className="max-w-6xl mx-auto p-8">
-                <h1 className="text-3xl font-medium mb-4">
+            <header className="max-w-6xl mx-auto p-4 sm:p-8">
+                <h1 className="text-2xl sm:text-3xl font-medium mb-4">
                     ETL Hadoop Driven Big Data Analytics
                 </h1>
                 <p className="text-base mb-8">
@@ -74,7 +76,7 @@ const BigDataAnalytics: React.FC = () => {
             </header>
 
             {/* Design Visual Placeholder */}
-            <section className="max-w-6xl mx-auto p-8 mb-2">
+            <section className="max-w-6xl mx-auto p-4 sm:p-8 mb-2">
                 <img
                     src={BigDataImg}
                     alt="Big Data Analytics Preview"
@@ -83,21 +85,21 @@ const BigDataAnalytics: React.FC = () => {
             </section>
 
             {/* Integrated 5-Step Service Flow Section */}
-            <section className="max-w-7xl mx-auto px-6 py-16">
-                <h2 className="text-3xl font-bold text-center mb-12">Our 5-Step Big Data Analytics Process</h2>
-                <div className="flex flex-col md:flex-row items-center justify-between gap-10 relative">
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+                <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">Our 5-Step Big Data Analytics Process</h2>
+                <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 md:gap-10 relative">
                     {steps.map((step, index) => {
                         const Icon = step.icon;
                         return (
                             <div
                                 key={index}
-                                className="relative bg-white p-6 rounded-xl shadow-md w-full md:w-1/5 text-center group transition-all duration-300 hover:shadow-xl"
+                                className="relative bg-white p-6 rounded-xl shadow-md w-full md:w-1/5 text-center group transition-all duration-300 hover:shadow-xl flex flex-col items-center"
                             >
                                 <div className="mx-auto mb-4 h-14 w-14 rounded-full bg-slate-100 flex items-center justify-center">
                                     <Icon className="h-7 w-7 text-slate-400" />
                                 </div>
                                 <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                                <p className="text-sm text-gray-600">{step.text}</p>
+                                <p className="text-sm text-gray-600 flex-grow">{step.text}</p>
                                 {index < steps.length - 1 && (
                                     <div className="hidden md:block absolute top-1/2 right-[-32px] w-8 border-t-2 border-dashed border-gray-300"></div>
                                 )}
@@ -108,8 +110,8 @@ const BigDataAnalytics: React.FC = () => {
             </section>
 
             {/* Big Data Analytics Process Section */}
-            <section className="max-w-6xl mx-auto p-8">
-                <h2 className="text-3xl font-semibold mb-4">
+            <section className="max-w-6xl mx-auto p-4 sm:p-8">
+                <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
                     Our Big Data experts help you with
                 </h2>
                 <p className="mb-4">
@@ -118,7 +120,7 @@ const BigDataAnalytics: React.FC = () => {
                 <p className="mb-8">
                     Deploying Hadoop is more than just installing jars as it requires configuring it to enterprise standards and preparing it for production. We have deployed dozens of clusters ranging from 2 machines to N number of machines. Our Solution Architects have the capability to deploy and configure Hadoop based on Hardware restrictions. Our services include deployment, full documentation of requirements, configurations, benchmarking and process to maintain and operate the cluster. We not only understand Hadoop but its full ecosystem including services like Hive, Pig, HDFS collector, Scheduler (Oozie), Cascading, Sqoop, Zookeeper, Hbase. We also install required plugins and administer these subsystems to provide end-to-end delivery.
                 </p>
-                <h3 className="text-2xl font-bold mb-4">How we do it?</h3>
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">How we do it?</h3>
                 <ul className="list-disc list-inside space-y-2 text-gray-800">
                     {[
                         'Understand your requirements.',
@@ -142,16 +144,16 @@ const BigDataAnalytics: React.FC = () => {
             </section>
 
             {/* UI UX Design Section */}
-            <section className="max-w-7xl mx-auto px-6 py-16 flex lg:flex-row justify-between items-start gap-12">
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col lg:flex-row justify-between items-start gap-12">
                 {/* Left Section */}
-                <div className="max-w-xl">
-                    <h2 className="text-5xl font-extrabold uppercase underline decoration-black decoration-4 mb-6">
+                <div className="max-w-xl w-full">
+                    <h2 className="text-4xl sm:text-5xl font-bold uppercase decoration-black decoration-4 mb-6">
                         What we have cooked!
                     </h2>
-                    <p className="text-lg text-black leading-relaxed mb-8">
+                    <p className="text-base sm:text-lg text-black leading-relaxed mb-8">
                         Explore how our Big Data Analytics expertise has delivered seamless, innovative, and impactful solutions for real-world challenges.
                     </p>
-                    <div className="animate-fadeIn w-[50%]" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+                    <div className="animate-fadeIn w-full sm:w-[50%]" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
                         <a href="/contact" className="button w-inline-block">
                             <div className="button-text-wrap">
                                 <div className="button-text">Get in touch</div>
@@ -165,8 +167,8 @@ const BigDataAnalytics: React.FC = () => {
                 <div className="w-full max-w-xl">
                     <ul className="divide-y divide-gray-200">
                         {bigDataInnerLinks.map((item, index) => (
-                            <a
-                                href={item.link}
+                            <div
+                                onClick={() => navigate(item.link)}
                                 key={index}
                                 className="flex items-center justify-between py-4 text-lg font-medium text-black hover:opacity-80 cursor-pointer"
                             >
@@ -175,7 +177,7 @@ const BigDataAnalytics: React.FC = () => {
                                     <span>{item.text}</span>
                                 </div>
                                 <span className="text-black">↗</span>
-                            </a>
+                            </div>
                         ))}
                     </ul>
                 </div>
