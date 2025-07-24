@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import usFlag from '../../assets/united-states.png';
+import japanFlag from '../../assets/japan.png';
+import indiaFlag from '../../assets/india.png';
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -14,6 +17,8 @@ const ContactUs = () => {
         email: "",
         phone: "",
     });
+
+    const [copied, setCopied] = useState(false);
 
     const validateEmail = (email: string) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -72,16 +77,55 @@ const ContactUs = () => {
                     <div className="space-y-8 text-black lg:pr-8">
                         <div>
                             <p className="text-sm font-semibold">Email us</p>
-                            <a href="mailto:hr@techcompiler.com" className="text-base sm:text-lg underline hover:text-gray-600 transition">
-                                hr@techcompiler.com
-                            </a>
+                            <div className="flex items-center gap-2">
+                                <a href="mailto:hr@techcompiler.com" className="text-base sm:text-lg underline hover:text-gray-600 transition">
+                                    hr@techcompiler.com
+                                </a>
+                                <button
+                                    type="button"
+                                    aria-label="Copy email"
+                                    className="p-1 rounded hover:bg-gray-200 transition relative"
+                                    onClick={() => {
+                                        navigator.clipboard.writeText('hr@techcompiler.com');
+                                        setCopied(true);
+                                        setTimeout(() => setCopied(false), 2000);
+                                    }}
+                                >
+                                    {/* Simple copy SVG icon */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="text-gray-600">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" strokeWidth="2" stroke="currentColor" fill="none"/>
+                                        <rect x="3" y="3" width="13" height="13" rx="2" strokeWidth="2" stroke="currentColor" fill="none"/>
+                                    </svg>
+                                    {copied && (
+                                        <span className="absolute left-1/2 -translate-x-1/2 -top-8 bg-black text-white text-xs rounded px-2 py-1 shadow transition-opacity duration-200 opacity-100 whitespace-nowrap z-10">
+                                            Copied to your clipboard
+                                        </span>
+                                    )}
+                                </button>
+                            </div>
                         </div>
                         <div>
                             <p className="text-sm font-semibold">Location</p>
-                            <p className="text-base sm:text-lg leading-6 mt-1">
-                                2464 Royal Ln. Mesa, <br />
-                                New Jersey 45463
-                            </p>
+                            <div className="space-y-4 mt-1">
+                                <div>
+                                    <p className="font-medium text-base mb-1">North America</p>
+                                    <div className="flex items-center gap-3">
+                                        <img src={usFlag} alt="US Flag" className="w-8 h-8 rounded shadow" />
+                                        <span className="text-sm sm:text-base leading-6">412 Linden Avenue, Rochester, NY 14625</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-base mb-1">Asia</p>
+                                    <div className="flex items-center gap-3 mb-1">
+                                        <img src={japanFlag} alt="Japan Flag" className="w-8 h-8 rounded shadow" />
+                                        <span className="text-sm sm:text-base leading-6">2-8-6-405, Higashi Tabata Kita-ku, Tokyo Japan</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <img src={indiaFlag} alt="India Flag" className="w-8 h-8 rounded shadow" />
+                                        <span className="text-sm sm:text-base leading-6">A-632, Logix Technova Business Park ExpressWay Sector 132, Noida UP India 201301</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

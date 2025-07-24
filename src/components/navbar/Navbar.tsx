@@ -109,8 +109,8 @@ const Navbar: React.FC = () => {
             )}
           </div>
 
-          <a className="hover:opacity-70 transition-opacity text-sm lg:text-base" onClick={() => navigate("/Our-Clients")}>Clients</a>
-          <a className="hover:opacity-70 transition-opacity text-sm lg:text-base" onClick={() => navigate("/Careers")}>Careers</a>
+          <a className="hover:opacity-70 transition-opacity text-sm lg:text-base cursor-pointer" onClick={() => navigate("/Our-Clients")}>Clients</a>
+          <a className="hover:opacity-70 transition-opacity text-sm lg:text-base cursor-pointer" onClick={() => navigate("/Careers")}>Careers</a>
         </div>
 
         <a className="hidden md:block border-b-2 border-black pb-1 hover:opacity-70 transition-opacity cursor-pointer text-sm lg:text-base" onClick={() => navigate("/Contact-Us")}>Contact</a>

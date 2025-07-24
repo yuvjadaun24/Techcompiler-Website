@@ -282,7 +282,7 @@ export const MainByAnima = (): JSX.Element => {
                   className="animate-fadeIn"
                   style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
                 >
-                  <a className="button w-inline-block" onClick={() => navigate("/Contact-Us")}>
+                  <a className="button w-inline-block cursor-pointer" onClick={() => navigate("/Contact-Us")}>
                     <div className="button-text-wrap">
                       <div className="button-text" >Get in touch</div>
                       <div className="button-text absolute">Get in touch</div>

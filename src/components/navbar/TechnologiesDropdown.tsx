@@ -85,8 +85,8 @@ const TechnologiesDropdown: FC<prop> = ({ setTechnologiesDropdownOpen }) => {
                 <h1 className="text-2xl font-semibold">Our Offerings</h1>
                 <p className="text-sm">Enabling agencies to focus on what they do best by providing a wide range of specialized services.</p>
                 <div className="animate-fadeIn w-[50%]" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
-                    <a href="/contact" className="button w-inline-block">
-                        <div className="button-text-wrap">
+                    <a className="button w-inline-block">
+                        <div className="button-text-wrap" onClick={() => navigate("/Contact-Us")}>
                             <div className="button-text">Get in touch</div>
                             <div className="button-text absolute">Get in touch</div>
                         </div>
