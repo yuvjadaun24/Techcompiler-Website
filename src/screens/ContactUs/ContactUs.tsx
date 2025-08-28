@@ -122,7 +122,7 @@ const ContactUs = () => {
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <img src={indiaFlag} alt="India Flag" className="w-8 h-8 rounded shadow" />
-                                        <span className="text-sm sm:text-base leading-6">A-632, Logix Technova Business Park ExpressWay Sector 132, Noida UP India 201301</span>
+                                        <span className="text-sm sm:text-base leading-6">Gold Tower, Wave One, Sector 18 Noida UP India 201301</span>
                                     </div>
                                 </div>
                             </div>
