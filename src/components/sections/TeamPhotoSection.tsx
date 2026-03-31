@@ -26,9 +26,9 @@ export default function TeamPhotoSection(): JSX.Element {
   const creditRef = useRef<HTMLDivElement | null>(null);
 
   const statData = [
-    { value: "80+", label: "Team Members", accent: true },
-    { value: "150+", label: "Projects Delivered", accent: false },
-    { value: "8+", label: "Years of Expertise", accent: false },
+    { value: "100+", label: "Team Members", accent: true },
+    { value: "80+", label: "Projects Delivered", accent: false },
+    { value: "15+", label: "Years of Expertise", accent: false },
   ];
 
   useEffect(() => {
@@ -150,10 +150,10 @@ export default function TeamPhotoSection(): JSX.Element {
 
         <div style={{ textAlign: "right" }} className="hidden md:block">
           <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "0.6rem", fontWeight: 700, color: "rgba(255,255,255,0.4)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 4 }}>
-            Est. 2015
+            Est. 2010
           </p>
           <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "0.6rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em" }}>
-            Rochester, NY · Noida, India
+            Rochester, NY / Noida, India
           </p>
         </div>
       </div>

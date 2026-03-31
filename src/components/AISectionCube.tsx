@@ -1,11 +1,13 @@
-import { Component, Suspense, useEffect, useRef } from "react";
+import { Component, Suspense, lazy, useEffect, useRef } from "react";
 import type { ErrorInfo, ReactNode } from "react";
+import type { Application } from "@splinetool/runtime";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { SplitText } from "gsap/SplitText";
 import { useNavigate } from "react-router-dom";
-import Spline from "@splinetool/react-spline";
+
+const Spline = lazy(() => import("@splinetool/react-spline"));
 
 const CARD_COUNT = 6;
 
@@ -131,10 +133,43 @@ export default function AISectionCube() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subRef = useRef<HTMLParagraphElement>(null);
 
+  /* refs — spline GPU disposal */
+  const splineRef = useRef<Application | null>(null);
+
   /* refs — cards & dots */
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
   const solveTextRef = useRef<HTMLSpanElement>(null);
+
+  /* ── Spline GPU disposal on unmount ──────────────────────── */
+  useEffect(() => {
+    return () => {
+      const app = splineRef.current as any;
+      if (!app) return;
+
+      // Traverse the entire Three.js scene graph and dispose every GPU resource
+      app.scene?.traverse((obj: any) => {
+        if (obj.geometry) obj.geometry.dispose();
+
+        if (obj.material) {
+          const materials: any[] = Array.isArray(obj.material) ? obj.material : [obj.material];
+          materials.forEach((mat) => {
+            // Dispose any texture properties on the material
+            Object.values(mat).forEach((val: any) => {
+              if (val?.isTexture) val.dispose();
+            });
+            mat.dispose();
+          });
+        }
+      });
+
+      // Release the WebGL context itself
+      app.renderer?.dispose();
+      app.renderer?.forceContextLoss();
+
+      splineRef.current = null;
+    };
+  }, []);
 
 
 
@@ -355,8 +390,23 @@ export default function AISectionCube() {
         >
           {/* Spline 3D scene */}
           <SplineErrorBoundary>
-            <Suspense fallback={null}>
-              <Spline scene="https://prod.spline.design/E2NnPus9oWYPVrZP/scene.splinecode" />
+            <Suspense
+              fallback={
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: C.sectionBg,
+                    pointerEvents: "none",
+                  }}
+                />
+              }
+            >
+              <Spline
+                scene="https://prod.spline.design/E2NnPus9oWYPVrZP/scene.splinecode"
+                onLoad={(app: Application) => { splineRef.current = app; }}
+                renderOnDemand={true}
+              />
             </Suspense>
           </SplineErrorBoundary>
 

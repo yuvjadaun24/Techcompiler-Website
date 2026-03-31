@@ -6,9 +6,9 @@ import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { SplitText } from "gsap/SplitText";
 import { useNavigate } from "react-router-dom";
 
-import YepMeEcommerce from "@/assets/yepme-hero-img.png";
-import goEmgreHero from "@/assets/goemerge-hero-img.png";
-import jllPresentation from "@/assets/jll-hero-img.png";
+import Emerge360Hero from "@/assets/Emerge-360-Hero.png";
+import GrowthCloudHero from "@/assets/GrowthCloud-Hero.png";
+import RCCTVHero from "@/assets/RCC-Hero.png";
 import shopDrugMart from "@/assets/drug-mart-hero-img.png";
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, DrawSVGPlugin, SplitText);
@@ -39,39 +39,39 @@ const C = {
 const PROJECTS = [
   {
     index: "01",
-    title: "YepMe E-Commerce",
+    title: "Emerge 360",
     category: "Product Engineering",
-    tags: ["React", "Node.js", "MongoDB", "AWS"],
-    year: "2022",
-    image: YepMeEcommerce,
+    tags: ["React.js", "Python", "TensorFlow", "AWS"],
+    year: "2024",
+    image: Emerge360Hero,
     description:
-      "A full-scale e-commerce platform handling millions of SKUs with real-time inventory, personalised recommendations, and a mobile-first checkout experience.",
-    accentWord: "E-Commerce",
-    href: "/YepMe-Ecommerce",
+      "An AI-powered business intelligence platform consolidating managed services with intelligent dashboards, predictive analytics, and automated reporting — surfacing actionable insights in real time.",
+    accentWord: "360",
+    href: "/Emerge-360",
   },
   {
     index: "02",
-    title: "GoEmerge Application",
-    category: "Mobile Application",
-    tags: ["React Native", "iOS", "Android", "Firebase"],
-    year: "2021",
-    image: goEmgreHero,
+    title: "GrowthCloud",
+    category: "Product Engineering",
+    tags: ["Next.js", "NestJS", "GraphQL", "OpenAI"],
+    year: "2024",
+    image: GrowthCloudHero,
     description:
-      "A cross-platform fitness and social running app with real-time leaderboards, route mapping, and social integration — built for performance at scale.",
-    accentWord: "Application",
-    href: "/GoEmerge-Application",
+      "A full-featured SaaS growth operations suite built from scratch — sprint boards, AI task recommendations, cloud file storage, and real-time collaboration under one unified interface.",
+    accentWord: "GrowthCloud",
+    href: "/GrowthCloud",
   },
   {
     index: "03",
-    title: "JLL Presentation",
+    title: "RCC TV Stream Director",
     category: "Product Engineering",
-    tags: ["Angular", ".NET", "SQL Server", "Azure"],
-    year: "2020",
-    image: jllPresentation,
+    tags: ["Vue.js", "Django", "FFmpeg", "AWS Media"],
+    year: "2023",
+    image: RCCTVHero,
     description:
-      "An enterprise presentation management platform for one of the world's largest real estate firms — streamlining slide creation, data embedding, and brand compliance.",
-    accentWord: "Presentation",
-    href: "/Jll-Presentation",
+      "A web-based media operations platform for broadcast scheduling, multi-network stream management, and precision local ad insertion — giving broadcast teams full control from a single interface.",
+    accentWord: "Stream Director",
+    href: "/RCC-TV-Stream-Director",
   },
   {
     index: "04",

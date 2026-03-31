@@ -197,9 +197,10 @@ export default function ServicePageLayout({ data }: { data: ServicePageData }) {
       data.stats.forEach((stat, i) => {
         const el = statNumberRefs.current[i];
         if (!el) return;
-        const numeric = parseFloat(stat.value.replace(/[^0-9.]/g, ""));
-        if (isNaN(numeric)) return;
-        const suffix = stat.value.replace(String(numeric), "");
+        const match = stat.value.match(/^(\d+(?:\.\d+)?)(.*)/);
+        if (!match) return; // no leading number — leave the value as-is
+        const numeric = parseFloat(match[1]);
+        const suffix = match[2];
         const obj = { val: 0 };
         gsap.to(obj, {
           val: numeric, duration: 1.8, ease: "power2.out", delay: 0.3 + i * 0.15,

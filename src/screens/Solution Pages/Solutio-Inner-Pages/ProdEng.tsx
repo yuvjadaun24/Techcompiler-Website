@@ -67,6 +67,18 @@ let prodEngInnerLinks = [
     {
         text: "Newsbeen Application",
         link: "/Newsbeen-Application"
+    },
+    {
+        text: "Emerge 360 — AI-Powered Business Intelligence Platform",
+        link: "/Emerge-360"
+    },
+    {
+        text: "GrowthCloud — AI-Powered Growth Operations Suite",
+        link: "/GrowthCloud"
+    },
+    {
+        text: "RCC TV — Radiant Stream Director",
+        link: "/RCC-TV-Stream-Director"
     }
 ]
 

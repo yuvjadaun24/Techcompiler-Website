@@ -80,7 +80,7 @@ export default function AboutAccordion(): JSX.Element {
           if (descRef.current) gsap.to(descRef.current, { autoAlpha: 1, y: 0, duration: 0.6, delay: 0.35 });
 
           // stat count ups
-          const targets = [150, 8, 3];
+          const targets = [80, 15, 3];
           statRefs.current.forEach((el, i) => {
             if (!el) return;
             const obj = { val: 0 };
@@ -160,20 +160,20 @@ export default function AboutAccordion(): JSX.Element {
               <div className="flex items-center" style={{ gap: 24 }}>
                 <div className="flex items-center">
                   <div className="flex flex-col items-center pr-6" style={{ borderRight: `1px solid ${C.border}` }}>
-                    <span ref={el => (statRefs.current[0] = el!)} style={{ fontSize: '1.8rem', fontWeight: 900, color: C.ink, fontFamily: "'Syne', sans-serif" }}>150+</span>
+                    <span ref={el => (statRefs.current[0] = el!)} style={{ fontSize: '1.8rem', fontWeight: 900, color: C.ink, fontFamily: "'Syne', sans-serif" }}>80+</span>
                     <span style={{ fontSize: '0.62rem', color: C.inkMuted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Clients</span>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <div className="flex flex-col items-center px-6" style={{ borderRight: `1px solid ${C.border}` }}>
-                    <span ref={el => (statRefs.current[1] = el!)} style={{ fontSize: '1.8rem', fontWeight: 900, color: C.ink, fontFamily: "'Syne', sans-serif" }}>8</span>
+                    <span ref={el => (statRefs.current[1] = el!)} style={{ fontSize: '1.8rem', fontWeight: 900, color: C.ink, fontFamily: "'Syne', sans-serif" }}>15+</span>
                     <span style={{ fontSize: '0.62rem', color: C.inkMuted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Experience</span>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <div className="flex flex-col items-center pl-6">
                     <span ref={el => (statRefs.current[2] = el!)} style={{ fontSize: '1.8rem', fontWeight: 900, color: C.ink, fontFamily: "'Syne', sans-serif" }}>CMMI 3</span>
-                    <span style={{ fontSize: '0.62rem', color: C.inkMuted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Certified</span>
+                    <span style={{ fontSize: '0.62rem', color: C.inkMuted, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Level CMMI Certified</span>
                   </div>
                 </div>
               </div>

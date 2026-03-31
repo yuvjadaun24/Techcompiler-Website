@@ -24,3 +24,8 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+
+// Global flag set by the tab-visibility handler in index.tsx
+interface Window {
+  __tabHidden?: boolean;
+}
