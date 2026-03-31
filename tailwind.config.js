@@ -91,6 +91,17 @@ module.exports = {
           '"Noto Color Emoji"',
         ],
       },
+      fontSize: {
+        // Scale down heading-scale classes by ~15-20%
+        "2xl":  ["1.25rem",  { lineHeight: "1.75rem" }], // was 1.5rem
+        "3xl":  ["1.5rem",   { lineHeight: "2rem" }],    // was 1.875rem
+        "4xl":  ["1.875rem", { lineHeight: "2.25rem" }], // was 2.25rem
+        "5xl":  ["2.5rem",   { lineHeight: "1.1" }],     // was 3rem
+        "6xl":  ["3rem",     { lineHeight: "1.05" }],    // was 3.75rem
+        "7xl":  ["3.75rem",  { lineHeight: "1" }],       // was 4.5rem
+        "8xl":  ["4.5rem",   { lineHeight: "1" }],       // was 6rem
+        "9xl":  ["6rem",     { lineHeight: "1" }],       // was 8rem
+      },
     },
     container: {
       center: true,

@@ -9,6 +9,7 @@ import {
 
 import BigDataImg from '@/assets/BigDataAnalyticsImg.png';
 import { useNavigate } from 'react-router-dom';
+import SolutionCategoryLayout from '@/components/solutions/SolutionCategoryLayout';
 
 const steps = [
     {
@@ -64,6 +65,7 @@ let bigDataInnerLinks = [
 const BigDataAnalytics: React.FC = () => {
     const navigate = useNavigate();
     return (
+        <SolutionCategoryLayout pageNumber="01">
         <div className="bg-gray-50 text-gray-900">
             {/* Header Section */}
             <header className="max-w-6xl mx-auto p-4 sm:p-8">
@@ -183,6 +185,7 @@ const BigDataAnalytics: React.FC = () => {
                 </div>
             </section>
         </div>
+        </SolutionCategoryLayout>
     );
 };
 

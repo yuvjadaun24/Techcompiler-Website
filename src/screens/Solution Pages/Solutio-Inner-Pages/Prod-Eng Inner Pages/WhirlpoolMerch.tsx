@@ -1,10 +1,12 @@
 import wp1 from "@/assets/wp-1.png"
 import wp2 from "@/assets/wp-2.png"
 import wp3 from "@/assets/wp-3.png"
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const WhirlpoolMerch = () => {
 
   return (
+    <CaseStudyLayout parentCategory="Product Engineering">
     <div className="container mx-auto p-8 rounded-lg">
       <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Whirlpool Merch Migration</h1>
 
@@ -133,6 +135,7 @@ const WhirlpoolMerch = () => {
 
 
     </div>
+    </CaseStudyLayout>
   );
 };
 

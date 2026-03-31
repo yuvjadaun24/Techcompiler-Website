@@ -8,6 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 import SocialIntegrationImg from '@/assets/SocialIntegration.png';
+import SolutionCategoryLayout from '@/components/solutions/SolutionCategoryLayout';
 
 const steps = [
     {
@@ -63,6 +64,7 @@ let socialIntegrationInnerLinks = [
 const SocialIntegration: React.FC = () => {
     const navigate = useNavigate();
     return (
+        <SolutionCategoryLayout pageNumber="05">
         <div className="bg-gray-50 text-gray-900">
             {/* Header Section */}
             <header className="max-w-6xl mx-auto p-4 sm:p-8">
@@ -178,6 +180,7 @@ const SocialIntegration: React.FC = () => {
                 </div>
             </section>
         </div>
+        </SolutionCategoryLayout>
     );
 };
 

@@ -1,9 +1,11 @@
 import krispy1 from "@/assets/kk1.png";
 import krispy2 from "@/assets/kk2.png";
 import krispy3 from "@/assets/kk3.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const KrispyKreme = () => {
     return (
+        <CaseStudyLayout parentCategory="Google Apps for Business">
         <div className="container mx-auto p-8 rounded-lg">
             <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Krispy Kreme Application Migration</h1>
 
@@ -67,6 +69,7 @@ const KrispyKreme = () => {
                 </div>
             </section>
         </div>
+        </CaseStudyLayout>
     );
 };
 

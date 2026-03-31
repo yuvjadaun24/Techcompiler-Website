@@ -1,9 +1,11 @@
 import onix1 from "@/assets/oam1.png";
 import onix2 from "@/assets/oam2.png";
 import onix3 from "@/assets/oam3.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const Onix = () => {
   return (
+    <CaseStudyLayout parentCategory="Google Apps for Business">
     <div className="container mx-auto p-8 rounded-lg">
       <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Onix Application Migration</h1>
 
@@ -74,6 +76,7 @@ const Onix = () => {
         </div>
       </section>
     </div>
+    </CaseStudyLayout>
   );
 };
 

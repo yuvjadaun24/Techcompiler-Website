@@ -1,9 +1,11 @@
 import atlas1 from "@/assets/atlas1.png"; // Assuming the new images are named accordingly
 import atlas2 from "@/assets/atlas2.png";
 import atlas3 from "@/assets/atlas3.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const AtlasRoofing = () => {
   return (
+    <CaseStudyLayout parentCategory="Google Apps for Business">
     <div className="container mx-auto p-8 rounded-lg">
       <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Atlas Roofing Application Migration</h1>
 
@@ -73,6 +75,7 @@ const AtlasRoofing = () => {
         </div>
       </section>
     </div>
+    </CaseStudyLayout>
   );
 };
 

@@ -3,9 +3,11 @@ import teenbeen2 from "@/assets/teenbeen2.png";
 import teenbeen3 from "@/assets/teenbeen3.png";
 import teenbeen4 from "@/assets/teenbeen4.png";
 import teenbeen5 from "@/assets/teenbeen5.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const NewsBeenMedia = () => {
   return (
+    <CaseStudyLayout parentCategory="Product Engineering">
     <div className="container mx-auto p-8 rounded-lg">
       <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Teenbeen Media Application Migration</h1>
 
@@ -87,6 +89,7 @@ const NewsBeenMedia = () => {
         </div>
       </section>
     </div>
+    </CaseStudyLayout>
   );
 };
 

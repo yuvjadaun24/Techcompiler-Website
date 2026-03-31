@@ -1,4 +1,117 @@
-.navbar-logo{
-    height: 40px;
-    cursor: pointer;
+/* ── Navbar Reset & Base ── */
+.navbar-logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+/* ── Nav Link Dot Indicator ── */
+.nav-link-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #C8FF00;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  pointer-events: none;
+}
+.nav-link-dot.active {
+  transform: translateX(-50%) scale(1);
+}
+
+/* ── Scroll Progress Bar ── */
+.nav-progress-bar {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: #C8FF00;
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* ── Dropdown Sub-Link Dot ── */
+.sublink-dot {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  border-radius: 50%;
+  background: #C8FF00;
+  opacity: 0;
+  transform: translateX(-8px);
+  display: inline-block;
+}
+
+/* ── Category Accent Bar ── */
+.category-bar {
+  width: 28px;
+  height: 2px;
+  background: #C8FF00;
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+/* ── Mobile Drawer ── */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(420px, 100vw);
+  height: 100dvh;
+  background: #FFFFFF;
+  z-index: 200;
+  overflow-y: auto;
+  transform: translateX(100%);
+}
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,14,26,0.5);
+  backdrop-filter: blur(3px);
+  z-index: 199;
+}
+
+/* ── Hamburger Lines ── */
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #0A0E1A;
+  border-radius: 1px;
+}
+
+/* ── Dropdown Backdrop ── */
+.dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10,14,26,0.25);
+  backdrop-filter: blur(2px);
+  z-index: 98;
+}
+
+/* ── Mega Menu Panel ── */
+.mega-menu-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid rgba(10,14,26,0.09);
+  z-index: 99;
+  padding: 36px 0 40px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* ── Mobile Accordion Sub-Link Dot ── */
+.mobile-sublink-dot {
+  width: 4px;
+  height: 4px;
+  min-width: 4px;
+  border-radius: 50%;
+  background: #C8FF00;
+  display: inline-block;
 }

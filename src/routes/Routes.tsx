@@ -59,6 +59,7 @@ import Onix from "@/screens/Solution Pages/Solutio-Inner-Pages/Google-Apps-For-B
 import SocialIntegration from "@/screens/Solution Pages/Solutio-Inner-Pages/SocialIntegration";
 import GeorgiaEconomic from "@/screens/Solution Pages/Solutio-Inner-Pages/Social-Integration-Pages/GeorgiaEconomic";
 import KLM from "@/screens/Solution Pages/Solutio-Inner-Pages/Social-Integration-Pages/KLM";
+import AIAgentPage from "@/screens/AI-Agent/AIAgentPage";
 
 const AllRoutes = () => {
     return (
@@ -358,6 +359,11 @@ const AllRoutes = () => {
                 <Route
                     path="/KLM-Clear-for-Boarding"
                     element={<Container children={<KLM  />} />}
+                />
+
+                <Route
+                    path="/ai-agent"
+                    element={<Container children={<AIAgentPage />} />}
                 />
             </Route>    
         </Routes>

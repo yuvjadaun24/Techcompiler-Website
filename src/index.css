@@ -3,8 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
 .cursor-container {
@@ -41,3 +46,36 @@ body {
   /* Use cubic-bezier easing for smooth return to cursor */
   transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+/* Glass card style adapted from user-provided snippet */
+
+.glass-card{
+  position: relative;
+  background: rgba(250,250,250,0.82);
+  border-radius: 1rem;
+  border: 1px solid rgba(10,14,26,0.06);
+  box-shadow: 0 18px 40px rgba(10,14,26,0.07), 0 1px 0 rgba(255,255,255,0.5) inset;
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.glass-card:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(10,14,26,0.08)}
+
+.glass-card--soft{
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.75);
+  box-shadow: 0 8px 32px rgba(10,14,26,0.08), 0 1px 0 rgba(255,255,255,0.9) inset;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+}
+
+/* Subtle decorative highlight bars (optional) */
+.glass-card::before,
+.glass-card::after{
+  content: "";position:absolute;left:12%;top:10px;width:28%;height:6px;background:linear-gradient(90deg,rgba(255,255,255,0.9),rgba(255,255,255,0.6));border-radius:6px;opacity:0.7;pointer-events:none;
+}
+.glass-card::after{right:12%;left:auto;transform:rotate(90deg);height:6px;width:28%;opacity:0.35}
+
+/* Utility to add inner padding when replacing inline styles */
+.glass-card .card-inner{padding:1.5rem}

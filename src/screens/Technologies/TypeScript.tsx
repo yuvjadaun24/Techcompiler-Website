@@ -1,172 +1,94 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import TechPageLayout, { TechPageData } from "@/components/technologies/TechPageLayout";
 import TypeScriptImg from "@/assets/Technologies Icon/TypeScriptImg.png";
 
-const tsServices = [
+const data: TechPageData = {
+  eyebrow: "Technology",
+  title: "TypeScript Development Services",
+  subtitle: "Type-safe applications built for scale",
+  description:
+    "Our expert TypeScript developers create cutting-edge web and mobile applications tailored to your specific business needs. Leveraging years of TypeScript experience, our developers implement proven architectural patterns and industry best practices to craft robust, maintainable TypeScript-powered digital products.",
+  stats: [
+    { value: "85", label: "TypeScript Projects" },
+    { value: "98%", label: "Positive Feedback" },
+    { value: "4.9?", label: "Average Rating" },
+  ],
+  heroImage: TypeScriptImg,
+  overviewSections: [
     {
-        name: "Custom TypeScript Development",
-        subtitle: "Build business-critical applications with TypeScript",
-        description:
-            "Leverage our expertise to construct robust web and mobile applications with TypeScript. We blend cutting-edge libraries with time-tested patterns for effective functionality. Utilizing TypeScript capabilities, we offer a balanced approach melding performance, security, and flexibility.",
-        image: "/images/typescript/custom.png"
+      title: "What is TypeScript development?",
+      paragraphs: [
+        "TypeScript is a strongly typed programming language that builds on JavaScript by adding static type definitions. It compiles to plain JavaScript and is designed to develop large-scale applications, providing better tooling, earlier error detection, and improved code maintainability.",
+        "Our TypeScript development team builds robust web applications, APIs, and enterprise systems that benefit from TypeScript's type safety and developer tooling. We leverage TypeScript across the full stack, from React frontends to Node.js backends.",
+      ],
     },
     {
-        name: "TypeScript UI/UX Development",
-        subtitle: "Intuitive, user-centric interfaces that enhance engagement",
-        description:
-            "Our TypeScript developers design intuitive, user-centric interfaces that enhance engagement and drive action. We combine aesthetic design sensibilities with UX best practices to produce interfaces that look amazing and function effortlessly.",
-        image: "/images/typescript/uiux.png"
+      title: "Harness TypeScript development services to craft innovative solutions",
+      paragraphs: [
+        "Our TypeScript team upholds the highest quality, security, and scalability standards to deliver long-lasting value. We leverage TypeScript's type system to catch errors early, improve code documentation, and facilitate collaboration across large development teams.",
+        "TypeScript's static typing, advanced IDE support, and mature ecosystem make it the preferred choice for serious enterprise applications where code quality and maintainability are paramount.",
+      ],
     },
     {
-        name: "TypeScript Web Development",
-        subtitle: "Dynamic web apps optimized for modern needs",
-        description:
-            "Our TypeScript web development team builds dynamic web apps optimized for the modern internet age. By leveraging TypeScript's capabilities, we create seamless web experiences where content updates instantly without page refreshes, ensuring a smooth user experience.",
-        image: "/images/typescript/web.png"
+      title: "Building reliable enterprise solutions with TechCompiler's TypeScript expertise",
+      paragraphs: [
+        "Leveraging our TypeScript capabilities, we create unique, scalable, and robust applications spanning industries. Our TypeScript codebase delivers the confidence needed for rapid feature development without compromising reliability.",
+      ],
+    },
+  ],
+  servicesHeading: "Explore our range of TypeScript development services",
+  services: [
+    {
+      name: "Custom TypeScript Development",
+      subtitle: "Type-safe solutions built for your business",
+      description:
+        "We build custom TypeScript solutions designed around your specific business requirements. Our developers leverage TypeScript's type system and modern patterns to create maintainable, scalable applications.",
+      image: "/images/typescript/custom.png",
     },
     {
-        name: "TypeScript Mobile App Development",
-        subtitle: "Cross-platform mobile apps with native quality",
-        description:
-            "Enable mobile access to your web app's full functionality with our TypeScript mobile development services. Our experts build cross-platform apps compatible across iOS and Android, ensuring a native-quality experience with maximum code reuse.",
-        image: "/images/typescript/mobile.png"
+      name: "TypeScript Web Application Development",
+      subtitle: "Modern, reliable web applications",
+      description:
+        "Our TypeScript web development services deliver modern, high-quality web applications. We use TypeScript with leading frameworks like React, Angular, and Vue to build robust front-end applications.",
+      image: "/images/typescript/web.png",
     },
     {
-        name: "TypeScript Enterprise App Development",
-        subtitle: "Scalable solutions for enterprise growth",
-        description:
-            "We develop full-fledged TypeScript enterprise solutions designed from scratch to scale with your rapid growth. Our TypeScript developers architect robust application structures and reusable components that simplify adding new features without breaking existing code.",
-        image: "/images/typescript/enterprise.png"
+      name: "TypeScript Backend Development",
+      subtitle: "Strongly-typed server-side solutions",
+      description:
+        "We build type-safe backend systems using TypeScript with Node.js, NestJS, and other server-side frameworks. Strong typing ensures API contracts are honored and reduces runtime errors in production.",
+      image: "/images/typescript/backend.png",
     },
     {
-        name: "TypeScript Migration and Porting Services",
-        subtitle: "Modernize your legacy applications",
-        description:
-            "Migrate your JavaScript codebase to TypeScript for enhanced integrity, performance, and scalability without risk or downtime. Our migration approach methodically converts files and components while retaining full functionality.",
-        image: "/images/typescript/migration.png"
+      name: "TypeScript API Development",
+      subtitle: "Well-typed APIs for reliable integrations",
+      description:
+        "Our TypeScript API development services produce well-documented, type-safe APIs that reduce integration errors. We generate types from API schemas to ensure consistency between frontend and backend.",
+      image: "/images/typescript/api.png",
     },
     {
-        name: "TypeScript Consulting Services",
-        subtitle: "Expert guidance for your TypeScript projects",
-        description:
-            "Our TypeScript consulting services analyze your tech infrastructure and workflows to chart an optimized roadmap leveraging TypeScript. We grasp objectives, pain points, and challenges across your stack, processes, and talent.",
-        image: "/images/typescript/consulting.png"
-    }
-];
-
-const TypeScript = () => {
-    return (
-        <div className="w-full">
-            <section className="py-20">
-                <div className="max-w-5xl mx-auto px-4">
-                    <div className="flex flex-col md:flex-row justify-between gap-6 mb-12 hover:scale-[1.01] transition-all duration-700 ease-in-out">
-                        <div className="md:w-2/3">
-                            <h1 className="text-4xl font-bold mb-4">TypeScript Development Services</h1>
-                            <h3 className="text-lg font-bold mb-4 text-gray-400">
-                                Build business-critical applications with TypeScript
-                            </h3>
-                            <p className="text-gray-700 text-sm leading-relaxed">
-                                Leverage our expertise to construct robust web and mobile applications with TypeScript. We blend cutting-edge libraries with time-tested patterns for effective functionality. Utilizing TypeScript capabilities, we offer a balanced approach melding performance, security, and flexibility.
-                            </p>
-                        </div>
-
-                        <div className="md:w-1/3 space-y-4 text-sm flex flex-col justify-evenly">
-                            <p className="text-lg font-bold text-gray-600">
-                                85 <br />
-                                <span className="text-sm font-thin text-gray-800">TypeScript Projects</span>
-                            </p>
-                            <p className="text-lg font-bold text-gray-600">
-                                98%<br />
-                                <span className="text-sm font-thin text-gray-800">Positive Feedback</span>
-                            </p>
-                            <p className="text-lg font-bold text-gray-600">
-                                4.9★<br />
-                                <span className="text-sm font-thin text-gray-800">Average Rating</span>
-                            </p>
-                            <button
-                                className="bg-zinc-800 w-48 h-14 rounded-2xl text-white text-sm font-light relative group"
-                                type="button">
-                                <div className="bg-white rounded-xl h-12 w-1/4 absolute left-1 top-[4px] flex items-center justify-center z-10 group-hover:w-[184px] duration-500">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="25"
-                                        height="25"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                    >
-                                        <path d="M5 12h14" stroke="#000" strokeWidth="1" />
-                                        <path d="M13 5l7 7-7 7" stroke="#000" strokeWidth="1" />
-                                    </svg>
-                                </div>
-                                <p className="translate-x-2">Get In Touch</p>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="mb-12">
-                        <img
-                            src={TypeScriptImg}
-                            alt="TypeScript Development Preview"
-                            className="rounded-3xl w-full object-cover shadow-[0px_4px_100px_16px_rgba(149,157,165,0.2)] transition-transform duration-500 hover:scale-105"
-                        />
-                    </div>
-
-                    <div className="mb-16">
-                        <h2 className="text-xl font-medium mb-4">What is TypeScript development?</h2>
-                        <p className="mb-4 text-gray-700 text-sm leading-relaxed">
-                            TypeScript is a statically typed superset of JavaScript that compiles down to plain JavaScript. It adds features like static typing, interfaces, generics, and more while remaining compatible with JavaScript ecosystems. TypeScript development utilizes these additional features to create more scalable, maintainable, and error-resistant web and mobile applications. Static typing catches bugs early in the development process, enhancing stability. The code also runs natively across browsers and devices without needing transpilation.
-                        </p>
-                        <p className="mb-4 text-gray-700 text-sm leading-relaxed">
-                            TypeScript follows ES6 standards and easily incorporates the latest JavaScript features. It can incrementally adopt TypeScript features or utilize them wholesale in large codebases. TypeScript apps blend cutting-edge functionality with bulletproof resilience and systemic integrity. Overall, TypeScript allows developers to create powerful solutions out of a future-proof language.
-                        </p>
-                    </div>
-
-                    <div className="mb-16">
-                        <h2 className="text-xl font-medium mb-4">TypeScript development services to build high-performing applications</h2>
-                        <p className="mb-4 text-gray-700 text-sm leading-relaxed">
-                            Techcompiler has honed TypeScript mastery through years of application development. Our experts architect systems utilizing industry best practices like dependency injection, modular programming, and abstraction to create evolvable code requiring minimal maintenance. We focus on language fundamentals, all while maximizing functionality. Our apps capture metrics, allowing data-driven refinements for better customer experiences.
-                        </p>
-                        <p className="mb-4 text-gray-700 text-sm leading-relaxed">
-                            We house TypeScript developers with proven expertise, curiosity, and commitment to quality. They receive continual training on emerging techniques and breakthroughs. We combine passion, rigor, and care to craft apps that solve complex business challenges with elegant solutions.
-                        </p>
-                    </div>
-
-                    <div className="mb-16">
-                        <h2 className="text-2xl font-semibold mb-4">Unveiling how our development process works</h2>
-                        <p className="mb-4 text-gray-700 text-sm leading-relaxed">
-                            We utilize an agile approach that ensures the development of high-quality TypeScript apps. Our process begins with collaboration to grasp objectives and challenges. We architect flexible solutions focused on your requirements so that they bring value to your business. We are committed to maintaining systemic integrity across rapid development cycles to deliver real user value quickly while upholding robustness for the long term. Our refined process compounds gains through swiftly building robust, scalable, and high-performing apps.
-                        </p>
-                    </div>
-
-                    <div className="mb-16">
-                        <h2 className="text-2xl font-semibold mb-4">Explore our range of TypeScript development services</h2>
-                        <Accordion type="single" collapsible className="w-full">
-                            {tsServices.map((service, index) => (
-                                <AccordionItem key={index} value={`service-${index}`} className="border-b border-gray-200">
-                                    <AccordionTrigger className="py-8 px-2 sm:px-4 flex justify-between items-center group transition-all duration-500 hover:text-grey-700">
-                                        <span className="text -2sm sm:text-xl md:text-2xl font-medium text-black group-hover:text-grey-600 transition-all duration-300">
-                                            {service.name}
-                                        </span>
-                                        <span className="text-4xl text-black transition-transform duration-300 group-data-[state=open]:rotate-45 group-hover:text-grey-500">
-                                            +
-                                        </span>
-                                    </AccordionTrigger>
-                                    <AccordionContent className="px-2 sm:px-4 pb-8 transition-opacity duration-700 ease-in-out">
-                                        <div className="flex flex-col md:flex-row gap-6 mt-4">
-                                            <img src={service.image} alt={`${service.name} preview`} className="w-[300px] h-auto object-contain rounded-lg shadow-md transition-transform duration-500 hover:scale-105" />
-                                            <div>
-                                                <h3 className="text-base font-medium text-gray-700">{service.subtitle}</h3>
-                                                <p className="text-base text-black mt-2 leading-relaxed">{service.description}</p>
-                                            </div>
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    </div>
-                </div>
-            </section>
-        </div>
-    );
+      name: "TypeScript Enterprise Development",
+      subtitle: "Scalable type-safe enterprise solutions",
+      description:
+        "We develop enterprise-grade TypeScript applications designed for large teams and complex domains. TypeScript's type system enables confident refactoring and onboarding in enterprise environments.",
+      image: "/images/typescript/enterprise.png",
+    },
+    {
+      name: "JavaScript to TypeScript Migration",
+      subtitle: "Modernize your JavaScript codebase",
+      description:
+        "Migrate your existing JavaScript projects to TypeScript with our expert migration services. We incrementally add type safety to your codebase, improving code quality without disrupting ongoing development.",
+      image: "/images/typescript/migration.png",
+    },
+    {
+      name: "TypeScript Consulting",
+      subtitle: "Expert TypeScript architecture and strategy",
+      description:
+        "Our TypeScript consultants help you adopt TypeScript effectively, from type system design to migration strategies and best practices. We provide guidance to maximize the productivity and quality benefits of TypeScript.",
+      image: "/images/typescript/consulting.png",
+    },
+  ],
 };
 
-export default TypeScript;
+const TypeScriptDevelopment = () => <TechPageLayout data={data} />;
+
+export default TypeScriptDevelopment;

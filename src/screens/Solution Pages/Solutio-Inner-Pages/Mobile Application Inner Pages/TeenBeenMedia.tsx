@@ -6,9 +6,11 @@ import tbm5 from "@/assets/tbm5.png";
 import tbm6 from "@/assets/tbm6.png";
 import tbm7 from "@/assets/tbm7.png";
 import tbm8 from "@/assets/tbm8.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const TeenbeenMedia = () => {
     return (
+        <CaseStudyLayout parentCategory="Mobile Application">
         <div className="container mx-auto p-8 rounded-lg">
             <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Teenbeen Media Application Migration</h1>
 
@@ -111,6 +113,7 @@ const TeenbeenMedia = () => {
             </section>
 
         </div>
+        </CaseStudyLayout>
     );
 };
 

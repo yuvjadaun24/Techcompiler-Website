@@ -9,6 +9,7 @@ import {
 
 import MobileApp from '@/assets/MobileAppDevImg.png';
 import { useNavigate } from 'react-router-dom';
+import SolutionCategoryLayout from '@/components/solutions/SolutionCategoryLayout';
 
 const steps = [
     {
@@ -76,6 +77,7 @@ let mobileAppInnerLinks = [
 const MobileAppDev: React.FC = () => {
     const navigate = useNavigate();
     return (
+        <SolutionCategoryLayout pageNumber="03">
         <div className="bg-gray-50 text-gray-900">
             {/* Header Section */}
             <header className="max-w-6xl mx-auto p-4 sm:p-8">
@@ -192,6 +194,7 @@ const MobileAppDev: React.FC = () => {
                 </div>
             </section>
         </div>
+        </SolutionCategoryLayout>
     );
 };
 

@@ -1,9 +1,11 @@
 import jll1 from "@/assets/jll1.png"; // Assuming the new images are named accordingly
 import jll2 from "@/assets/jll2.png";
 import jll3 from "@/assets/jll3.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const JLLPresentation = () => {
   return (
+    <CaseStudyLayout parentCategory="Product Engineering">
     <div className="container mx-auto p-8 rounded-lg">
       <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">JLL Presentation Migration</h1>
 
@@ -124,6 +126,7 @@ const JLLPresentation = () => {
         </div>
       </section>
     </div>
+    </CaseStudyLayout>
   );
 };
 

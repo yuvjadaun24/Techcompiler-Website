@@ -1,9 +1,11 @@
 import imag1 from "@/assets/imag1.png"; // Assuming the new images are named accordingly
 import imag2 from "@/assets/imag2.png";
 import imag3 from "@/assets/imag3.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const ImaginativeMinds = () => {
   return (
+    <CaseStudyLayout parentCategory="Mobile Application">
     <div className="container mx-auto p-8 rounded-lg">
       <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Imaginative Minds Application Migration</h1>
 
@@ -89,6 +91,7 @@ const ImaginativeMinds = () => {
         </div>
       </section>
     </div>
+    </CaseStudyLayout>
   );
 };
 

@@ -1,9 +1,11 @@
 import emerge1 from "@/assets/emerge1.png"; // Assuming the new images are named accordingly
 import emerge2 from "@/assets/emerge2.png";
 import emerge3 from "@/assets/emerge3.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const GoEmerge = () => {
     return (
+        <CaseStudyLayout parentCategory="Mobile Application">
         <div className="container mx-auto p-8 rounded-lg">
             <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">GoEmerge Application Migration</h1>
 
@@ -66,6 +68,7 @@ const GoEmerge = () => {
             </section>
 
         </div>
+        </CaseStudyLayout>
     );
 };
 

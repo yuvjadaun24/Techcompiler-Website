@@ -7,13 +7,13 @@ import { ReactNode } from "react";
 const Container = ({ children }: { children: ReactNode }): JSX.Element => {
 
   return (
-    <div className="flex flex-col w-full" data-model-id="79:4">
+    <div className="flex flex-col w-full overflow-x-clip" data-model-id="79:4">
       <CursorFollower />
       {/* Navigation Header */}
       <Navbar />
 
-      {/* Main Content */}
-      <main className="w-full">
+      {/* Main Content — offset for fixed navbar */}
+      <main className="w-full" style={{ paddingTop: 68 }}>
         {children}
       </main>
 

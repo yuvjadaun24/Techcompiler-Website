@@ -1,8 +1,10 @@
 import blogmint1 from "@/assets/blogmint1.png"; // Assuming the new images are named accordingly
 import blogmint2 from "@/assets/blogmint2.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const Blogmint = () => {
     return (
+        <CaseStudyLayout parentCategory="Mobile Application">
         <div className="container mx-auto p-8 rounded-lg">
             <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Blogmint Application Migration</h1>
 
@@ -65,6 +67,7 @@ const Blogmint = () => {
             </section>
 
         </div>
+        </CaseStudyLayout>
     );
 };
 

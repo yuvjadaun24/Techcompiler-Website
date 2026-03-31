@@ -6,9 +6,11 @@ import prune5 from "@/assets/prune5.png";
 import prune6 from "@/assets/prune6.png";
 import prune7 from "@/assets/prune7.png";
 import prune8 from "@/assets/prune8.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const PruneDigital = () => {
     return (
+        <CaseStudyLayout parentCategory="Mobile Application">
         <div className="container mx-auto p-8 rounded-lg">
             <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Prune Digital Application Migration</h1>
 
@@ -91,6 +93,7 @@ const PruneDigital = () => {
             </section>
 
         </div>
+        </CaseStudyLayout>
     );
 };
 

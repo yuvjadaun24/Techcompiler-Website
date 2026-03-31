@@ -1,9 +1,11 @@
 import pwg1 from "@/assets/pwg-1.png"; // Assuming the new images are named accordingly
 import pwg2 from "@/assets/pwg-2.png";
 import pwg3 from "@/assets/pwg-3.png";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const WeddingGuide = () => {
     return (
+        <CaseStudyLayout parentCategory="Mobile Application">
         <div className="container mx-auto p-8 rounded-lg">
             <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Perfect Wedding Guide Migration</h1>
 
@@ -58,6 +60,7 @@ const WeddingGuide = () => {
             </section>
 
         </div>
+        </CaseStudyLayout>
     );
 };
 

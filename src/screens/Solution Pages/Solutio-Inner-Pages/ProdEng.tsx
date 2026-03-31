@@ -9,6 +9,7 @@ import {
 
 import prodimg from '@/assets/ProfEngImg.png';
 import { useNavigate } from 'react-router-dom';
+import SolutionCategoryLayout from '@/components/solutions/SolutionCategoryLayout';
 
 const steps = [
     {
@@ -72,6 +73,7 @@ let prodEngInnerLinks = [
 const ProdEng: React.FC = () => {
     const navigate = useNavigate();
     return (
+        <SolutionCategoryLayout pageNumber="04">
         <div className="bg-gray-50 text-gray-900">
             {/* Header Section */}
             <header className="max-w-6xl mx-auto p-4 sm:p-8">
@@ -191,6 +193,7 @@ const ProdEng: React.FC = () => {
                 </div>
             </section>
         </div>
+        </SolutionCategoryLayout>
     );
 };
 

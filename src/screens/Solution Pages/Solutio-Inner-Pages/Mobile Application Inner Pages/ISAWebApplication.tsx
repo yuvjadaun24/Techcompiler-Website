@@ -7,9 +7,11 @@ import isa6 from "@/assets/isa6.jpeg";
 import isa7 from "@/assets/isa7.jpeg";
 import isa8 from "@/assets/isa8.jpeg";
 import isa9 from "@/assets/isa9.jpeg";
+import CaseStudyLayout from '@/components/solutions/CaseStudyLayout';
 
 const IntegratedSoftwareApplications = () => {
     return (
+        <CaseStudyLayout parentCategory="Mobile Application">
         <div className="container mx-auto p-8 rounded-lg">
             <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Integrated Software Applications Migration</h1>
 
@@ -117,6 +119,7 @@ const IntegratedSoftwareApplications = () => {
             </section>
 
         </div>
+        </CaseStudyLayout>
     );
 };
 
