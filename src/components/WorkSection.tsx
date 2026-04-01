@@ -1076,49 +1076,53 @@ const WorkSection: React.FC = () => {
                     {p.index}
                   </span>
 
-                  {/* Year badge */}
-                  <span
-                    style={{
-                      position: "absolute",
-                      top: "40%",
-                      left: "clamp(32px, 5vw, 72px)",
-                      fontSize: "0.6rem",
-                      fontWeight: 700,
-                      color: "rgba(10,14,26,0.25)",
-                      letterSpacing: "0.18em",
-                      fontFamily: "'Syne', sans-serif",
-                    }}
-                  >
-                    &copy; {p.year}
-                  </span>
-
-                  {/* Category tag */}
+                  {/* Category row — category left, year right */}
                   <div
                     ref={(el) => { categoryRefs.current[i] = el; }}
                     style={{
-                      fontSize: "0.65rem",
-                      fontWeight: 800,
-                      letterSpacing: "0.2em",
-                      textTransform: "uppercase",
-                      color: C.accent,
-                      fontFamily: "'Syne', sans-serif",
-                      marginBottom: 20,
                       display: "flex",
                       alignItems: "center",
-                      gap: 8,
+                      justifyContent: "space-between",
+                      marginBottom: 20,
+                      maxWidth: 580,
                       position: "relative",
                       zIndex: 3,
                     }}
                   >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 8,
+                        fontSize: "0.65rem",
+                        fontWeight: 800,
+                        letterSpacing: "0.2em",
+                        textTransform: "uppercase",
+                        color: C.accent,
+                        fontFamily: "'Syne', sans-serif",
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: 20,
+                          height: 1,
+                          background: C.accent,
+                          display: "inline-block",
+                        }}
+                      />
+                      {p.category}
+                    </div>
                     <span
                       style={{
-                        width: 20,
-                        height: 1,
-                        background: C.accent,
-                        display: "inline-block",
+                        fontSize: "0.6rem",
+                        fontWeight: 700,
+                        color: "rgba(10,14,26,0.25)",
+                        letterSpacing: "0.18em",
+                        fontFamily: "'Syne', sans-serif",
                       }}
-                    />
-                    {p.category}
+                    >
+                      &copy; {p.year}
+                    </span>
                   </div>
 
                   {/* Title */}

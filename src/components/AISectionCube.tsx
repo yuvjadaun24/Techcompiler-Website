@@ -1,27 +1,12 @@
-import { Component, Suspense, lazy, useCallback, useEffect, useRef } from "react";
-import type { ErrorInfo, ReactNode } from "react";
-import type { Application } from "@splinetool/runtime";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
 import { SplitText } from "gsap/SplitText";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { useNavigate } from "react-router-dom";
 
-const Spline = lazy(() => import("@splinetool/react-spline"));
-
-const CARD_COUNT = 6;
-
-/* ── Error boundary so WebGL failures don't crash the page ── */
-class SplineErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
-  state = { hasError: false };
-  static getDerivedStateFromError() { return { hasError: true }; }
-  componentDidCatch(_: Error, info: ErrorInfo) {
-    console.warn("Spline 3D scene failed to load — hiding.", info);
-  }
-  render() { return this.state.hasError ? null : this.props.children; }
-}
-
-gsap.registerPlugin(ScrollTrigger, CustomEase, SplitText);
+gsap.registerPlugin(ScrollTrigger, CustomEase, SplitText, DrawSVGPlugin);
 
 CustomEase.create("silk", "M0,0 C0.11,0 0.19,0.53 0.27,0.53 0.41,0.78 0.51,1 1,1");
 CustomEase.create("ai-snap", "M0,0 C0.2,0 0.2,1 1,1");
@@ -29,9 +14,9 @@ CustomEase.create("ai-card", "M0,0 C0.16,1 0.3,1 1,1");
 
 /* ── Colour tokens ────────────────────────────────────────── */
 const C = {
-  sectionBg: "#FFFFFF",
-  cardBg: "rgba(255,255,255,0.9)",
-  cardBorder: "rgba(10,14,26,0.06)",
+  dark: "#0A0E1A",
+  white: "#FFFFFF",
+  cardBorder: "rgba(10,14,26,0.09)",
   ink: "#0A0E1A",
   inkMuted: "rgba(10,14,26,0.45)",
   accent: "#C8FF00",
@@ -43,7 +28,7 @@ const iconProps: React.SVGProps<SVGSVGElement> = {
   height: 26,
   viewBox: "0 0 26 26",
   fill: "none",
-  stroke: "rgba(10,14,26,0.55)",
+  stroke: "currentColor",
   strokeWidth: 1.4,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
@@ -52,14 +37,14 @@ const iconProps: React.SVGProps<SVGSVGElement> = {
 const MLIcon = (
   <svg {...iconProps}>
     <path d="M3 18l6-4 4 3 6-5 4 3" />
-    <path d="M3 12l6-3 4 2 6-4 4 2" stroke={C.accent} />
+    <path d="M3 12l6-3 4 2 6-4 4 2" stroke="#C8FF00" />
     <path d="M3 6l6-2 4 2 6-3 4 1" />
   </svg>
 );
 const NLPIcon = (
   <svg {...iconProps}>
     <rect x="3" y="4" width="20" height="14" rx="3" />
-    <text x="13" y="14" textAnchor="middle" fill={C.inkMuted} stroke="none" fontSize="7" fontFamily="monospace">&lt;/&gt;</text>
+    <text x="13" y="14" textAnchor="middle" fill="currentColor" stroke="none" fontSize="7" fontFamily="monospace">&lt;/&gt;</text>
     <path d="M10 18l-2 4M16 18l2 4" />
   </svg>
 );
@@ -77,7 +62,7 @@ const GenAIIcon = (
   <svg {...iconProps}>
     <circle cx="5" cy="7" r="2" /><circle cx="5" cy="19" r="2" /><circle cx="5" cy="13" r="2" />
     <circle cx="15" cy="10" r="2" /><circle cx="15" cy="16" r="2" />
-    <circle cx="23" cy="13" r="2.5" stroke={C.accent} />
+    <circle cx="23" cy="13" r="2.5" stroke="#C8FF00" />
     <line x1="7" y1="7" x2="13" y2="10" /><line x1="7" y1="13" x2="13" y2="10" />
     <line x1="7" y1="13" x2="13" y2="16" /><line x1="7" y1="19" x2="13" y2="16" />
     <line x1="17" y1="10" x2="21" y2="13" /><line x1="17" y1="16" x2="21" y2="13" />
@@ -92,8 +77,8 @@ const ChatIcon = (
 const PredictIcon = (
   <svg {...iconProps}>
     <circle cx="13" cy="13" r="10" />
-    <polyline points="8 16 11 12 14 14 19 8" stroke={C.accent} />
-    <polyline points="16 8 19 8 19 11" stroke={C.accent} />
+    <polyline points="8 16 11 12 14 14 19 8" stroke="#C8FF00" />
+    <polyline points="16 8 19 8 19 11" stroke="#C8FF00" />
   </svg>
 );
 
@@ -107,549 +92,566 @@ const AI_SERVICES = [
   { number: "06", category: "Predictive Analytics", title: "Predictive Analytics", desc: "Utilize historical data and ML models to forecast future trends, behaviors, and outcomes with measurable accuracy.", icon: PredictIcon },
 ];
 
-/* ── Mobile wireframe cube SVG ────────────────────────────── */
-const WireframeCube = () => (
-  <svg viewBox="0 0 120 104" width={120} height={104} fill="none"
-    stroke={C.accent} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" opacity={0.6}>
-    <path d="M60 10 L100 32 L100 72 L60 94 L20 72 L20 32 Z" />
-    <path d="M60 10 L60 52 M60 52 L100 32 M60 52 L20 32" strokeDasharray="3 4" opacity={0.4} />
-  </svg>
-);
+/* ── Connection path definitions ──────────────────────────── */
+// Layer 1 → Layer 2
+const L1_PATHS = [
+  "M 160,70  C 290,70  290,40  420,40",
+  "M 160,70  C 290,70  290,115 420,115",
+  "M 160,70  C 290,90  290,190 420,190",
+  "M 160,70  C 290,100 290,245 420,245",
+  "M 160,140 C 290,140 290,40  420,40",
+  "M 160,140 C 290,140 290,115 420,115",
+  "M 160,140 C 290,140 290,190 420,190",
+  "M 160,140 C 290,140 290,245 420,245",
+  "M 160,210 C 290,210 290,40  420,40",
+  "M 160,210 C 290,190 290,115 420,115",
+  "M 160,210 C 290,210 290,190 420,190",
+  "M 160,210 C 290,210 290,245 420,245",
+];
+// Layer 2 → Hub
+const L2_PATHS = [
+  "M 420,40  C 510,40  510,140 600,140",
+  "M 420,115 C 510,115 510,140 600,140",
+  "M 420,190 C 510,190 510,140 600,140",
+  "M 420,245 C 510,245 510,140 600,140",
+];
+// Hub → Layer 3
+const HUB_PATHS = [
+  "M 600,140 C 690,140 690,55  780,55",
+  "M 600,140 C 690,140 690,140 780,140",
+  "M 600,140 C 690,140 690,225 780,225",
+];
+// Layer 3 → Layer 4
+const L3_PATHS = [
+  "M 780,55  C 910,55  910,85  1040,85",
+  "M 780,55  C 910,55  910,140 1040,140",
+  "M 780,55  C 910,70  910,195 1040,195",
+  "M 780,140 C 910,140 910,85  1040,85",
+  "M 780,140 C 910,140 910,140 1040,140",
+  "M 780,140 C 910,140 910,195 1040,195",
+  "M 780,225 C 910,210 910,85  1040,85",
+  "M 780,225 C 910,210 910,140 1040,140",
+  "M 780,225 C 910,225 910,195 1040,195",
+];
+
+// Signal pulse timing per layer
+const L1_SIGNALS = L1_PATHS.map((d, i) => ({
+  d,
+  duration: `${(2.4 + (i % 5) * 0.16).toFixed(2)}s`,
+  delay:    `${(i * 0.15).toFixed(2)}s`,
+}));
+const L2_SIGNALS = L2_PATHS.map((d, i) => ({
+  d,
+  duration: `${(1.8 + i * 0.15).toFixed(2)}s`,
+  delay:    `${(i * 0.3).toFixed(2)}s`,
+}));
+const HUB_SIGNALS = HUB_PATHS.map((d, i) => ({
+  d,
+  duration: `${(2.0 + i * 0.2).toFixed(2)}s`,
+  delay:    `${(i * 0.4).toFixed(2)}s`,
+}));
+const L3_SIGNALS = L3_PATHS.map((d, i) => ({
+  d,
+  duration: `${(2.8 + (i % 5) * 0.16).toFixed(2)}s`,
+  delay:    `${(0.3 + i * 0.2).toFixed(2)}s`,
+}));
+
+// Mobile simplified paths (Hub only — L2→Hub and Hub→L3)
+const MOBILE_SIGNALS = [
+  ...L2_SIGNALS,
+  ...HUB_SIGNALS,
+];
 
 /* ================================================================
-   MAIN COMPONENT
+   MAIN COMPONENT — SIGNAL FLOW
    ================================================================ */
 export default function AISectionCube() {
   const navigate = useNavigate();
-  const isMobile = useRef(typeof window !== "undefined" && window.innerWidth < 1024);
 
-  /* refs — scroll structure */
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const runwayRef = useRef<HTMLDivElement>(null);
-  const stageRef = useRef<HTMLDivElement>(null);
-  const flashOverlayRef = useRef<HTMLDivElement>(null);
+  const sectionRef       = useRef<HTMLDivElement>(null);
+  const headlineRef      = useRef<HTMLHeadingElement>(null);
+  const subRef           = useRef<HTMLParagraphElement>(null);
+  const networkSvgRef    = useRef<SVGSVGElement>(null);
+  const connectorLineRef = useRef<SVGLineElement>(null);
+  const gridRef          = useRef<HTMLDivElement>(null);
+  const cardRefs         = useRef<(HTMLDivElement | null)[]>([]);
+  const dotRefs          = useRef<(HTMLDivElement | null)[]>([]);
 
-  /* refs — header */
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const subRef = useRef<HTMLParagraphElement>(null);
-
-  /* refs — spline GPU disposal */
-  const splineRef = useRef<Application | null>(null);
-
-  /* refs — cards & dots */
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const solveTextRef = useRef<HTMLSpanElement>(null);
-
-  /* ── Spline GPU disposal on unmount ──────────────────────── */
-  const disposeSpline = useCallback(() => {
-    const app = splineRef.current as any;
-    if (!app) return;
-
-    // Traverse the entire Three.js scene graph and dispose every GPU resource
-    app.scene?.traverse((obj: any) => {
-      if (obj.geometry) obj.geometry.dispose();
-
-      if (obj.material) {
-        const materials: any[] = Array.isArray(obj.material) ? obj.material : [obj.material];
-        materials.forEach((mat) => {
-          // Dispose any texture properties on the material
-          Object.values(mat).forEach((val: any) => {
-            if (val?.isTexture) val.dispose();
-          });
-          mat.dispose();
-        });
-      }
-    });
-
-    // Release the WebGL context itself
-    app.renderer?.dispose();
-    app.renderer?.forceContextLoss();
-
-    splineRef.current = null;
-  }, []);
-
-  useEffect(() => {
-    return disposeSpline;
-  }, [disposeSpline]);
-
-  /* ── Force-GPU-dispose event listener (beforeunload safety) ── */
-  useEffect(() => {
-    const handler = () => disposeSpline();
-    window.addEventListener("force-gpu-dispose", handler);
-    return () => window.removeEventListener("force-gpu-dispose", handler);
-  }, [disposeSpline]);
-
-  /* ── IntersectionObserver: stop/start Spline when off-screen ── */
   useEffect(() => {
     const section = sectionRef.current;
-    const app = () => splineRef.current as any;
     if (!section) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        const spline = app();
-        if (!spline) return;
-        if (entry.isIntersecting) {
-          spline.play?.();
-        } else {
-          spline.stop?.();
-        }
-      },
-      { threshold: 0 },
-    );
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, []);
-
-
-
-  /* ── GSAP orchestration ─────────────────────────────────── */
-  useEffect(() => {
-    const splitInstances: SplitText[] = [];
+    let splitInstance: InstanceType<typeof SplitText> | null = null;
 
     const ctx = gsap.context(() => {
-
-      /* ── Section header SplitText (fires once) ────────── */
-      if (headlineRef.current) {
-        gsap.set(headlineRef.current, { autoAlpha: 1 });
+      // ── 1. Initial hidden states ───────────────────────────
+      try {
+        gsap.set(".wire-l1, .wire-l2, .wire-hub, .wire-l3", { drawSVG: "0% 0%" });
+      } catch { /* DrawSVG unavailable */ }
+      gsap.set(".network-node, .hub-core", { autoAlpha: 0, scale: 0 });
+      if (connectorLineRef.current) {
+        try { gsap.set(connectorLineRef.current, { drawSVG: "0% 0%" }); } catch { /* noop */ }
       }
-      if (subRef.current) {
-        gsap.set(subRef.current, { autoAlpha: 0, y: 20 });
+      gsap.set(cardRefs.current.filter(Boolean), { autoAlpha: 0, clipPath: "inset(100% 0% 0% 0%)" });
+
+      // ── 2. Headline SplitText ──────────────────────────────
+      try {
+        splitInstance = new SplitText(headlineRef.current!, { type: "words" });
+        gsap.set(splitInstance.words, { autoAlpha: 0, y: 28 });
+        gsap.to(splitInstance.words, {
+          autoAlpha: 1, y: 0, duration: 0.65, stagger: 0.07, ease: "power3.out",
+          scrollTrigger: { trigger: section, start: "top 72%", once: true },
+        });
+      } catch {
+        gsap.fromTo(headlineRef.current,
+          { autoAlpha: 0, y: 24 },
+          { autoAlpha: 1, y: 0, duration: 0.7, scrollTrigger: { trigger: section, start: "top 72%", once: true } },
+        );
       }
 
+      // ── 3. Subtext ─────────────────────────────────────────
+      gsap.fromTo(subRef.current,
+        { autoAlpha: 0, y: 16 },
+        { autoAlpha: 1, y: 0, duration: 0.55, ease: "power2.out", delay: 0.35,
+          scrollTrigger: { trigger: section, start: "top 72%", once: true } },
+      );
+
+      // ── 4. Network draw sequence ───────────────────────────
       ScrollTrigger.create({
-        trigger: runwayRef.current,
-        start: "top 80%",
+        trigger: section,
+        start: "top 65%",
         once: true,
         onEnter: () => {
-          if (!headlineRef.current) return;
+          const tl = gsap.timeline();
           try {
-            const split = new SplitText(headlineRef.current, { type: "chars", charsClass: "char" });
-            splitInstances.push(split);
-            gsap.set(headlineRef.current.querySelectorAll(".char"), {
-              autoAlpha: 0, yPercent: 100, rotationX: -70, transformOrigin: "50% 100%",
-            });
-            const tl = gsap.timeline();
-            tl.to(headlineRef.current.querySelectorAll(".char"), {
-              autoAlpha: 1, yPercent: 0, rotationX: 0,
-              duration: 0.8, stagger: { amount: 0.55, ease: "power2.out" }, ease: "ai-snap",
-            });
-            if (subRef.current) {
-              tl.to(subRef.current, { autoAlpha: 1, y: 0, duration: 0.6, ease: "silk" }, "-=0.3");
-            }
-          } catch {
-            gsap.to(headlineRef.current, { autoAlpha: 1 });
-            if (subRef.current) gsap.to(subRef.current, { autoAlpha: 1, y: 0 });
+            tl.to(".wire-l1", { drawSVG: "0% 100%", duration: 0.7, stagger: 0.04, ease: "power2.inOut" })
+              .to(".wire-l2", { drawSVG: "0% 100%", duration: 0.5, stagger: 0.05, ease: "power2.inOut" }, "-=0.3")
+              .to(".wire-hub", { drawSVG: "0% 100%", duration: 0.6, stagger: 0.06, ease: "power2.inOut" }, "-=0.2")
+              .to(".wire-l3", { drawSVG: "0% 100%", duration: 0.7, stagger: 0.04, ease: "power2.inOut" }, "-=0.3");
+          } catch { /* DrawSVG unavailable — wires inherit base visibility */ }
+          tl.fromTo(".network-node",
+            { autoAlpha: 0, scale: 0 },
+            { autoAlpha: 1, scale: 1, duration: 0.35, stagger: 0.04, ease: "back.out(2)", transformOrigin: "center" },
+            "-=0.4",
+          )
+            .fromTo(".hub-core",
+              { autoAlpha: 0, scale: 0 },
+              { autoAlpha: 1, scale: 1, duration: 0.5, ease: "back.out(3)", transformOrigin: "center" },
+              "-=0.2",
+            );
+          if (connectorLineRef.current) {
+            try {
+              tl.to(connectorLineRef.current, { drawSVG: "0% 100%", duration: 0.5, ease: "power2.out" });
+            } catch { /* noop */ }
           }
         },
       });
 
-      if (isMobile.current) {
-        /* ── Mobile: simple scroll-triggered card reveals ── */
-        cardRefs.current.forEach((card) => {
-          if (!card) return;
-          gsap.fromTo(card,
-            { autoAlpha: 0, y: 40 },
-            {
-              autoAlpha: 1, y: 0, duration: 0.6, ease: "ai-card",
-              scrollTrigger: { trigger: card, start: "top 85%", once: true },
-            },
-          );
-        });
-        return;
-      }
-
-      /* ── Desktop: Spline + scroll card reveals ─────── */
-
-      /* Hide cards initially */
-      cardRefs.current.forEach((card) => {
-        if (card) gsap.set(card, { autoAlpha: 0 });
-      });
-
-      /* ── Per-card scroll-triggered reveals ─────────── */
-      let solvedCount = 0;
-
-      function revealCard(index: number) {
-        const card = cardRefs.current[index];
-        if (!card) return;
-        const isLeft = index < 3;
-        gsap.fromTo(card,
-          { autoAlpha: 0, x: isLeft ? -60 : 60, scale: 0.92 },
-          { autoAlpha: 1, x: 0, scale: 1, duration: 0.7, ease: "ai-card" },
-        );
-        gsap.fromTo(card,
-          { borderColor: "rgba(200,255,0,0.7)" },
-          { borderColor: C.cardBorder, duration: 1.2, ease: "power2.out", delay: 0.05 },
-        );
-        const dot = dotRefs.current[index];
-        if (dot) gsap.to(dot, { backgroundColor: C.accent, scale: 1.6, duration: 0.4, ease: "bounce.out" });
-        if (solveTextRef.current) solveTextRef.current.textContent = `Solved: ${index + 1} / 6`;
-
-        if (index === 5) {
-          if (flashOverlayRef.current) {
-            gsap.fromTo(flashOverlayRef.current,
-              { autoAlpha: 0.15 },
-              { autoAlpha: 0, duration: 0.8, ease: "power2.out" },
-            );
-          }
-        }
-      }
-
-      function hideCard(index: number) {
-        const card = cardRefs.current[index];
-        if (!card) return;
-        const isLeft = index < 3;
-        gsap.to(card, { autoAlpha: 0, x: isLeft ? -40 : 40, scale: 0.94, duration: 0.4, ease: "power2.in" });
-        const dot = dotRefs.current[index];
-        if (dot) gsap.to(dot, { backgroundColor: "rgba(10,14,26,0.06)", scale: 1, duration: 0.3 });
-        if (solveTextRef.current) solveTextRef.current.textContent = index > 0 ? `Solved: ${index} / 6` : "Solving… 0 / 6";
-      }
-
-      Array.from({ length: CARD_COUNT }).forEach((_, i) => {
+      // ── 5. Card reveals ────────────────────────────────────
+      if (gridRef.current) {
         ScrollTrigger.create({
-          trigger: runwayRef.current,
-          start: `${20 + i * 11.5}% top`,
-          end: `${31.5 + i * 11.5}% top`,
-          onEnter() {
-            if (solvedCount === i) {
-              revealCard(i);
-              solvedCount++;
-            }
-          },
-          onLeaveBack() {
-            if (solvedCount === i + 1) {
-              hideCard(i);
-              solvedCount--;
-            }
+          trigger: gridRef.current,
+          start: "top 82%",
+          once: true,
+          onEnter: () => {
+            gsap.to(cardRefs.current.filter(Boolean), {
+              autoAlpha: 1, clipPath: "inset(0% 0% 0% 0%)", y: 0,
+              duration: 0.65, stagger: 0.1, ease: "power3.out",
+              onComplete: () => {
+                dotRefs.current.forEach((dot, i) => {
+                  if (!dot) return;
+                  gsap.to(dot, {
+                    backgroundColor: "#C8FF00", scale: 1.4,
+                    duration: 0.3, delay: i * 0.09, ease: "back.out(2)",
+                  });
+                });
+              },
+            });
           },
         });
-      });
+      }
 
+      // ── 6. Mouse parallax (desktop / fine pointer only) ───
+      if (!window.matchMedia("(pointer: coarse)").matches) {
+        const onMouseMove = (e: MouseEvent) => {
+          if (!section || !networkSvgRef.current) return;
+          const rect = section.getBoundingClientRect();
+          const dx = (e.clientX - rect.left  - rect.width  / 2) / rect.width;
+          const dy = (e.clientY - rect.top   - rect.height / 2) / rect.height;
+          gsap.to(networkSvgRef.current, {
+            x: dx * 18, y: dy * 10, duration: 1.2, ease: "power2.out",
+          });
+        };
+        section.addEventListener("mousemove", onMouseMove, { passive: true });
+      }
+
+      // ── 7. IntersectionObserver — pause signal animations ──
+      const io = new IntersectionObserver(([entry]) => {
+        networkSvgRef.current?.classList.toggle("network-active", entry.isIntersecting);
+      }, { threshold: 0.1 });
+      io.observe(section);
+
+      return () => { io.disconnect(); };
     }, sectionRef);
 
     return () => {
-      splitInstances.forEach((s) => { try { s.revert(); } catch { } });
       ctx.revert();
+      try { splitInstance?.revert(); } catch { /* noop */ }
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
-  /* ── MOBILE LAYOUT ──────────────────────────────────────── */
-  if (isMobile.current) {
-    return (
+  /* ── Shared: signal pulses renderer ──────────────────────── */
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const signalData = isMobile
+    ? MOBILE_SIGNALS
+    : [...L1_SIGNALS, ...L2_SIGNALS, ...HUB_SIGNALS, ...L3_SIGNALS];
+
+  const wireClass = (group: string) =>
+    `network-wire wire-${group}`;
+
+  return (
+    <>
+      {/* ── Inline CSS for network animations ─────────────── */}
+      <style>{`
+        @keyframes signal-travel {
+          0%   { stroke-dashoffset: 200; opacity: 0; }
+          10%  { opacity: 1; }
+          90%  { opacity: 1; }
+          100% { stroke-dashoffset: 0; opacity: 0; }
+        }
+        @keyframes hub-breathe {
+          0%, 100% { r: 20px; opacity: 0.2; }
+          50%       { r: 26px; opacity: 0.08; }
+        }
+        .signal-pulse {
+          stroke: #C8FF00;
+          stroke-width: 2;
+          fill: none;
+          stroke-dasharray: 12 200;
+          stroke-dashoffset: 200;
+          stroke-linecap: round;
+          opacity: 0;
+          animation: signal-travel var(--duration, 3s) linear var(--delay, 0s) infinite;
+          animation-play-state: paused;
+          filter: url(#glow-lime);
+        }
+        .network-active .signal-pulse {
+          animation-play-state: running;
+        }
+        .hub-ring {
+          animation: hub-breathe 2.8s ease-in-out infinite;
+        }
+        @media (max-width: 767px) {
+          .layer-label { display: none; }
+        }
+      `}</style>
+
+      {/* ================================================================
+          SECTION WRAPPER
+          ================================================================ */}
       <section
         ref={sectionRef}
-        style={{ background: C.sectionBg, fontFamily: "'Syne', sans-serif" }}
-        className="w-full py-20 px-6"
+        className="relative w-full overflow-hidden"
+        style={{ fontFamily: "'Syne', sans-serif" }}
       >
-        {/* Header */}
-        <div className="flex flex-col items-center text-center mb-12">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-5 h-px" style={{ background: C.accent }} />
-            <span className="text-[0.62rem] font-bold tracking-[0.22em] uppercase" style={{ color: C.inkMuted }}>Artificial Intelligence</span>
-            <div className="w-5 h-px" style={{ background: C.accent }} />
-          </div>
-          <h2
-            ref={headlineRef}
-            className="text-3xl font-black leading-tight mb-4"
-            style={{ autoAlpha: 0, color: C.ink } as React.CSSProperties}
-          >
-            Embrace the Future with Cutting-Edge{" "}
-            <em style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", color: C.accent }}>AI</em>
-          </h2>
-          <p ref={subRef} className="text-sm leading-relaxed max-w-md" style={{ color: C.inkMuted }}>
-            From machine learning to generative AI — we build systems that think.
-          </p>
-          <div className="mt-8">
-            <WireframeCube />
-          </div>
-        </div>
-
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-          {AI_SERVICES.map((card, i) => (
-            <div
-              key={i}
-              ref={(el) => { cardRefs.current[i] = el; }}
-              className="glass-card glass-card--soft group relative rounded-2xl"
-            >
-              <div className="card-inner">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[0.58rem] font-black tracking-[0.2em] uppercase" style={{ color: C.accent }}>{card.number}</span>
-                  <span className="text-[0.58rem] tracking-[0.12em] uppercase" style={{ color: C.inkMuted }}>{card.category}</span>
-                </div>
-                <div className="mb-4">{card.icon}</div>
-                <h3 className="text-[0.98rem] font-black leading-tight mb-3" style={{ color: C.ink }}>{card.title}</h3>
-                <p className="text-[0.75rem] leading-relaxed" style={{ color: C.inkMuted }}>{card.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="flex justify-center mt-12">
-          <button
-            onClick={() => navigate("/Contact-Us")}
-            className="font-black text-sm px-10 py-4 rounded-full tracking-[0.06em] uppercase transition-colors duration-200 hover:bg-white"
-            style={{ background: C.accent, color: C.sectionBg }}
-          >
-            Get In Touch <span className="ml-2">→</span>
-          </button>
-        </div>
-      </section>
-    );
-  }
-
-  /* ── DESKTOP LAYOUT ─────────────────────────────────────── */
-  return (
-    <section ref={sectionRef} style={{ background: C.sectionBg, fontFamily: "'Syne', sans-serif", width: "100%" }}>
-      {/* Scroll runway */}
-      <div ref={runwayRef} style={{ position: "relative", minHeight: "500vh", width: "100%" }}>
-        {/* Sticky stage */}
+        {/* ── ZONE A — Light ─────────────────────────────────── */}
         <div
-          ref={stageRef}
+          className="relative w-full"
           style={{
-            position: "sticky",
-            top: 0,
-            height: "100dvh",
-            width: "100vw",
-            overflow: "hidden",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            background: C.white,
+            paddingTop: "clamp(72px, 10vw, 120px)",
+            paddingBottom: "clamp(32px, 4vw, 56px)",
           }}
         >
-          {/* Spline 3D scene */}
-          <SplineErrorBoundary>
-            <Suspense
-              fallback={
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background: C.sectionBg,
-                    pointerEvents: "none",
-                  }}
-                />
-              }
-            >
-              <Spline
-                scene="https://prod.spline.design/E2NnPus9oWYPVrZP/scene.splinecode"
-                onLoad={(app: Application) => { splineRef.current = app; }}
-                renderOnDemand={true}
-              />
-            </Suspense>
-          </SplineErrorBoundary>
-
-          {/* Radial light overlay — brightens centre, fades edges */}
-          <div
-            className="Radial-light-overlay"
-            style={{
-              position: "absolute",
-              inset: 0,
-              pointerEvents: "none",
-              zIndex: 1,
-              background:
-                "radial-gradient(circle, hsla(0, 0%, 100%, 0.1) 0%, hsla(0, 0%, 100%, 1) 100%)",
-            }}
-          />
-
-          {/* Lime flash overlay */}
-          <div
-            ref={flashOverlayRef}
-            style={{
-              position: "absolute",
-              inset: 0,
-              pointerEvents: "none",
-              zIndex: 60,
-              background: C.accent,
-              opacity: 0,
-              visibility: "hidden" as const,
-            }}
-          />
-
-          {/* ── Header ─────────────────────────────────── */}
-          <div
-            style={{
-              position: "absolute",
-              top: "8%",
-              left: 0,
-              right: 0,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              zIndex: 20,
-              pointerEvents: "none",
-            }}
-          >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-5 h-px" style={{ background: C.accent }} />
-              <span
-                className="text-[0.62rem] font-bold tracking-[0.22em] uppercase"
-                style={{ color: C.inkMuted }}
-              >
+          {/* Header */}
+          <div className="relative z-10 flex flex-col items-center text-center">
+            {/* Eyebrow */}
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-6 h-px bg-[#C8FF00]" />
+              <span className="text-[0.6rem] font-bold tracking-[0.22em] uppercase text-[rgba(10,14,26,0.45)]">
                 Artificial Intelligence
               </span>
-              <div className="w-5 h-px" style={{ background: C.accent }} />
+              <div className="w-6 h-px bg-[#C8FF00]" />
             </div>
+
+            {/* Headline */}
             <h2
               ref={headlineRef}
-              className="text-[clamp(1.5rem,3vw,2.6rem)] font-black leading-tight text-center max-w-2xl"
-              style={{ color: C.ink }}
+              className="font-black text-[#0A0E1A] leading-[0.91] tracking-[-0.025em] text-center"
+              style={{ fontSize: "clamp(2.8rem, 6vw, 2.5rem)" }}
             >
               Embrace the Future
               <br />
               with Cutting-Edge{" "}
-              <em style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", color: C.accent }}>
+              <em style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", color: "#C8FF00" }}>
                 AI
               </em>
             </h2>
+
+            {/* Subtext */}
             <p
               ref={subRef}
-              className="text-[0.85rem] mt-4 text-center max-w-md leading-relaxed"
-              style={{ color: C.inkMuted }}
+              className="text-[rgba(10,14,26,0.45)] text-center mt-5 max-w-md mx-auto leading-relaxed"
+              style={{ fontSize: "0.92rem" }}
             >
               From machine learning to generative AI — we build systems that think.
             </p>
           </div>
 
-          {/* ── Left card column (cards 0, 1, 2) ───────── */}
-          <div
-            style={{
-              position: "absolute",
-              left: 0,
-              top: "15vh",
-              width: "30vw",
-              height: "70vh",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              paddingLeft: "3vw",
-              zIndex: 20,
-            }}
-          >
-            {AI_SERVICES.slice(0, 3).map((card, i) => (
-              <div
-                key={i}
-                ref={(el) => { cardRefs.current[i] = el; }}
-                className="glass-card glass-card--soft group relative"
-                style={{ opacity: 0, visibility: "hidden" as const }}
-              >
-                <div className="card-inner">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[0.58rem] font-black tracking-[0.2em] uppercase" style={{ color: C.accent }}>{card.number}</span>
-                    <span className="text-[0.58rem] tracking-[0.12em] uppercase" style={{ color: C.inkMuted }}>{card.category}</span>
-                  </div>
-                  <div className="mb-4">{card.icon}</div>
-                  <h3 className="text-[0.98rem] font-black leading-tight mb-3" style={{ color: C.ink }}>{card.title}</h3>
-                  <p className="text-[0.75rem] leading-relaxed" style={{ color: C.inkMuted }}>{card.desc}</p>
-                  <div
-                    className="absolute bottom-0 left-5 right-5 h-[1.5px] rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: C.accent }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* ── Right card column (cards 3, 4, 5) ──────── */}
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              top: "15vh",
-              width: "30vw",
-              height: "70vh",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              paddingRight: "3vw",
-              zIndex: 20,
-            }}
-          >
-            {AI_SERVICES.slice(3).map((card, i) => (
-              <div
-                key={i + 3}
-                ref={(el) => { cardRefs.current[i + 3] = el; }}
-                className="glass-card glass-card--soft group relative"
-                style={{ opacity: 0, visibility: "hidden" as const }}
-              >
-                <div className="card-inner">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[0.58rem] font-black tracking-[0.2em] uppercase" style={{ color: C.accent }}>{card.number}</span>
-                    <span className="text-[0.58rem] tracking-[0.12em] uppercase" style={{ color: C.inkMuted }}>{card.category}</span>
-                  </div>
-                  <div className="mb-4">{card.icon}</div>
-                  <h3 className="text-[0.98rem] font-black leading-tight mb-3" style={{ color: C.ink }}>{card.title}</h3>
-                  <p className="text-[0.75rem] leading-relaxed" style={{ color: C.inkMuted }}>{card.desc}</p>
-                  <div
-                    className="absolute bottom-0 left-5 right-5 h-[1.5px] rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ background: C.accent }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* ── Solve status bar ──────────────────────── */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: 32,
-              left: 0,
-              right: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 16,
-              zIndex: 20,
-              pointerEvents: "none",
-            }}
-          >
-            {AI_SERVICES.map((_, i) => (
-              <div
-                key={i}
-                ref={(el) => { dotRefs.current[i] = el; }}
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  background: "rgba(10,14,26,0.06)",
-                  transition: "all 0.5s",
-                }}
-              />
-            ))}
-            <span
-              ref={solveTextRef}
-              className="text-[0.6rem] font-bold tracking-[0.2em] uppercase"
-              style={{ color: C.inkMuted }}
+          {/* Neural Network SVG */}
+          <div className="relative w-full mt-12" style={{ height: isMobile ? 200 : 280 }}>
+            <svg
+              ref={networkSvgRef}
+              viewBox="0 0 1200 280"
+              preserveAspectRatio="xMidYMid meet"
+              className="w-full h-full"
+              style={{ overflow: "visible" }}
             >
-              Solving… 0 / 6
-            </span>
+              <defs>
+                <filter id="glow-lime" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="glow-ink" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <radialGradient id="hub-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%"   stopColor="#C8FF00" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#C8FF00" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+
+              {/* ── Layer labels ── */}
+              <text x="160"  y="16" textAnchor="middle" fill="rgba(10,14,26)" fontSize="9" fontFamily="Syne" letterSpacing="1" fontWeight="700" className="layer-label">INPUT</text>
+              <text x="420"  y="16" textAnchor="middle" fill="rgba(10,14,26)" fontSize="9" fontFamily="Syne" letterSpacing="1" fontWeight="700" className="layer-label">HIDDEN A</text>
+              <text x="600"  y="16" textAnchor="middle" fill="rgba(10,14,26)" fontSize="9" fontFamily="Syne" letterSpacing="1" fontWeight="700" className="layer-label">CORE</text>
+              <text x="780"  y="16" textAnchor="middle" fill="rgba(10,14,26)" fontSize="9" fontFamily="Syne" letterSpacing="1" fontWeight="700" className="layer-label">HIDDEN B</text>
+              <text x="1040" y="16" textAnchor="middle" fill="rgba(10,14,26)" fontSize="9" fontFamily="Syne" letterSpacing="1" fontWeight="700" className="layer-label">OUTPUT</text>
+
+              {/* ── BASE WIRES — Layer 1 → Layer 2 ── */}
+              {L1_PATHS.map((d, i) => (
+                <path key={`l1-wire-${i}`} d={d} className={wireClass("l1")} fill="none" stroke="rgba(10,14,26,0.08)" strokeWidth="1" strokeLinecap="round" />
+              ))}
+              {/* ── BASE WIRES — Layer 2 → Hub ── */}
+              {L2_PATHS.map((d, i) => (
+                <path key={`l2-wire-${i}`} d={d} className={wireClass("l2")} fill="none" stroke="rgba(10,14,26,0.08)" strokeWidth="1" strokeLinecap="round" />
+              ))}
+              {/* ── BASE WIRES — Hub → Layer 3 ── */}
+              {HUB_PATHS.map((d, i) => (
+                <path key={`hub-wire-${i}`} d={d} className={wireClass("hub")} fill="none" stroke="rgba(10,14,26,0.08)" strokeWidth="1" strokeLinecap="round" />
+              ))}
+              {/* ── BASE WIRES — Layer 3 → Layer 4 ── */}
+              {L3_PATHS.map((d, i) => (
+                <path key={`l3-wire-${i}`} d={d} className={wireClass("l3")} fill="none" stroke="rgba(10,14,26,0.08)" strokeWidth="1" strokeLinecap="round" />
+              ))}
+
+              {/* ── SIGNAL PULSES ── */}
+              {signalData.map((s, i) => (
+                <path
+                  key={`signal-${i}`}
+                  d={s.d}
+                  className="signal-pulse"
+                  style={{ "--duration": s.duration, "--delay": s.delay } as React.CSSProperties}
+                />
+              ))}
+
+              {/* ── NODES — Layer 1 ── */}
+              {[{ cx: 160, cy: 70 }, { cx: 160, cy: 140 }, { cx: 160, cy: 210 }].map((n, i) => (
+                <circle key={`n1-${i}`} cx={n.cx} cy={n.cy} r={i === 1 ? 8 : 6}
+                  stroke={i === 1 ? "rgba(10,14,26,0.45)" : "rgba(10,14,26,0.2)"}
+                  strokeWidth={i === 1 ? 1.5 : 1.2}
+                  fill={i === 1 ? "rgba(10,14,26,0.06)" : "rgba(10,14,26,0.03)"}
+                  filter="url(#glow-ink)"
+                  className="network-node"
+                />
+              ))}
+
+              {/* ── NODES — Layer 2 ── */}
+              {[{ cx: 420, cy: 40 }, { cx: 420, cy: 115 }, { cx: 420, cy: 190 }, { cx: 420, cy: 245 }].map((n, i) => (
+                <circle key={`n2-${i}`} cx={n.cx} cy={n.cy} r={i === 1 ? 8 : 6}
+                  stroke={i === 1 ? "rgba(10,14,26,0.45)" : "rgba(10,14,26,0.2)"}
+                  strokeWidth={i === 1 ? 1.5 : 1.2}
+                  fill={i === 1 ? "rgba(10,14,26,0.06)" : "rgba(10,14,26,0.03)"}
+                  filter="url(#glow-ink)"
+                  className="network-node"
+                />
+              ))}
+
+              {/* ── NODES — Layer 3 ── */}
+              {[{ cx: 780, cy: 55 }, { cx: 780, cy: 140 }, { cx: 780, cy: 225 }].map((n, i) => (
+                <circle key={`n3-${i}`} cx={n.cx} cy={n.cy} r={i === 1 ? 8 : 6}
+                  stroke={i === 1 ? "rgba(10,14,26,0.45)" : "rgba(10,14,26,0.2)"}
+                  strokeWidth={i === 1 ? 1.5 : 1.2}
+                  fill={i === 1 ? "rgba(10,14,26,0.06)" : "rgba(10,14,26,0.03)"}
+                  filter="url(#glow-ink)"
+                  className="network-node"
+                />
+              ))}
+
+              {/* ── NODES — Layer 4 ── */}
+              {[{ cx: 1040, cy: 85 }, { cx: 1040, cy: 140 }, { cx: 1040, cy: 195 }].map((n, i) => (
+                <circle key={`n4-${i}`} cx={n.cx} cy={n.cy} r={i === 1 ? 8 : 6}
+                  stroke={i === 1 ? "rgba(10,14,26,0.45)" : "rgba(10,14,26,0.2)"}
+                  strokeWidth={i === 1 ? 1.5 : 1.2}
+                  fill={i === 1 ? "rgba(10,14,26,0.06)" : "rgba(10,14,26,0.03)"}
+                  filter="url(#glow-ink)"
+                  className="network-node"
+                />
+              ))}
+
+              {/* ── HUB NODE ── */}
+              <g className="hub-core">
+                {/* Glow aura */}
+                <circle cx="640" cy="140" r="32" fill="url(#hub-grad)" />
+                {/* Breathing outer ring */}
+                <circle cx="640" cy="140" r="20"
+                  stroke="rgba(200,255,0,0.2)"
+                  strokeWidth="1"
+                  fill="none"
+                  className="hub-ring"
+                />
+                {/* Middle ring */}
+                <circle cx="640" cy="140" r="13"
+                  stroke="rgba(200,255,0,0.45)"
+                  strokeWidth="1.2"
+                  fill="rgba(200,255,0,0.06)"
+                />
+                {/* Core */}
+                <circle cx="640" cy="140" r="7"
+                  stroke="#C8FF00"
+                  strokeWidth="1.5"
+                  fill="rgba(200,255,0,0.2)"
+                  filter="url(#glow-lime)"
+                />
+              </g>
+            </svg>
+          </div>
+
+          {/* ── Zone A → B connector ──────────────────────────── */}
+          <div className="flex flex-col items-center mt-4">
+            <svg width="2" height="64" viewBox="0 0 2 64" style={{ display: "block" }}>
+              <line
+                ref={connectorLineRef}
+                x1="1" y1="0" x2="1" y2="64"
+                stroke="#C8FF00"
+                strokeWidth="1.5"
+                strokeDasharray="3 4"
+              />
+            </svg>
+            <div className="flex gap-2 mt-2">
+              {[0, 1, 2, 3, 4, 5].map((i) => (
+                <div
+                  key={i}
+                  ref={(el) => { dotRefs.current[i] = el; }}
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: "rgba(10,14,26,0.1)" }}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ── CTA below sticky section ──────────────────────── */}
-      <div
-        className="w-full flex flex-col items-center gap-6 py-20"
-        style={{
-          background: C.sectionBg,
-          borderTop: `1px solid ${C.cardBorder}`,
-        }}
-      >
-        <p className="text-sm tracking-[0.1em]" style={{ color: C.inkMuted }}>
-          Ready to apply AI to your business?
-        </p>
-        <button
-          onClick={() => navigate("/Contact-Us")}
-          className="group relative overflow-hidden font-black text-sm px-10 py-4 rounded-full tracking-[0.06em] uppercase transition-colors duration-200 hover:bg-white"
-          style={{ background: C.accent, color: C.sectionBg }}
-        >
-          Get In Touch
-          <span className="ml-2 inline-block group-hover:translate-x-1 transition-transform duration-200">→</span>
-        </button>
-      </div>
-    </section>
+        {/* ── ZONE B — Card grid ───────────────────────────────── */}
+        <div className="w-full bg-white" style={{ paddingTop: "clamp(32px,4vw,56px)", paddingBottom: "clamp(64px,8vw,100px)" }}>
+          <div className="max-w-6xl mx-auto px-5 md:px-10">
+            {/* 2×3 grid */}
+            <div
+              ref={gridRef}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6"
+            >
+              {AI_SERVICES.map((card, i) => (
+                <div
+                  key={i}
+                  ref={(el) => { cardRefs.current[i] = el; }}
+                  className="group relative"
+                >
+                  <div
+                    className="relative bg-white rounded-2xl p-7 h-full overflow-hidden
+                                transition-all duration-300 ease-out
+                                group-hover:-translate-y-1"
+                    style={{
+                      border: `1px solid ${C.cardBorder}`,
+                      transition: "border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(200,255,0,0.45)";
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(10,14,26,0.08)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLDivElement).style.borderColor = C.cardBorder;
+                      (e.currentTarget as HTMLDivElement).style.boxShadow = "";
+                    }}
+                  >
+                    {/* Top row */}
+                    <div className="flex items-center justify-between mb-5">
+                      <span className="text-[0.58rem] font-bold tracking-[0.18em] uppercase text-[#C8FF00]">
+                        {card.number}
+                      </span>
+                      <span className="text-[0.58rem] tracking-[0.12em] uppercase text-[rgba(10,14,26,0.3)]">
+                        {card.category}
+                      </span>
+                    </div>
+
+                    {/* Icon */}
+                    <div className="mb-5 text-[rgba(10,14,26,0.45)] group-hover:text-[#0A0E1A] transition-colors duration-200">
+                      {card.icon}
+                    </div>
+
+                    {/* Title */}
+                    <h3
+                      className="font-black text-[#0A0E1A] leading-tight mb-3"
+                      style={{ fontSize: "clamp(0.95rem, 1.4vw, 1.1rem)" }}
+                    >
+                      {card.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-[#6B7280] leading-relaxed" style={{ fontSize: "0.82rem" }}>
+                      {card.desc}
+                    </p>
+
+                    {/* Bottom accent line */}
+                    <div
+                      className="absolute bottom-0 left-6 right-6 h-[1.5px] bg-[#C8FF00] rounded-full
+                                  scale-x-0 group-hover:scale-x-100 origin-left"
+                      style={{ transition: "transform 400ms ease-out" }}
+                    />
+
+                    {/* Watermark number */}
+                    <span
+                      className="absolute -bottom-3 -right-2 font-black leading-none select-none pointer-events-none text-[rgba(10,14,26,0.03)]"
+                      style={{ fontSize: "7rem" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="flex justify-center mt-16">
+              <button
+                onClick={() => navigate("/Contact-Us")}
+                className="group relative overflow-hidden font-black text-sm px-10 py-4 rounded-full tracking-[0.06em] uppercase transition-colors duration-200 hover:bg-white"
+                style={{ background: C.accent, color: C.dark }}
+              >
+                Get In Touch
+                <span className="ml-2 inline-block group-hover:translate-x-1 transition-transform duration-200">
+                  →
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
