@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import { useEffect } from "react";
 import PageSidebar from "./components/PageSidebar";
 import PageHero from "./components/PageHero";
@@ -61,6 +62,7 @@ export default function AIAgentPage() {
 
   return (
     <div style={{ background: "#F8F9FB", minHeight: "100vh" }}>
+      <PageMeta />
       <style>{`
         [data-animate] {
           opacity: 0;

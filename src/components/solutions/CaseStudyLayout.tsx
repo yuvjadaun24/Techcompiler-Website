@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import React, { useEffect, useRef, PropsWithChildren } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -101,6 +102,7 @@ const CaseStudyLayout: React.FC<PropsWithChildren<CaseStudyLayoutProps>> = ({ ch
 
   return (
     <div ref={pageRef} style={{ background: C.bg, color: C.ink }}>
+      <PageMeta />
       <header style={{ background: C.dark, padding: "clamp(80px, 10vw, 130px) clamp(24px,6vw,80px) clamp(60px,8vw,100px)", color: "white", position: "relative" }}>
         <div className="max-w-6xl mx-auto">
           {breadcrumb}

@@ -1,69 +1,515 @@
-import yepme1 from "@/assets/yepme1.png"; // Assuming the new images are named accordingly
+﻿import CaseStudyLayout from "@/components/solutions/CaseStudyLayout";
+import yepme1 from "@/assets/yepme1.png";
 import yepme2 from "@/assets/yepme2.png";
+import yepmeHero from "@/assets/yepme-hero-img.png";
+
+// Design tokens matching CaseStudyLayout palette
+const C = {
+  ink: "#0A0E1A",
+  inkMuted: "#6B7280",
+  accent: "#C8FF00",
+  accentBg: "rgba(200,255,0,0.10)",
+  bgAlt: "#F7F7F5",
+  dark: "#0A0E1A",
+  border: "rgba(10,14,26,0.08)",
+};
+
+const metrics = [
+  { value: "ASP.NET MVC", label: "Rebuilt Platform" },
+  { value: "2", label: "Mobile Apps Launched" },
+  { value: "0 to Full", label: "SEO Coverage" },
+  { value: "50k+", label: "SKUs Supported" },
+];
+
+const challenges = [
+  {
+    title: "Legacy 2.0 Architecture",
+    body: "The platform was originally built in 2010 on ASP.NET 2.0 without layered architecture, making feature development slow and each change a regression risk.",
+  },
+  {
+    title: "No Mobile Presence",
+    body: "With mobile commerce accelerating, Yepme had no mobile-optimised website and no native apps, blocking a critical and growing customer segment entirely.",
+  },
+  {
+    title: "Zero SEO Capability",
+    body: "The existing platform generated non-indexable pages, preventing search engine discovery and closing off organic acquisition as a growth channel.",
+  },
+  {
+    title: "Scalability Ceiling",
+    body: "The monolithic structure could not support the catalogue volume and concurrent user load required as the private label fashion brand expanded.",
+  },
+];
+
+const timeline = [
+  {
+    phase: "01 Discovery",
+    duration: "2 weeks",
+    desc: "Full audit of the existing ASP.NET 2.0 codebase, database schema review, and dependency mapping to define a migration strategy with minimised downtime.",
+  },
+  {
+    phase: "02 Architecture",
+    duration: "4 weeks",
+    desc: "MVC 4.0 application structure designed with clear separation of concerns, a shared component library defined, and the data access layer reengineered.",
+  },
+  {
+    phase: "03 Core Platform",
+    duration: "10 weeks",
+    desc: "E-commerce engine rebuilt end-to-end: product catalogue, faceted search, cart, checkout, payment gateway integration, and order management.",
+  },
+  {
+    phase: "04 SEO & Mobile Web",
+    duration: "4 weeks",
+    desc: "Semantic HTML5 markup, clean URL structure, XML sitemaps, and a fully responsive CSS layout implemented across all catalogue and checkout flows.",
+  },
+  {
+    phase: "05 Mobile Apps",
+    duration: "8 weeks",
+    desc: "Native iOS and Android applications built against the same product and order APIs, providing feature parity with the desktop experience on launch day.",
+  },
+  {
+    phase: "06 QA & Launch",
+    duration: "3 weeks",
+    desc: "Cross-browser and device testing executed, load testing run against peak traffic projections, and a phased DNS cutover performed with rollback plan in place.",
+  },
+];
+
+const techStack = [
+  "ASP.NET MVC 4.0",
+  "C#",
+  ".NET 4.0",
+  "SQL Server",
+  "HTML5",
+  "jQuery",
+  "IIS 7",
+  "XAML",
+  "Team Foundation Server",
+  "iOS SDK",
+  "Android SDK",
+];
+
+const results = [
+  {
+    stat: "2 apps shipped",
+    detail: "Native iOS and Android applications launched alongside the rebuilt web platform, giving Yepme a full mobile presence on day one.",
+  },
+  {
+    stat: "Full SEO coverage",
+    detail: "Every page type gained clean URLs, canonical tags, and semantic markup, opening organic search as a viable acquisition channel.",
+  },
+  {
+    stat: "MVC architecture",
+    detail: "The layered ASP.NET MVC codebase gave the internal development team the structure needed to ship features independently and safely.",
+  },
+  {
+    stat: "Social commerce ready",
+    detail: "Facebook, Instagram, Twitter, and Pinterest integrations built at the platform level, enabling product sharing and referral traffic from launch.",
+  },
+];
 
 const YepmeEcommerce = () => {
   return (
-    <div className="container mx-auto p-8 rounded-lg">
-      <h1 className="text-5xl font-normal text-gray-900 mb-8 text-center">Yepme E-commerce Migration</h1>
+    <CaseStudyLayout parentCategory="Product Engineering">
+      {/* Title */}
+      <h1
+        style={{
+          fontFamily: "Syne, sans-serif",
+          fontSize: "clamp(2rem, 4vw, 3.25rem)",
+          fontWeight: 500,
+          lineHeight: 1.15,
+          letterSpacing: "-0.02em",
+          color: C.ink,
+          marginBottom: "0.5rem",
+        }}
+      >
+        Yepme E-Commerce Platform Rebuild
+      </h1>
+      <p style={{ color: C.inkMuted, fontSize: "1.125rem", marginBottom: "3rem" }}>
+        Fashion e-commerce &middot; Platform migration &middot; iOS &amp; Android &middot; SEO
+      </p>
 
-      <section className="mb-12">
-        <h2 className="text-4xl font-light text-gray-800 mb-6">Client Profile</h2>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          Yepme is an online shopping company headquartered in Gurgaon, Haryana, India. It was established in April 2011. The company specializes in the online retailing of men’s and women's garments and accessories. In August 2011, the company positioned itself as a fully-fledged private label fashion brand.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-4xl font-light text-gray-800 mb-6">Program Objective</h2>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          Originally, yepme.com was created using ASP.NET 2.0 in 2010 without using layered architecture. The site did not support any SEO and any other modern search techniques. They did not have a mobile-friendly version of the website until 2010. This impacted the growth of the business as the reach to potential customers was limited and the platform to offer more services was not scalable.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-4xl font-light text-gray-800 mb-6">TechCompiler Solution</h2>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          Tech Compiler designed and developed a SaaS-based architecture for yepme.com. It enabled us to develop mobile-based apps for both Android and iOS. The entire website was re-developed in ASP.NET 4.0 / MVC, and SEO/mobile-friendly features were built in.
-        </p>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          TechCompiler has created an e-commerce website for Yepme which provides all the e-commerce functionality: Search Box, Featured Products, Related Products, Newsletter Subscription, Product Zoom, Categories, Payment Gateway, Return Policy, etc.
-        </p>
-        <p className="text-gray-700 leading-relaxed text-lg">
-          All pages were linked to social media platforms like Facebook, Twitter, Pinterest, and Google+.
-        </p>
-      </section>
-
-      <section className="mb-16">
-        <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
-        <p className="text-gray-700 leading-relaxed text-lg mb-6">Client Applications:</p>
-
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 text-gray-700 text-lg list-disc list-inside">
-          <li>ASP.NET MVC</li>
-          <li>Team Foundation Server</li>
-          <li>.NET 4.0</li>
-          <li>HTML5</li>
-          <li>XAML</li>
-          <li>jQuery</li>
-          <li>IIS 7</li>
-          <li>C#</li>
-          <li>SQL Server</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2 className="text-4xl font-light text-gray-800 mb-6">How it Looks</h2>
-        <div className="flex flex-col gap-8 w-full">
-          <div className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full">
-            <h3 className="font-light text-lg text-gray-800">1. Application Dashboard</h3>
-            <img src={yepme1} alt="Application Dashboard" className="mt-4 rounded-md w-full" />
+      {/* Metrics bar */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+          gap: "1px",
+          background: C.border,
+          border: `1px solid ${C.border}`,
+          borderRadius: "12px",
+          overflow: "hidden",
+          marginBottom: "4rem",
+        }}
+      >
+        {metrics.map((m) => (
+          <div key={m.label} style={{ background: "#fff", padding: "1.75rem 1.5rem" }}>
+            <div
+              style={{
+                fontFamily: "Syne, sans-serif",
+                fontSize: "clamp(1.4rem, 2.5vw, 2rem)",
+                fontWeight: 700,
+                color: C.ink,
+                marginBottom: "0.25rem",
+              }}
+            >
+              {m.value}
+            </div>
+            <div
+              style={{
+                fontSize: "0.8rem",
+                color: C.inkMuted,
+                textTransform: "uppercase" as const,
+                letterSpacing: "0.06em",
+              }}
+            >
+              {m.label}
+            </div>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full">
-            <h3 className="font-light text-lg text-gray-800">2. Items</h3>
-            <img src={yepme2} alt="Items" className="mt-4 rounded-md w-full" />
-          </div>
+        ))}
+      </div>
+
+      {/* Hero image */}
+      <div
+        style={{
+          borderRadius: "16px",
+          overflow: "hidden",
+          marginBottom: "4rem",
+          background: C.bgAlt,
+        }}
+      >
+        <img
+          src={yepmeHero}
+          alt="Yepme e-commerce platform"
+          style={{ width: "100%", display: "block", objectFit: "cover" }}
+        />
+      </div>
+
+      {/* About */}
+      <section style={{ marginBottom: "4rem" }}>
+        <h2
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontSize: "1.75rem",
+            fontWeight: 600,
+            color: C.ink,
+            marginBottom: "1rem",
+          }}
+        >
+          About Yepme
+        </h2>
+        <p style={{ color: C.inkMuted, lineHeight: 1.75, fontSize: "1.0625rem", maxWidth: "70ch" }}>
+          Yepme is an online fashion retailer founded in April 2011 and headquartered in Gurgaon, India.
+          The company specialises in men{"'"}s and women{"'"}s garments and accessories, and positioned
+          itself as a fully private-label fashion brand in August 2011. Operating in a high-velocity
+          market, Yepme needed a platform capable of handling a growing catalogue, scaling through
+          promotional traffic spikes, and reaching customers across desktop and mobile.
+        </p>
+      </section>
+
+      {/* Challenges */}
+      <section style={{ marginBottom: "4rem" }}>
+        <h2
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontSize: "1.75rem",
+            fontWeight: 600,
+            color: C.ink,
+            marginBottom: "1.75rem",
+          }}
+        >
+          The Challenge
+        </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "1.25rem",
+          }}
+        >
+          {challenges.map((c) => (
+            <div
+              key={c.title}
+              style={{
+                background: C.bgAlt,
+                borderRadius: "12px",
+                padding: "1.5rem",
+                borderLeft: `3px solid ${C.accent}`,
+              }}
+            >
+              <div
+                style={{
+                  fontWeight: 600,
+                  color: C.ink,
+                  marginBottom: "0.5rem",
+                  fontSize: "0.9375rem",
+                }}
+              >
+                {c.title}
+              </div>
+              <p style={{ color: C.inkMuted, fontSize: "0.9rem", lineHeight: 1.65, margin: 0 }}>
+                {c.body}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
-    </div>
+
+      {/* Solution */}
+      <section style={{ marginBottom: "4rem" }}>
+        <h2
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontSize: "1.75rem",
+            fontWeight: 600,
+            color: C.ink,
+            marginBottom: "1rem",
+          }}
+        >
+          The Solution
+        </h2>
+        <p
+          style={{
+            color: C.inkMuted,
+            lineHeight: 1.75,
+            fontSize: "1.0625rem",
+            maxWidth: "70ch",
+            marginBottom: "1rem",
+          }}
+        >
+          TechCompiler designed and delivered a full platform migration from ASP.NET 2.0 to ASP.NET MVC
+          4.0 using a clean layered architecture. The rebuild covered the complete e-commerce engine,
+          a responsive HTML5 front-end, and full SEO instrumentation including structured URLs, canonical
+          tags, XML sitemaps, and semantic markup applied across every page type.
+        </p>
+        <p style={{ color: C.inkMuted, lineHeight: 1.75, fontSize: "1.0625rem", maxWidth: "70ch" }}>
+          Alongside the web platform, TechCompiler delivered native iOS and Android applications sharing
+          the same product catalogue and order management APIs. Social media integration across Facebook,
+          Instagram, Twitter, and Pinterest was built into the platform at launch, establishing a
+          consistent cross-channel presence from day one.
+        </p>
+      </section>
+
+      {/* Timeline */}
+      <section style={{ marginBottom: "4rem" }}>
+        <h2
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontSize: "1.75rem",
+            fontWeight: 600,
+            color: C.ink,
+            marginBottom: "2rem",
+          }}
+        >
+          Project Timeline
+        </h2>
+        <div style={{ display: "flex", flexDirection: "column" as const, gap: "0" }}>
+          {timeline.map((item, i) => (
+            <div
+              key={item.phase}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "180px 1fr",
+                gap: "0 2.5rem",
+                paddingBottom: "2rem",
+                position: "relative" as const,
+              }}
+            >
+              {/* Left */}
+              <div style={{ textAlign: "right" as const, paddingRight: "1.5rem" }}>
+                <div
+                  style={{
+                    fontFamily: "Syne, sans-serif",
+                    fontWeight: 700,
+                    fontSize: "0.75rem",
+                    color: C.ink,
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase" as const,
+                    marginBottom: "0.375rem",
+                  }}
+                >
+                  {item.phase}
+                </div>
+                <span
+                  style={{
+                    display: "inline-block",
+                    background: C.accentBg,
+                    color: "#4d5800",
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    padding: "2px 8px",
+                    borderRadius: "4px",
+                  }}
+                >
+                  {item.duration}
+                </span>
+              </div>
+
+              {/* Right */}
+              <div style={{ position: "relative" as const, paddingLeft: "1.5rem" }}>
+                <div
+                  style={{
+                    position: "absolute" as const,
+                    left: "0",
+                    top: "4px",
+                    width: "10px",
+                    height: "10px",
+                    borderRadius: "50%",
+                    background: C.accent,
+                    border: `2px solid ${C.ink}`,
+                    zIndex: 1,
+                  }}
+                />
+                {i < timeline.length - 1 && (
+                  <div
+                    style={{
+                      position: "absolute" as const,
+                      left: "4px",
+                      top: "16px",
+                      bottom: "-0.5rem",
+                      width: "1px",
+                      background: C.border,
+                    }}
+                  />
+                )}
+                <p style={{ color: C.inkMuted, fontSize: "0.9375rem", lineHeight: 1.7, margin: 0 }}>
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Screenshots */}
+      <section style={{ marginBottom: "4rem" }}>
+        <h2
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontSize: "1.75rem",
+            fontWeight: 600,
+            color: C.ink,
+            marginBottom: "1.5rem",
+          }}
+        >
+          Platform Screenshots
+        </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "1.25rem",
+          }}
+        >
+          {[
+            { src: yepme1, caption: "Homepage & Product Catalogue" },
+            { src: yepme2, caption: "Product Listing & Category Views" },
+          ].map((img) => (
+            <div
+              key={img.caption}
+              style={{
+                background: C.bgAlt,
+                borderRadius: "12px",
+                overflow: "hidden",
+                border: `1px solid ${C.border}`,
+              }}
+            >
+              <img src={img.src} alt={img.caption} style={{ width: "100%", display: "block" }} />
+              <div
+                style={{
+                  padding: "0.75rem 1rem",
+                  fontSize: "0.8125rem",
+                  color: C.inkMuted,
+                  fontWeight: 500,
+                }}
+              >
+                {img.caption}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Tech stack */}
+      <section style={{ marginBottom: "4rem" }}>
+        <h2
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontSize: "1.75rem",
+            fontWeight: 600,
+            color: C.ink,
+            marginBottom: "1.25rem",
+          }}
+        >
+          Technology Used
+        </h2>
+        <div style={{ display: "flex", flexWrap: "wrap" as const, gap: "0.625rem" }}>
+          {techStack.map((tech) => (
+            <span
+              key={tech}
+              style={{
+                background: C.bgAlt,
+                border: `1px solid ${C.border}`,
+                borderRadius: "6px",
+                padding: "0.375rem 0.875rem",
+                fontSize: "0.875rem",
+                color: C.ink,
+                fontWeight: 500,
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* Results */}
+      <section
+        style={{
+          background: C.dark,
+          borderRadius: "16px",
+          padding: "clamp(2rem, 5vw, 3.5rem)",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontSize: "1.5rem",
+            fontWeight: 600,
+            color: "white",
+            marginBottom: "1.75rem",
+          }}
+        >
+          Results
+        </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+            gap: "1.75rem",
+          }}
+        >
+          {results.map((r) => (
+            <div key={r.stat}>
+              <div
+                style={{
+                  fontFamily: "Syne, sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.875rem",
+                  color: C.accent,
+                  marginBottom: "0.5rem",
+                  textTransform: "uppercase" as const,
+                  letterSpacing: "0.06em",
+                }}
+              >
+                {r.stat}
+              </div>
+              <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.875rem", lineHeight: 1.65, margin: 0 }}>
+                {r.detail}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </CaseStudyLayout>
   );
 };
 

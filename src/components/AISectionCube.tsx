@@ -1,4 +1,4 @@
-import { Component, Suspense, lazy, useEffect, useRef } from "react";
+import { Component, Suspense, lazy, useCallback, useEffect, useRef } from "react";
 import type { ErrorInfo, ReactNode } from "react";
 import type { Application } from "@splinetool/runtime";
 import gsap from "gsap";
@@ -142,33 +142,64 @@ export default function AISectionCube() {
   const solveTextRef = useRef<HTMLSpanElement>(null);
 
   /* ── Spline GPU disposal on unmount ──────────────────────── */
-  useEffect(() => {
-    return () => {
-      const app = splineRef.current as any;
-      if (!app) return;
+  const disposeSpline = useCallback(() => {
+    const app = splineRef.current as any;
+    if (!app) return;
 
-      // Traverse the entire Three.js scene graph and dispose every GPU resource
-      app.scene?.traverse((obj: any) => {
-        if (obj.geometry) obj.geometry.dispose();
+    // Traverse the entire Three.js scene graph and dispose every GPU resource
+    app.scene?.traverse((obj: any) => {
+      if (obj.geometry) obj.geometry.dispose();
 
-        if (obj.material) {
-          const materials: any[] = Array.isArray(obj.material) ? obj.material : [obj.material];
-          materials.forEach((mat) => {
-            // Dispose any texture properties on the material
-            Object.values(mat).forEach((val: any) => {
-              if (val?.isTexture) val.dispose();
-            });
-            mat.dispose();
+      if (obj.material) {
+        const materials: any[] = Array.isArray(obj.material) ? obj.material : [obj.material];
+        materials.forEach((mat) => {
+          // Dispose any texture properties on the material
+          Object.values(mat).forEach((val: any) => {
+            if (val?.isTexture) val.dispose();
           });
+          mat.dispose();
+        });
+      }
+    });
+
+    // Release the WebGL context itself
+    app.renderer?.dispose();
+    app.renderer?.forceContextLoss();
+
+    splineRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    return disposeSpline;
+  }, [disposeSpline]);
+
+  /* ── Force-GPU-dispose event listener (beforeunload safety) ── */
+  useEffect(() => {
+    const handler = () => disposeSpline();
+    window.addEventListener("force-gpu-dispose", handler);
+    return () => window.removeEventListener("force-gpu-dispose", handler);
+  }, [disposeSpline]);
+
+  /* ── IntersectionObserver: stop/start Spline when off-screen ── */
+  useEffect(() => {
+    const section = sectionRef.current;
+    const app = () => splineRef.current as any;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const spline = app();
+        if (!spline) return;
+        if (entry.isIntersecting) {
+          spline.play?.();
+        } else {
+          spline.stop?.();
         }
-      });
-
-      // Release the WebGL context itself
-      app.renderer?.dispose();
-      app.renderer?.forceContextLoss();
-
-      splineRef.current = null;
-    };
+      },
+      { threshold: 0 },
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
 

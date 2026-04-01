@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
@@ -218,6 +219,7 @@ const ContactUs = () => {
 
   return (
     <div ref={pageRef}>
+      <PageMeta />
       <AnimatePresence>
         {showToast && (
           <motion.div initial={{ opacity: 0, y: -30, scale: 0.95 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: -30, scale: 0.95 }} transition={{ duration: 0.4 }}
@@ -279,7 +281,7 @@ const ContactUs = () => {
                 <p style={{ fontSize: "0.72rem", fontWeight: 800, color: C.dark, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10, fontFamily: "'Syne',sans-serif" }}>Asia</p>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 12 }}>
                   <img src={japanFlag} alt="Japan Flag" style={{ width: 24, height: 24, borderRadius: 4, flexShrink: 0, marginTop: 2 }} />
-                  <span style={{ fontSize: "0.82rem", color: C.grayText, lineHeight: 1.5, fontFamily: "'Syne',sans-serif" }}>2-8-6-405, Higashi Tabata Kita-ku, Tokyo Japan</span>
+                  <span style={{ fontSize: "0.82rem", color: C.grayText, lineHeight: 1.5, fontFamily: "'Syne',sans-serif" }}>4F Kabutocho Dai-6 Hayama Building, 17-2 Nihonbashi Kabutocho, Chuo-ku, Tokyo, Japan</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
                   <img src={indiaFlag} alt="India Flag" style={{ width: 24, height: 24, borderRadius: 4, flexShrink: 0, marginTop: 2 }} />

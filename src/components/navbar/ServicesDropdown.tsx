@@ -81,47 +81,49 @@ const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onClose, na
 
     tlRef.current?.kill();
 
-    if (isOpen) {
-      const tl = gsap.timeline();
-      tlRef.current = tl;
+    const ctx = gsap.context(() => {
+      if (isOpen) {
+        const tl = gsap.timeline();
+        tlRef.current = tl;
 
-      tl.fromTo(
-        panelRef.current,
-        { autoAlpha: 0, y: -16 },
-        { autoAlpha: 1, y: 0, duration: 0.38, ease: 'drop' }
-      );
-
-      const headers = categoryHeaderRefs.current.filter(Boolean);
-      if (headers.length) {
         tl.fromTo(
-          headers,
-          { autoAlpha: 0, x: -14 },
-          { autoAlpha: 1, x: 0, duration: 0.3, stagger: 0.06, ease: 'nav' },
-          '-=0.22'
+          panelRef.current!,
+          { autoAlpha: 0, y: -16 },
+          { autoAlpha: 1, y: 0, duration: 0.38, ease: 'drop' }
         );
-      }
 
-      const groups = subLinkGroupRefs.current.filter(Boolean);
-      if (groups.length) {
-        tl.fromTo(
-          groups,
-          { autoAlpha: 0, y: 10 },
-          { autoAlpha: 1, y: 0, duration: 0.28, stagger: 0.05, ease: 'nav' },
-          '-=0.2'
-        );
-      }
+        const headers = categoryHeaderRefs.current.filter(Boolean);
+        if (headers.length) {
+          tl.fromTo(
+            headers,
+            { autoAlpha: 0, x: -14 },
+            { autoAlpha: 1, x: 0, duration: 0.3, stagger: 0.06, ease: 'nav' },
+            '-=0.22'
+          );
+        }
 
-      if (ctaPanelRef.current) {
-        tl.fromTo(
-          ctaPanelRef.current,
-          { autoAlpha: 0, x: 20 },
-          { autoAlpha: 1, x: 0, duration: 0.35, ease: 'nav' },
-          '-=0.28'
-        );
-      }
-    }
+        const groups = subLinkGroupRefs.current.filter(Boolean);
+        if (groups.length) {
+          tl.fromTo(
+            groups,
+            { autoAlpha: 0, y: 10 },
+            { autoAlpha: 1, y: 0, duration: 0.28, stagger: 0.05, ease: 'nav' },
+            '-=0.2'
+          );
+        }
 
-    return () => { tlRef.current?.kill(); };
+        if (ctaPanelRef.current) {
+          tl.fromTo(
+            ctaPanelRef.current,
+            { autoAlpha: 0, x: 20 },
+            { autoAlpha: 1, x: 0, duration: 0.35, ease: 'nav' },
+            '-=0.28'
+          );
+        }
+      }
+    }, panelRef);
+
+    return () => { tlRef.current?.kill(); ctx.revert(); };
   }, [isOpen]);
 
   // ── Escape key ──

@@ -2,10 +2,14 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "../ScrollToTop";
 import { DropdownProvider } from "./context/DropdownContext";
 import { Toaster } from "react-hot-toast";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 // ── Global tab-visibility handler ─────────────────────────
 // Pauses ALL GSAP tweens & ScrollTriggers while the tab is
@@ -21,14 +25,27 @@ document.addEventListener("visibilitychange", () => {
   }
 });
 
+// ── beforeunload safety net ───────────────────────────────
+// Kill every GSAP tween & ScrollTrigger and dispatch a
+// force-gpu-dispose event so WebGL components can release
+// GPU resources before the page unloads.
+window.addEventListener("beforeunload", () => {
+  gsap.ticker.sleep();
+  gsap.globalTimeline.clear();
+  ScrollTrigger.getAll().forEach((t) => t.kill());
+  window.dispatchEvent(new Event("force-gpu-dispose"));
+});
+
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
-    <BrowserRouter>
-      <DropdownProvider>
-        <ScrollToTop />
-        <Toaster />
-        <App />
-      </DropdownProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <DropdownProvider>
+          <ScrollToTop />
+          <Toaster />
+          <App />
+        </DropdownProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 );

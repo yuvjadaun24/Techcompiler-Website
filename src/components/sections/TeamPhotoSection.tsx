@@ -153,7 +153,7 @@ export default function TeamPhotoSection(): JSX.Element {
             Est. 2010
           </p>
           <p style={{ fontFamily: "'Syne', sans-serif", fontSize: "0.6rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em" }}>
-            Rochester, NY / Noida, India
+            Rochester, NY · Noida, India · Tokyo, Japan
           </p>
         </div>
       </div>

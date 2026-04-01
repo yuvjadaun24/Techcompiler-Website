@@ -10,7 +10,7 @@ const data: TechPageData = {
   stats: [
     { value: "75", label: "Android Projects" },
     { value: "97%", label: "Positive Feedback" },
-    { value: "4.8?", label: "Average Rating" },
+    { value: "4.8★", label: "Average Rating" },
   ],
   heroImage: AndroidImg,
   overviewSections: [
@@ -88,11 +88,11 @@ const data: TechPageData = {
       image: "/images/android/custom.png",
     },
     {
-      name: "iWatch App Development",
-      subtitle: "Extend your Android ecosystem conveniently to users' wrists",
+      name: "Wear OS & Galaxy Watch App Development",
+      subtitle: "Extend your Android ecosystem to users' wrists",
       description:
-        "Extend your Android ecosystem conveniently to users' wrists with our smartwatch app development. We enable timely notifications, convenient app controls, and quick access to key information through wrist-based interactions.",
-      image: "/images/android/iwatch.png",
+        "Extend your Android ecosystem to the wrist with native Wear OS and Samsung Galaxy Watch app development. We build watchface apps, health-tracking companions, and productivity tools that leverage sensors, notifications, and Google Health integration.",
+      image: "/images/android/wear-os.png",
     },
     {
       name: "Android TV App Development",

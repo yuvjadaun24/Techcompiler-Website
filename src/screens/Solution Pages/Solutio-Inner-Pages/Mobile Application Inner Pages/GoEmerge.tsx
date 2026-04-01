@@ -38,11 +38,11 @@ const GoEmerge = () => {
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 text-gray-700 text-lg list-disc list-inside">
                     <li>ASP.NET MVC</li>
                     <li>Team Foundation Server</li>
-                    <li>.NET 4.5</li>
-                    <li>IIS 7</li>
+                    <li>.NET</li>
+                    <li>IIS</li>
                     <li>C#</li>
-                    <li>XCode 6</li>
-                    <li>iOS 8.0</li>
+                    <li>Xcode</li>
+                    <li>iOS SDK</li>
                 </ul>
             </section>
 

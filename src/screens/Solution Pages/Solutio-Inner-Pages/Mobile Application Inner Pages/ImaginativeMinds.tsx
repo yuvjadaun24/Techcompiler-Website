@@ -50,10 +50,10 @@ const ImaginativeMinds = () => {
         <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 text-gray-700 text-lg list-disc list-inside">
           <li>Enterprise Applications</li>
-          <li>Xcode, Objective-C</li>
-          <li>J2EE frameworks like Spring, Strut, and JSF</li>
-          <li>J2EE Design Patterns</li>
-          <li>Java Persistence API frameworks like Hibernate and TopLink</li>
+          <li>Xcode, Swift</li>
+          <li>Java frameworks (Spring, Spring MVC, JSF)</li>
+          <li>Enterprise Java Design Patterns</li>
+          <li>JPA / Hibernate</li>
           <li>MySQL, SQLite</li>
           <li>JIRA bug tracking tool</li>
         </ul>

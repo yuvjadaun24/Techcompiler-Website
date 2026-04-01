@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -146,6 +147,7 @@ const CareersPage = () => {
 
   return (
     <div ref={pageRef}>
+      <PageMeta />
       {/* ── SECTION 1 — Hero ── */}
       <section style={{
         background: C.white,

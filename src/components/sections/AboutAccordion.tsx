@@ -11,7 +11,7 @@ const ACCORDION = [
     number: "01",
     question: "Who we are?",
     answer:
-      "At TechCompiler, we pioneer change through technology and innovation. As a global enterprise technology solutions provider headquartered in Rochester, NY, we empower organizations and professionals to adapt to the digital landscape.",
+      "At TechCompiler, we pioneer change through technology and innovation. As a global enterprise technology solutions provider with offices in the USA, India, and Japan, we empower organizations and professionals to adapt to the digital landscape.",
   },
   {
     number: "02",
@@ -54,7 +54,7 @@ export default function AboutAccordion(): JSX.Element {
 
   /* copy from existing file (verbatim) */
   const description =
-    "At TechCompiler, we pioneer change through technology and innovation. As a global enterprise technology solutions provider headquartered in Rochester, NY, we empower organizations and professionals to adapt to the digital landscape. With deep technical expertise and industry experience, we unlock our clients' full potential.";
+    "At TechCompiler, we pioneer change through technology and innovation. As a global enterprise technology solutions provider with offices in the USA, India, and Japan, we empower organizations and professionals to adapt to the digital landscape. With deep technical expertise and industry experience, we unlock our clients' full potential.";
 
   useEffect(() => {
     const ctx = gsap.context(() => {

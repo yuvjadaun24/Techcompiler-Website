@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
@@ -263,6 +264,7 @@ export default function TechPageLayout({ data }: { data: TechPageData }) {
 
   return (
     <div ref={pageRef} style={{ fontFamily: FONT, background: C.bg, color: C.ink }}>
+      <PageMeta />
 
       {/* ════════ SECTION 1 — HERO ════════ */}
       <section style={{ ...SECTION_PAD, borderBottom: `1px solid ${C.inkDim}` }}>

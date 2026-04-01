@@ -5,8 +5,8 @@ import UiUxDesign from "./../../../assets/uiuxdesign.png";
 const data: ServicePageData = {
   eyebrow: "UI/UX DESIGN",
   title: "UI/UX Designing",
-  subtitle: "Elevate your brand with modern UI/UX design",
-  description: "Our UI/UX design services deliver intuitive, aesthetically pleasing interfaces that captivate users and enhance their interactions with your digital products. We are well-versed in the latest design concepts and user research, which makes it easier for us to create user-friendly experiences that are pleasing to the eyes of users. Our group of skilled designers meticulously crafts each detail, from format and typography to shade schemes and iconography; we always make sure a coherent and attractive experience across as and platforms. With a deep understanding of user behavior and industry best practices, we optimize your procedure, accessibility, and conversion rates, driving business growth and customer satisfaction.",
+  subtitle: "Research-led design that reduces friction, increases conversions, and ships production-ready.",
+  description: "TechCompiler's design team runs UX discovery, information architecture, wireframing, and usability testing before a pixel of final UI is produced. The result: interfaces that pass accessibility audits, render cleanly across devices, and improve the conversion and retention metrics our clients track. We've completed 65 design projects across SaaS platforms, e-commerce experiences, and enterprise internal tools.",
   stats: [
     { value: "65", label: "Design Projects" },
     { value: "98%", label: "Positive Feedback" },
@@ -14,19 +14,19 @@ const data: ServicePageData = {
   ],
   heroImage: UiUxDesign,
 
-  overviewTitle: "What is UI/UX design?",
+  overviewTitle: "How we approach design",
   overviewParagraphs: [
-    "UI/UX design, or User Interface/User Experience design, is the practice of creating digital merchandise that is not only visually appealing but also highly functional, intuitive, and user-friendly. It encompasses the complete manner of designing and developing digital interfaces, from preliminary research and concept creation to prototyping, testing, and implementation.",
-    "At its core, UI design focuses on the visible elements that customers engage with, including buttons, menus, icons, and overall format. It involves creating an aesthetically pleasing and consistent interface that adheres to established design principles and brand guidelines.",
+    "UI/UX design is the practice of building digital interfaces that are clear, efficient, and accessible. The UX layer defines how a product works — the flows, the hierarchy, the task paths. The UI layer determines how it looks — typography, colour, spacing, and component states. At TechCompiler both happen in the same team, which means fewer handoff gaps and faster iteration.",
+    "We don't start in Figma. We start with a research phase: stakeholder interviews, competitive analysis, and user journey mapping. That work surfaces the real friction points — the ones that cause users to abandon a flow or contact support. The visual design phase then solves for those specifically, not just general aesthetics.",
   ],
 
   servicesHeading: "Design Services We Offer",
-  servicesSubline: "Helping brands create impactful and user-first digital experiences since 2018.",
+  servicesSubline: "End-to-end UX and UI for products people actually want to use.",
   services: [
-    { name: "Branding", subtitle: "Defining your unique identity", description: "Our branding services help create a strong, memorable identity that resonates with your audience, ensuring your brand stands out in a crowded market.", image: "/images/branding-sample.png" },
-    { name: "Design", subtitle: "Creating intuitive and stunning visuals", description: "We design sleek and engaging interfaces that combine aesthetics with usability to elevate your product's experience.", image: "/images/branding-sample.png" },
-    { name: "Development", subtitle: "Building scalable solutions", description: "From frontend to backend, we craft fast, secure, and responsive web applications tailored to your goals.", image: "/images/branding-sample.png" },
-    { name: "Motion", subtitle: "Adding life to your brand", description: "With captivating animations and transitions, we help your digital presence come alive in meaningful ways.", image: "/images/branding-sample.png" },
+    { name: "UX Research & Discovery", subtitle: "Understand users before you build for them", description: "We run stakeholder interviews, competitive audits, and user journey mapping to surface the real friction points in your product — before a single screen is designed.", image: "/images/branding-sample.png" },
+    { name: "Wireframing & Prototyping", subtitle: "Test flows before committing to final design", description: "Low-fidelity wireframes and clickable Figma prototypes let you validate navigation, user flows, and feature logic with real users — catching problems at the cheapest moment in the process.", image: "/images/branding-sample.png" },
+    { name: "UI Design System", subtitle: "One source of truth for every component", description: "We build scalable design systems with documented components, token-based colour and typography, and Figma-to-code handoff specs that development teams can actually implement consistently.", image: "/images/branding-sample.png" },
+    { name: "Usability Testing & Iteration", subtitle: "Validation from real users, not internal assumptions", description: "Moderated and unmoderated usability sessions on final designs, with written findings and prioritised recommendations — so your next iteration is based on evidence, not opinion.", image: "/images/branding-sample.png" },
   ],
 
   whyTitle: "Why UI/UX Design Matters",
@@ -39,7 +39,7 @@ const data: ServicePageData = {
 
   workflowTitle: "Our Design Workflow",
   workflowSteps: [
-    { step: "Research & Discovery", desc: "We start by understanding user needs and business goals to define the core problem." },
+    { step: "Research & Discovery", desc: "Understanding user needs and business goals to define the core problem and design challenge." },
     { step: "Wireframing & Prototyping", desc: "Sketching out low to high fidelity layouts and building interactive prototypes for testing." },
     { step: "Visual Design", desc: "Crafting UI elements, typography, color systems, and layouts that align with your brand." },
     { step: "Usability Testing", desc: "Validating interface effectiveness through real-user feedback and iterative improvements." },
@@ -51,7 +51,7 @@ const data: ServicePageData = {
 
   whyUsTitle: "Why Work With Us?",
   whyUsCards: [
-    { title: "We Design with Purpose", desc: "Every pixel is intentional. We design not just to impress, but to drive results and engagement." },
+    { title: "We Design with Purpose", desc: "Every pixel is intentional. We design to drive results and engagement — not just to impress." },
     { title: "Pixel-Perfect Execution", desc: "We collaborate closely with development teams to ensure designs translate beautifully into real products." },
   ],
 };

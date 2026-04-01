@@ -10,14 +10,14 @@ const data: TechPageData = {
   stats: [
     { value: "75", label: "iOS Projects" },
     { value: "97%", label: "Positive Feedback" },
-    { value: "4.8?", label: "Average Rating" },
+    { value: "4.8★", label: "Average Rating" },
   ],
   heroImage: iOSImg,
   overviewSections: [
     {
       title: "What is iOS application development?",
       paragraphs: [
-        "iOS application development involves creating immersive, intuitive software experiences optimized specifically for Apple products like iPhone, iPad, and iPod Touch. It requires expertise across Apple's robust frameworks like SwiftUI, Xcode, and SDK alongside core competencies in Objective-C and Swift programming.",
+        "iOS application development involves creating immersive, intuitive software experiences optimized specifically for Apple products like iPhone and iPad. It requires deep expertise across Apple's modern frameworks — SwiftUI, Swift, Combine, and Xcode — alongside mastery of platform capabilities such as Core Data, Core Location, and ARKit.",
         "The iOS platform provides developers with advanced capabilities to build responsive, cutting-edge solutions through powerful frameworks like Core Animation, Core Data, Core Location, and more. ARKit, CoreML, and innovative sensor integrations also enable groundbreaking app possibilities.",
         "Ultimately, iOS development is the strategic fusion of technical skills and design vision to deliver seamless user experiences that leverage iOS technologies. It means understanding Apple's strict interface guidelines and keeping the end-user at the top of mind.",
       ],
@@ -28,7 +28,7 @@ const data: TechPageData = {
         "Our holistic iOS app development process starts with gaining in-depth insight into your business objectives, target audience needs, and success metrics. This shapes a strategic roadmap aligning technical capabilities with user expectations.",
         "We conceptualize innovative solutions through wireframes and interactive prototypes validated by user feedback. Agile app development integrates continuous client collaboration, while our robust architecture focuses on flexible, future-proof, and highly secure designs.",
         "Rigorous testing across every device and scenario ensures a polished, bug-free product ready for App Store deployment. We also provide ongoing maintenance and support, continuously optimizing and enhancing your app to evolve with user needs.",
-        "The result is a streamlined process built on transparency, user-centricity, and seamless collaboration � allowing us to translate ideas into tangible iOS solutions that users love.",
+        "The result is a streamlined process built on transparency, user-centricity, and seamless collaboration � allowing us to translate ideas into tangible iOS solutions that users love.",
       ],
     },
     {
@@ -63,11 +63,11 @@ const data: TechPageData = {
       image: "/images/ios/custom.png",
     },
     {
-      name: "iWatch App Development",
+      name: "Apple Watch App Development",
       subtitle: "Extend your iOS ecosystem conveniently to users' wrists",
       description:
-        "Extend your iOS ecosystem conveniently to users' wrists with our Apple Watch app development. We enable timely notifications, convenient app controls, and quick access to key information through wrist-based Apple Watch interactions.",
-      image: "/images/ios/iwatch.png",
+        "Extend your iOS ecosystem to users' wrists with native watchOS app development. We leverage Apple Watch's sensors, complications, and Siri integration to deliver timely notifications, health tracking features, and quick access to key information right from the wrist.",
+      image: "/images/ios/apple-watch.png",
     },
     {
       name: "Apple TV App Development",

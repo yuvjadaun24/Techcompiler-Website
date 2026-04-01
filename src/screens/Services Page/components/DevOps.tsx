@@ -5,7 +5,7 @@ const data: ServicePageData = {
   eyebrow: "DEVOPS",
   title: "DevOps",
   subtitle: "Speed, stability, and scalability \u2014 delivered continuously",
-  description: "Our DevOps services integrate development and operations for seamless, high-speed delivery of robust software solutions. By automating processes, aligning teams, and embracing cloud-native technologies, we create a culture of agility and reliability. Whether you're building from scratch or optimizing legacy systems, we accelerate your delivery pipeline while improving system resilience, observability, and scalability. Empower your teams with tools, workflows, and infrastructure designed for continuous improvement and innovation.",
+  description: "TechCompiler's DevOps practice automates the pipelines and infrastructure that engineering teams depend on every working day. We've implemented CI/CD toolchains, Kubernetes clusters, and infrastructure-as-code across SaaS, fintech, and enterprise environments — taking deployment frequency from weekly to daily and cutting mean incident response time. Our engineers cover the full toolchain: source control workflows, container builds, environment parity, and end-to-end observability from day one.",
   stats: [
     { value: "100+", label: "Successful Deployments" },
     { value: "95%", label: "Deployment Success Rate" },

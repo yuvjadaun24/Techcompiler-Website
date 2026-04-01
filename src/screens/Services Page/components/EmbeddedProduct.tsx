@@ -6,7 +6,7 @@ const data: ServicePageData = {
   eyebrow: "EMBEDDED SERVICES",
   title: "Embedded Services",
   subtitle: "Engineering smart, real-time embedded solutions",
-  description: "We specialize in developing customized embedded systems that power smart devices and critical hardware platforms. Our services span from firmware to UI for constrained environments, ensuring performance, efficiency, and real-time capability. Partner with us to innovate with intelligent, embedded technology tailored to your business vision.",
+  description: "TechCompiler engineers firmware, RTOS integration, and hardware-coupled software for IoT devices, industrial controllers, and consumer electronics. Our embedded team handles the complete development lifecycle: hardware requirements analysis, BSP bring-up, driver and middleware development, and field deployment with OTA update capability. We work in C/C++ on ARM Cortex, ESP32, and STM32 platforms using FreeRTOS and Zephyr.",
   stats: [
     { value: "75+", label: "Embedded Projects" },
     { value: "15+", label: "Industries Served" },

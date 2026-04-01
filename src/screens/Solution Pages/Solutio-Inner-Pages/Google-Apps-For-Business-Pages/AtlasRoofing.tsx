@@ -40,9 +40,9 @@ const AtlasRoofing = () => {
         <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 text-gray-700 text-lg list-disc list-inside">
           <li>Enterprise Applications</li>
-          <li>J2EE frameworks like Spring, Strut, and JSF</li>
-          <li>J2EE Design Patterns</li>
-          <li>Java Persistence API frameworks like Hibernate and TopLink</li>
+          <li>Java frameworks (Spring, Spring MVC, JSF)</li>
+          <li>Enterprise Java Design Patterns</li>
+          <li>JPA / Hibernate</li>
           <li>JSP, JSPX, Servlets, Custom Tags, JDBC, XML/XSL, EJB, JMS, JTA, and JUnit</li>
           <li>Google Apps Engine</li>
           <li>GSQL and database design</li>

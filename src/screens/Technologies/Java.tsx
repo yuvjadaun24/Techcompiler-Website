@@ -75,10 +75,10 @@ const data: TechPageData = {
       image: "/images/java/game-development.png",
     },
     {
-      name: "Java J2EE Development Services",
-      subtitle: "Robust and secure J2EE products",
+      name: "Jakarta EE / Enterprise Java Services",
+      subtitle: "Robust and secure enterprise Java applications",
       description:
-        "Harness the power of J2EE with Tech Compiler's comprehensive development services. Our experienced team utilizes top-tier Java web development practices to build robust, secure J2EE products tailored to your business needs.",
+        "Harness the full power of Jakarta EE and the modern Java ecosystem with TechCompiler's enterprise development services. Our experienced team builds scalable, cloud-native backend systems using Spring Boot, Jakarta EE, and microservices architectures tailored to your business needs.",
       image: "/images/java/j2ee-development.png",
     },
     {

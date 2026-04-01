@@ -5,7 +5,7 @@ const data: ServicePageData = {
   eyebrow: "FULL STACK DEVELOPMENT",
   title: "Full Stack Development",
   subtitle: "Build seamless digital experiences from front to back",
-  description: "Our Full Stack Development services cover every layer of modern applications\u2014combining compelling user interfaces with powerful backend systems. From interactive frontends to reliable APIs and optimized databases, we bring complete technical depth to your digital solutions.",
+  description: "TechCompiler's full-stack teams design and build production web and mobile applications across React, Angular, Node.js, Django, Spring Boot, and .NET. We handle everything from frontend component architecture and REST or GraphQL API design to database modelling and cloud deployment — delivering complete, tested systems with documented handover. Engagements run on fixed milestones with weekly progress reviews.",
   stats: [
     { value: "100+", label: "Projects Delivered" },
     { value: "92%", label: "Client Retention Rate" },
@@ -15,7 +15,7 @@ const data: ServicePageData = {
   overviewTitle: "What is Full Stack Development?",
   overviewParagraphs: [
     "Full Stack Development refers to the end-to-end building of web or mobile applications\u2014spanning both the client-side (frontend) and server-side (backend) components. A full stack team is equipped to handle everything from UI design to server logic, APIs, databases, and deployment.",
-    "It enables businesses to streamline development, reduce dependencies, and bring fully integrated solutions to life efficiently.",
+    "This enables businesses to streamline development, reduce cross-team dependencies, and ship fully integrated solutions with less coordination overhead.",
   ],
 
   servicesHeading: "Services we provide",

@@ -4,8 +4,8 @@ import type { ServicePageData } from "@/components/services/ServicePageLayout";
 const data: ServicePageData = {
   eyebrow: "DATABASE MIGRATION",
   title: "Database Migration Services",
-  subtitle: "Unleash business growth by migrating digital assets",
-  description: "In today's rapidly evolving digital landscape, organizations must adapt swiftly to remain competitive. Database migration services empower businesses to seamlessly transition their data ecosystems to unlock new possibilities. Our expert team meticulously plans and executes migrations, ensuring data integrity, minimizing downtime, and mitigating risks. Whether upgrading to cutting-edge technologies, consolidating disparate systems, or embracing cloud computing, our tailored solutions optimize performance, enhance scalability, and fortify security.",
+  subtitle: "Risk-managed database migrations with zero unplanned downtime and verifiable data integrity.",
+  description: "TechCompiler has migrated complex production databases across Oracle, SQL Server, PostgreSQL, Amazon RDS, and Snowflake — including in regulated environments where data loss is non-negotiable. Our three-phase process (validate, migrate, verify) keeps your application running throughout the cutover window, and every migration includes a pre-approved rollback plan before work begins.",
   stats: [
     { value: "99.9%", label: "Data Integrity Retention" },
     { value: "Zero", label: "Unplanned Downtime" },
@@ -14,8 +14,8 @@ const data: ServicePageData = {
 
   overviewTitle: "What is Database Migration?",
   overviewParagraphs: [
-    "Database migration is the process of transferring data between storage types, formats, or systems. It often includes moving to a new database platform or cloud service to increase efficiency and scalability.",
-    "Our structured approach to migration ensures accuracy, reduces risks, and minimizes downtime\u2014so your business keeps moving while your data evolves.",
+    "Database migration is the process of moving data from one storage system, platform, or schema to another. Common scenarios include moving an on-premises SQL Server database to Amazon RDS, consolidating multiple databases after a company acquisition, or upgrading from a legacy Oracle schema to PostgreSQL to reduce licensing costs.",
+    "The risk in any migration is data loss, schema incompatibility, and application downtime during the cutover. Our structured approach addresses all three: we run a full schema analysis and compatibility check, build automated validation scripts to compare row counts and checksums before and after transfer, and schedule the actual cutover in a low-traffic window with a tested rollback procedure ready to execute.",
   ],
 
   servicesHeading: "Services we provide",

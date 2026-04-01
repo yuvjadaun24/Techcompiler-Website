@@ -4,8 +4,8 @@ import type { ServicePageData } from "@/components/services/ServicePageLayout";
 const data: ServicePageData = {
   eyebrow: "MANAGED IT SERVICES",
   title: "Managed IT Services",
-  subtitle: "Elevate your digital prowess with managed IT services",
-  description: "Navigating the ever-evolving digital landscape can be daunting, but with our managed IT services, you can focus on driving your core business while we handle the complexities of technology. Our team of certified experts proactively monitors, maintains, and optimizes your IT infrastructure, ensuring seamless operations, enhanced cybersecurity, and cost-effective solutions. From cloud computing and data management to network administration and helpdesk support, we provide comprehensive services tailored to your unique needs. By partnering with you, we can help you mitigate risks, all while unlocking the full potential of technology.",
+  subtitle: "Proactive IT management that keeps your systems running and your engineering team focused on product.",
+  description: "TechCompiler's Managed IT practice handles monitoring, patching, helpdesk support, and infrastructure maintenance for clients across North America and Asia-Pacific. We operate on a predictable monthly subscription — covering your entire IT estate so internal staff can concentrate on strategic work instead of reactive firefighting. Clients on our managed services programme average 99.9% system uptime and a 40% reduction in IT operational costs.",
   stats: [
     { value: "99.9%", label: "System Uptime Ensured" },
     { value: "24/7", label: "Monitoring & Support" },
@@ -14,8 +14,8 @@ const data: ServicePageData = {
 
   overviewTitle: "What are Managed IT Services?",
   overviewParagraphs: [
-    "Managed IT services involve outsourcing your IT management responsibilities to experts who proactively monitor, maintain, and support your infrastructure. This includes everything from network and server management to cybersecurity and user support.",
-    "Our goal is to ensure your technology works for you\u2014boosting efficiency, reducing costs, and minimizing risks\u2014so you can concentrate on what matters most: growing your business.",
+    "Managed IT services means transferring day-to-day technology operations — monitoring, patching, helpdesk, backup, and security — to a specialist provider who owns the outcomes, not just the effort. For most businesses, this is more cost-effective than maintaining internal IT staff who spend the majority of their time on reactive support rather than strategic work.",
+    "Our managed services are delivered on a fixed monthly fee that covers your full IT estate. You get a named account manager, documented SLAs with financial penalties for misses, and a quarterly business review that benchmarks your infrastructure health against the previous period.",
   ],
 
   servicesHeading: "Services we provide",

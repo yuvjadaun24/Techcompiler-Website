@@ -4,8 +4,8 @@ import type { ServicePageData } from "@/components/services/ServicePageLayout";
 const data: ServicePageData = {
   eyebrow: "DIGITAL TRANSFORMATION",
   title: "Digital Transformation",
-  subtitle: "Unleash strategic transformations with digital dominance",
-  description: "In today's rapidly evolving digital landscape, businesses must embrace transformative strategies to stay ahead of the curve. Our comprehensive digital transformation services empower organizations to unlock new realms of innovation, agility, and customer-centricity. Through a meticulously crafted approach, we revolutionize processes, integrate cutting-edge technologies, and cultivate a digital-first mindset across all facets of operations. Our seasoned experts navigate the intricate complexities, delivering tailored solutions that propel businesses toward unprecedented growth and market dominance. From streamlining workflows to harnessing data-driven insights, we architect future-proof digital ecosystems that foster operational excellence, enhance customer engagement, and drive sustainable competitive advantages.",
+  subtitle: "Structured modernisation that replaces operational bottlenecks with measurable, repeatable gains.",
+  description: "TechCompiler's digital transformation practice helps mid-market and enterprise clients retire legacy systems, automate manual processes, and move to cloud-native infrastructure. Engagements begin with a two-week discovery sprint — producing a prioritised roadmap tied to your business KPIs, not a generic maturity model. We've delivered 50+ transformation programmes across retail, logistics, financial services, and public sector.",
   stats: [
     { value: "50+", label: "Digital Success Stories" },
     { value: "98%", label: "Client Retention Rate" },
@@ -14,8 +14,8 @@ const data: ServicePageData = {
 
   overviewTitle: "What is digital transformation?",
   overviewParagraphs: [
-    "Digital transformation is the integration of digital technology into all areas of a business, fundamentally changing how you operate and deliver value to customers. It involves reimagining processes, encouraging a digital culture, and making strategic use of technology to adapt and grow in an evolving landscape.",
-    "Whether it's adopting automation, modernizing legacy systems, migrating to the cloud, or leveraging AI-driven insights, digital transformation ensures you're equipped to respond faster to market demands and deliver enhanced customer experiences.",
+    "Digital transformation is the work of replacing inefficient manual or legacy processes with technology that runs faster, generates less error, and produces data you can act on. That definition sounds obvious, but the execution is where most programmes stall — because transformation touches people and processes, not just software.",
+    "Our approach starts with a current-state audit and a clear model of what the business needs to be true 12 months from now. We then build a sequenced programme of technology changes — cloud migration, process automation, system integration, or data infrastructure — that can be delivered incrementally without shutting down day-to-day operations.",
   ],
 
   servicesHeading: "Services we provide",

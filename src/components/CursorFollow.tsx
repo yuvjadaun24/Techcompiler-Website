@@ -8,6 +8,7 @@ export default function CursorFollower() {
         const cursor = cursorRef.current;
         let mouseX = 0;
         let mouseY = 0;
+        let animFrameId = 0;
 
         const moveCursor = (e: MouseEvent) => {
             mouseX = e.clientX;
@@ -15,16 +16,17 @@ export default function CursorFollower() {
         };
 
         const animate = () => {
-            if (cursor) {
+            if (!(window as any).__tabHidden && cursor) {
                 cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
             }
-            requestAnimationFrame(animate);
+            animFrameId = requestAnimationFrame(animate);
         };
 
         window.addEventListener("mousemove", moveCursor);
-        animate();
+        animFrameId = requestAnimationFrame(animate);
 
         return () => {
+            cancelAnimationFrame(animFrameId);
             window.removeEventListener("mousemove", moveCursor);
         };
     }, []);

@@ -275,6 +275,7 @@ const WorkSection: React.FC = () => {
               duration: 0.8,
               stagger: { amount: 0.5, ease: "power2.out" },
               ease: "title",
+              onComplete() { gsap.set(lines, { clearProps: "willChange" }); },
               scrollTrigger: {
                 trigger: headerRef.current,
                 start: "top 80%",

@@ -5,7 +5,7 @@ const data: ServicePageData = {
   eyebrow: "DATA ANALYTICS",
   title: "Data Analytics",
   subtitle: "Transform data into decisions, and decisions into impact",
-  description: "In today's digital world, data is your most powerful asset. Our Data Analytics services empower organizations to collect, process, and interpret data to drive smarter business strategies. From foundational data infrastructure to predictive analytics, we help turn raw numbers into business value\u2014enhancing operations, customer experiences, and growth.",
+  description: "TechCompiler's data analytics practice helps businesses move from spreadsheet reporting to production-grade analytics infrastructure. We build the pipelines that clean, unify, and model your data, then deliver the dashboards and machine learning models that let operations and product teams act on it without waiting for an analyst. Our work covers data strategy, ETL engineering, statistical modelling, and real-time visualisation on Power BI, Tableau, and bespoke dashboards.",
   stats: [
     { value: "50TB+", label: "Data Processed Monthly" },
     { value: "99.9%", label: "Data Accuracy Rate" },
@@ -15,7 +15,7 @@ const data: ServicePageData = {
   overviewTitle: "What is Data Analytics?",
   overviewParagraphs: [
     "Data Analytics is the science of examining raw data to uncover trends, draw conclusions, and support decision-making. It covers a range of techniques from simple reporting and visualization to predictive modeling and machine learning.",
-    "Whether you're aiming to reduce costs, improve customer experiences, or innovate new products, data analytics offers the clarity and foresight needed to succeed in a competitive market.",
+    "Whether you're aiming to reduce costs, improve customer experiences, or develop new products, data analytics provides the clarity and evidence to make those decisions with confidence.",
   ],
 
   servicesHeading: "Services we provide",

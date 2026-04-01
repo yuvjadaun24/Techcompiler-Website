@@ -34,7 +34,7 @@ const WeddingGuide = () => {
                 <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 text-gray-700 text-lg list-disc list-inside">
                     <li>Android SDK</li>
-                    <li>iOS 6.0</li>
+                    <li>iOS SDK</li>
                 </ul>
             </section>
 

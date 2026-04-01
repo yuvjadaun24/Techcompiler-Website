@@ -5,8 +5,8 @@ import infraServices from "../../../assets/infraservices.png";
 const data: ServicePageData = {
   eyebrow: "INFRASTRUCTURE SERVICES",
   title: "Infrastructure Services",
-  subtitle: "Powering business excellence with robust IT infrastructure",
-  description: "Harness the power of the latest IT infrastructure solutions tailored to your business needs. Our complete services encompass strategic plans, implementation, and ongoing support, ensuring your corporation operates at peak performance. With contemporary technology, expert guidance, and a dedication to excellence, we empower you to achieve seamless operations, scalability, and a competitive edge in the digital landscape.",
+  subtitle: "Cloud and on-premises infrastructure designed for 99.99% uptime — and built to scale when you need it.",
+  description: "TechCompiler designs, provisions, and manages IT infrastructure for businesses running on AWS, Azure, and Google Cloud. We handle network architecture, security hardening, auto-scaling, and 24/7 monitoring — so your engineering teams can ship product instead of managing servers. Our infrastructure practice has delivered 60+ projects across SaaS platforms, financial services firms, and high-traffic consumer applications.",
   stats: [
     { value: "60+", label: "Infrastructure Projects" },
     { value: "99.99%", label: "Uptime Achieved" },
@@ -16,12 +16,12 @@ const data: ServicePageData = {
 
   overviewTitle: "What are Infrastructure Services?",
   overviewParagraphs: [
-    "IT infrastructure refers back to the mixed set of hardware, software, networks, facilities, and related equipment utilized to develop, test, deliver, manipulate, and help IT services and packages. It serves as the backbone that allows organizations to function effectively and successfully in the evolving digital landscape.",
-    "Our IT infrastructure typically consists of several key components:",
+    "IT infrastructure is the combination of hardware, software, networks, and facilities that an organisation uses to run its technology operations. When it's designed well, it's invisible — applications load instantly, data is secure, and teams can work without IT becoming a bottleneck. When it's poorly designed, it consumes engineering time, causes outages, and blocks product development.",
+    "Our infrastructure services cover the full stack: cloud provisioning and cost optimisation on AWS, Azure, and GCP; network design and security hardening; CI/CD pipelines and container orchestration; and 24/7 monitoring and incident response. We work alongside your internal team or take full ownership, depending on what you need.",
   ],
   overviewList: [
     { label: "Computer Hardware", text: "This includes servers, storage systems, workstations, and other physical devices that process, store, and transmit data." },
-    { label: "Operating Systems", text: "These software program structures manage the hardware resources and provide a basis for current packages and services." },
+    { label: "Operating Systems", text: "Operating systems manage hardware resources and provide the runtime platform on which applications and services run." },
     { label: "Networks", text: "Wired and wireless networks, including LANs, WANs, and internet connectivity, facilitate data communication and resource sharing." },
     { label: "Virtualization", text: "Technologies like virtualization allow for efficient resource utilization and scalability by creating virtual instances of hardware, operating systems, and applications." },
     { label: "Data Centers and Facilities", text: "Physical spaces designed to house and support IT infrastructure resources, ensuring proper power, cooling, and security." },

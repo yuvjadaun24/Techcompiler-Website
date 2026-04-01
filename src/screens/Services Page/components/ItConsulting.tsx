@@ -5,7 +5,7 @@ const data: ServicePageData = {
   eyebrow: "IT CONSULTING",
   title: "IT Consulting",
   subtitle: "Empowering business decisions through expert IT guidance",
-  description: "In a world where technology evolves rapidly, IT Consulting ensures your organization makes informed, future-ready decisions. We partner with businesses to align technology strategy with goals, assess current systems, and implement transformative solutions. Our consultants bring industry knowledge and technical expertise to help you overcome operational challenges, reduce risk, and achieve measurable results.",
+  description: "TechCompiler's IT Consulting practice connects technology decisions to business outcomes. We partner with leadership teams to assess current-state systems, align technology strategy with business goals, and define the sequenced roadmap that bridges the gap. Our consultants bring hands-on delivery experience — not just frameworks — across strategy, architecture, and transformation programmes.",
   stats: [
     { value: "25+", label: "Industries Consulted" },
     { value: "95%", label: "Client Satisfaction Rate" },

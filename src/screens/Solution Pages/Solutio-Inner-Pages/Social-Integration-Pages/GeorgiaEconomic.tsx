@@ -24,7 +24,7 @@ const GeorgiaEconomicDevelopment = () => {
             <section className="mb-12">
                 <h2 className="text-4xl font-light text-gray-800 mb-6">TechCompiler Solution</h2>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                    TechCompiler designed a user-friendly responsive web application which provided a Health IQ Test to cater to GDEcD's vision. Participants were able to take the Health IQ Test on any desktop or mobile device of their preference, as well as share scores on their favorite social media channels like Facebook, Twitter, and Google+.
+                    TechCompiler designed a user-friendly responsive web application which provided a Health IQ Test to cater to GDEcD's vision. Participants were able to take the Health IQ Test on any desktop or mobile device of their preference, as well as share scores on their favorite social media channels like Facebook, Twitter, and LinkedIn.
                 </p>
             </section>
 
@@ -32,9 +32,9 @@ const GeorgiaEconomicDevelopment = () => {
                 <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 text-gray-700 text-lg list-disc list-inside">
                     <li>Enterprise Applications</li>
-                    <li>J2EE frameworks like Spring, Strut, and JSF</li>
-                    <li>J2EE Design Patterns</li>
-                    <li>Java Persistence API frameworks like Hibernate</li>
+                    <li>Java frameworks (Spring, Spring MVC, JSF)</li>
+                    <li>Enterprise Java Design Patterns</li>
+                    <li>JPA / Hibernate</li>
                     <li>JSP, JSPX, Servlets, Custom Tags, JDBC, XML/XSL, and JUnit</li>
                     <li>Google Apps Engine</li>
                     <li>MySQL</li>
@@ -45,7 +45,7 @@ const GeorgiaEconomicDevelopment = () => {
             <section>
                 <h2 className="text-4xl font-light text-gray-800 mb-6">How It Works</h2>
                 <p className="text-gray-700 leading-relaxed text-lg mb-6">
-                    This system is a responsive web application, allowing users to take the quiz on any desktop or mobile device of their preference, as well as share scores on their favorite social media channels like Facebook, Twitter, and Google+.
+                    This system is a responsive web application, allowing users to take the quiz on any desktop or mobile device of their preference, as well as share scores on their favorite social media channels like Facebook, Twitter, and LinkedIn.
                 </p>
             </section>
 

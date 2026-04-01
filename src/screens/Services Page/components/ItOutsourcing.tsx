@@ -4,8 +4,8 @@ import type { ServicePageData } from "@/components/services/ServicePageLayout";
 const data: ServicePageData = {
   eyebrow: "IT OUTSOURCING",
   title: "IT Outsourcing",
-  subtitle: "Elevate your business with seamless IT outsourcing",
-  description: "In this digital landscape, companies are seeking agility, expertise, and cost-efficiency. Our IT outsourcing services provide a strategic solution, empowering you to focus on your core competencies even as we handle your technology needs. With our highly skilled professionals, cutting-edge technologies, and a consumer-centric method, we deliver tailored solutions that drive innovation, optimize processes, and enhance your value. From software program development to cybersecurity, cloud computing to data analytics, our complete services make certain seamless integration and maximum price. Leverage our industry expertise and global talent pool to stay ahead of the curve, reduce operational costs, and unlock new growth opportunities.",
+  subtitle: "Extend your engineering capacity with specialists who integrate into your workflow from day one.",
+  description: "TechCompiler provides dedicated development teams, staff augmentation, and project-based delivery for clients across North America, Europe, and Asia-Pacific. Engagements start in weeks, not months — our teams adopt your tools, your sprint cadence, and your code standards. Clients typically reduce time-to-market by 2× and cut IT operational costs by up to 50% versus equivalent in-house hiring.",
   stats: [
     { value: "50%", label: "Operational Cost Savings" },
     { value: "24/7", label: "Global IT Support" },
@@ -14,8 +14,8 @@ const data: ServicePageData = {
 
   overviewTitle: "What is IT Outsourcing?",
   overviewParagraphs: [
-    "IT outsourcing is the practice of hiring external service providers to handle your technology operations. Whether it's development, infrastructure, security, or support, we take over the heavy lifting while you stay focused on business growth.",
-    "Our outsourcing model combines technical expertise, global delivery, and innovative tools to maximize value, minimize risk, and deliver measurable outcomes.",
+    "IT outsourcing means engaging an external team to own part of your technology workload — whether that's a complete product build, a specific function like DevOps or QA, or individual engineers who join your existing squad. The business case is straightforward: specialist capability, faster capacity scaling, and lower overhead than full-time hiring in high-cost markets.",
+    "TechCompiler's outsourcing model is built around integration, not isolation. Our developers join your Slack, commit to your repository, attend your standups, and are measured against your KPIs — not a separate set of internal SLA metrics. The result is output that looks and feels like it came from your own team.",
   ],
 
   servicesHeading: "Services we provide",

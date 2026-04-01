@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import "../../../../components/ui/accordion";
 import "../../../../components/ui/card";
 import "../../../../components/animations/FadeIn";
@@ -25,6 +26,7 @@ export const MainByAnima = (): JSX.Element => {
 
   return (
     <div className="flex flex-col w-full items-start">
+      <PageMeta />
       {/* ── New AI Agent Hero Section ─────────────────────── */}
       <HeroSection />
 

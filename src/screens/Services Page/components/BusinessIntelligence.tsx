@@ -4,8 +4,8 @@ import type { ServicePageData } from "@/components/services/ServicePageLayout";
 const data: ServicePageData = {
   eyebrow: "BUSINESS INTELLIGENCE",
   title: "Business Intelligence Services",
-  subtitle: "Unveil profound insights using our business intelligence services",
-  description: "Business intelligence services empower organizations by transforming raw data into actionable insights, driving informed decision-making and fueling growth strategies. Our comprehensive BI solutions harness the power of advanced analytics, data visualization, and reporting to provide a holistic view of your business landscape. Gain a competitive edge by uncovering hidden trends, optimizing operations, and identifying untapped opportunities. Elevate your organization's performance with our expert business intelligence services, unlocking the true potential of your data for sustained success.",
+  subtitle: "Centralised data, clear dashboards, and analytics your operations team can run without a data scientist.",
+  description: "TechCompiler builds business intelligence infrastructure that gives finance, operations, and product teams direct access to the numbers that matter — without routing every question through an analyst. We've delivered 75+ BI projects across retail, logistics, and financial services, covering data warehouse design, ETL pipeline engineering, and Power BI and Tableau dashboard development.",
   stats: [
     { value: "75+", label: "BI Projects Delivered" },
     { value: "92%", label: "Faster Insights for Clients" },
@@ -14,7 +14,7 @@ const data: ServicePageData = {
 
   overviewTitle: "What is Business Intelligence?",
   overviewParagraphs: [
-    "Business Intelligence (BI) encompasses the tools, technologies, and strategies used to analyze and interpret data to support informed business decisions. It allows organizations to harness data from various sources, offering a clear picture of operations and opportunities.",
+    "Business Intelligence is the practice of collecting data from across your organisation — sales systems, ERP, CRM, web analytics, operational databases — consolidating it in one place, and presenting it in a format that non-technical decision makers can use without help. The technology is secondary; the hard work is modelling your data correctly so that numbers in a dashboard mean the same thing to everyone who reads them.",
     "Key components of our BI offerings include:",
   ],
   overviewList: [
@@ -31,7 +31,7 @@ const data: ServicePageData = {
   services: [
     { name: "Data Warehousing", subtitle: "Centralized data storage & retrieval", description: "Our BI solutions start with robust data warehousing, ensuring all your data is clean, accessible, and ready for insightful analysis.", image: "/images/bi-datawarehouse.png" },
     { name: "Data Visualization", subtitle: "Interactive dashboards & reports", description: "We transform complex data into intuitive dashboards using tools like Power BI, Tableau, and Looker to enable faster decision-making.", image: "/images/bi-visualization.png" },
-    { name: "Predictive Analytics", subtitle: "Forecast trends & behavior", description: "Utilize historical data to forecast future outcomes and make strategic decisions with confidence using machine learning and AI models.", image: "/images/bi-predictive.png" },
+    { name: "Predictive Analytics", subtitle: "Forecast trends & behavior", description: "We use historical data and machine learning models to forecast future outcomes, surface leading indicators, and support confident strategic decisions.", image: "/images/bi-predictive.png" },
     { name: "Self-Service BI", subtitle: "Empowering business users", description: "We enable your teams with self-service BI capabilities, eliminating bottlenecks and democratizing access to key data insights.", image: "/images/bi-selfservice.png" },
   ],
 

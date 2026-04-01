@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import React, { useEffect, useRef, PropsWithChildren } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -100,6 +101,7 @@ const SolutionCategoryLayout: React.FC<PropsWithChildren<SolutionCategoryLayoutP
 
   return (
     <div ref={pageRef} style={{ background: C.bg, color: C.ink }}>
+      <PageMeta />
       <div style={{ borderBottom: `1px solid ${C.inkDim}` }} className="max-w-6xl mx-auto px-4 sm:px-8">
         {/* Hero/children remain provided by pages — layout only provides the canvas and utilities */}
       </div>

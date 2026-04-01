@@ -1,3 +1,4 @@
+import PageMeta from "@/seo/PageMeta";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
@@ -342,6 +343,7 @@ export default function ServicePageLayout({ data }: { data: ServicePageData }) {
 
   return (
     <div ref={pageRef} style={{ fontFamily: FONT, background: C.bg, color: C.ink }}>
+      <PageMeta />
 
       {/* ════════ SECTION 1 — HERO ════════ */}
       <section style={{ ...SECTION_PAD, borderBottom: `1px solid ${C.inkDim}` }}>

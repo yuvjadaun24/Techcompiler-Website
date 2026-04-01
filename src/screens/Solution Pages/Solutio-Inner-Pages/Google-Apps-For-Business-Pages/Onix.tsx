@@ -44,7 +44,7 @@ const Onix = () => {
       <section className="mb-16">
         <h2 className="text-4xl font-light text-gray-800 mb-6">Technology Used</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-3 text-gray-700 text-lg list-disc list-inside">
-          <li>Java/J2EE</li>
+          <li>Jakarta EE (Java)</li>
           <li>Google Data Store</li>
           <li>Various Google APIs and SDKs</li>
           <li>Google App Engine (GAE)</li>

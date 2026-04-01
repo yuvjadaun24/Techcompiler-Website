@@ -135,38 +135,42 @@ const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
 
   // ── Open / Close animation ──
   useEffect(() => {
-    if (isOpen && !wasOpen.current) {
-      wasOpen.current = true;
+    const ctx = gsap.context(() => {
+      if (isOpen && !wasOpen.current) {
+        wasOpen.current = true;
 
-      if (backdropRef.current) {
-        gsap.fromTo(backdropRef.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 });
-      }
-      if (drawerRef.current) {
-        gsap.to(drawerRef.current, { x: 0, duration: 0.52, ease: 'slide' });
+        if (backdropRef.current) {
+          gsap.fromTo(backdropRef.current, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.35 });
+        }
+        if (drawerRef.current) {
+          gsap.to(drawerRef.current, { x: 0, duration: 0.52, ease: 'slide' });
+        }
+
+        // Stagger items in
+        const items = drawerItemRefs.current.filter(Boolean);
+        if (items.length) {
+          gsap.fromTo(
+            items,
+            { autoAlpha: 0, x: 24 },
+            { autoAlpha: 1, x: 0, duration: 0.4, stagger: 0.055, ease: 'nav', delay: 0.15 }
+          );
+        }
       }
 
-      // Stagger items in
-      const items = drawerItemRefs.current.filter(Boolean);
-      if (items.length) {
-        gsap.fromTo(
-          items,
-          { autoAlpha: 0, x: 24 },
-          { autoAlpha: 1, x: 0, duration: 0.4, stagger: 0.055, ease: 'nav', delay: 0.15 }
-        );
-      }
-    }
+      if (!isOpen && wasOpen.current) {
+        wasOpen.current = false;
 
-    if (!isOpen && wasOpen.current) {
-      wasOpen.current = false;
+        if (drawerRef.current) {
+          gsap.to(drawerRef.current, { x: '100%', duration: 0.38, ease: 'power3.in' });
+        }
+        if (backdropRef.current) {
+          gsap.to(backdropRef.current, { autoAlpha: 0, duration: 0.3 });
+        }
+        setOpenAccordion(null);
+      }
+    });
 
-      if (drawerRef.current) {
-        gsap.to(drawerRef.current, { x: '100%', duration: 0.38, ease: 'power3.in' });
-      }
-      if (backdropRef.current) {
-        gsap.to(backdropRef.current, { autoAlpha: 0, duration: 0.3 });
-      }
-      setOpenAccordion(null);
-    }
+    return () => ctx.revert();
   }, [isOpen]);
 
   // ── Escape key ──

@@ -29,7 +29,7 @@ const PerfectWeddingGuide = () => {
           The search feature within the website was made using Solr, providing the capability to search vendors/services on the basis of Latitude/Longitude or zip codes.
         </p>
         <p className="text-gray-700 leading-relaxed text-lg">
-          All pages were linked to social media platforms like Facebook, Twitter, Pinterest, and Google+.
+          All pages were linked to social media platforms like Facebook, Instagram, Twitter, and Pinterest.
         </p>
       </section>
 
