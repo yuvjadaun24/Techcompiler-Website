@@ -50,14 +50,14 @@ const row2Logos = [
 
 const STATS_HERO = [
   { value: 12, suffix: "+", label: "Industries" },
-  { value: 150, suffix: "+", label: "Projects Delivered" },
+  { value: 80, suffix: "+", label: "Projects Delivered" }, //THis is a test comment
   { value: 100, suffix: "%", label: "Delivery Rate" },
 ];
 
 const STATS_CARD = [
-  { value: 150, suffix: "+", label: "Projects Delivered" },
+  { value: 80, suffix: "+", label: "Projects Delivered" },
   { value: 100, suffix: "%", label: "Client Satisfaction" },
-  { value: 8, suffix: "+", label: "Years in Business" },
+  { value: 15, suffix: "+", label: "Years in Business" },
 ];
 
 function revealUp(el: Element | null, delay = 0) {
