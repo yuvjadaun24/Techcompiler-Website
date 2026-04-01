@@ -460,13 +460,13 @@ export const FooterByAnima = (): JSX.Element => {
         >
           TechCompiler Data Systems Pvt. Ltd.
         </span>
-        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+        {/* <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <LegalLink label="Privacy Policy" />
           <span style={{ color: "rgba(255,255,255,0.15)", fontSize: 11 }}>Â·</span>
           <LegalLink label="Terms of Service" />
           <span style={{ color: "rgba(255,255,255,0.15)", fontSize: 11 }}>Â·</span>
           <LegalLink label="Sitemap" />
-        </div>
+        </div> */}
         <span
           style={{
             fontFamily: "DM Mono, monospace",

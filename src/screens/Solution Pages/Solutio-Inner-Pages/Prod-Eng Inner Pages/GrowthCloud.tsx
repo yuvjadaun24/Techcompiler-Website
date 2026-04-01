@@ -1,3 +1,9 @@
+import GrowthCloud1 from "@/assets/Project-Images/GrowthCloud-1.png";
+import GrowthCloud2 from "@/assets/Project-Images/GrowthCloud-2.png";
+import GrowthCloud3 from "@/assets/Project-Images/GrowthCloud-3.png";
+import GrowthCloud4 from "@/assets/Project-Images/GrowthCloud-4.png";
+import GrowthCloud5 from "@/assets/Project-Images/GrowthCloud-5.png";
+
 const GrowthCloud = () => {
   return (
     <div className="container mx-auto p-8 rounded-lg">
@@ -43,6 +49,17 @@ const GrowthCloud = () => {
           integrated cloud file storage, real-time collaboration, third-party app integrations (Slack, GitHub, Google
           Workspace), and usage-based billing management.
         </p>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-4xl font-light text-gray-800 mb-8">Platform Gallery</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <img src={GrowthCloud1} alt="GrowthCloud Dashboard" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={GrowthCloud2} alt="GrowthCloud Sprint Management" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={GrowthCloud3} alt="GrowthCloud Collaboration" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={GrowthCloud4} alt="GrowthCloud Tasks" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={GrowthCloud5} alt="GrowthCloud Analytics" className="rounded-lg shadow-lg w-full h-auto" />
+        </div>
       </section>
 
       <section className="mb-16">

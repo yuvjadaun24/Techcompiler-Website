@@ -127,7 +127,7 @@ const WorkSection: React.FC = () => {
   const categoryRefs= useRef<(HTMLDivElement | null)[]>([]);
   const descRefs    = useRef<(HTMLDivElement | null)[]>([]);
   const tagRefs     = useRef<(HTMLDivElement | null)[]>([]);
-  const ctaRefs     = useRef<(HTMLAnchorElement | null)[]>([]);
+  const ctaRefs     = useRef<(HTMLDivElement | null)[]>([]);
   const lineRefs    = useRef<(HTMLSpanElement | null)[]>([]);
   const imageFrameRefs = useRef<(HTMLDivElement | null)[]>([]);
   const imageRefs   = useRef<(HTMLImageElement | null)[]>([]);
@@ -583,6 +583,7 @@ const WorkSection: React.FC = () => {
           <div
             key={i}
             className="mobile-project-card"
+            onClick={() => navigate(p.href)}
             style={{
               background: "rgba(10,14,26,0.03)",
               border: `1px solid rgba(10,14,26,0.08)`,
@@ -590,11 +591,22 @@ const WorkSection: React.FC = () => {
               borderRadius: 20,
               padding: 28,
               marginBottom: 20,
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderBottomColor = C.accent;
+              (e.currentTarget as HTMLElement).style.background = "rgba(10,14,26,0.05)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderBottomColor = "rgba(200,255,0,0.4)";
+              (e.currentTarget as HTMLElement).style.background = "rgba(10,14,26,0.03)";
             }}
           >
             <img
               src={p.image}
               alt={p.title}
+              onClick={() => navigate(p.href)}
               style={{
                 width: "100%",
                 height: 180,
@@ -603,6 +615,7 @@ const WorkSection: React.FC = () => {
                 borderRadius: 12,
                 filter: "grayscale(15%)",
                 marginBottom: 20,
+                cursor: "pointer",
               }}
             />
 
@@ -693,7 +706,7 @@ const WorkSection: React.FC = () => {
               ))}
             </div>
 
-            <a
+            <div
               onClick={() => navigate(p.href)}
               style={{
                 display: "inline-flex",
@@ -710,7 +723,7 @@ const WorkSection: React.FC = () => {
               }}
             >
               View &rarr;
-            </a>
+            </div>
           </div>
         ))}
 
@@ -1190,7 +1203,7 @@ const WorkSection: React.FC = () => {
                   </div>
 
                   {/* CTA */}
-                  <a
+                  <div
                     ref={(el) => { ctaRefs.current[i] = el; }}
                     onClick={() => navigate(p.href)}
                     onMouseEnter={() => onCtaEnter(i)}
@@ -1221,7 +1234,7 @@ const WorkSection: React.FC = () => {
                       }}
                     />
                     View Project &rarr;
-                  </a>
+                  </div>
                 </div>
 
                 {/* ── Right zone (48vw) ── */}
@@ -1242,14 +1255,22 @@ const WorkSection: React.FC = () => {
                   <div
                     ref={(el) => { imageFrameRefs.current[i] = el; }}
                     className="project-image-frame"
+                    onClick={() => navigate(p.href)}
                     style={{
                       position: "relative",
                       width: "clamp(320px, 38vw, 520px)",
                       height: "clamp(220px, 50vh, 360px)",
                       borderRadius: 16,
                       overflow: "hidden",
-                      cursor: "none",
+                      cursor: "pointer",
                       border: "1px solid rgba(10,14,26,0.08)",
+                      transition: "border-color 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = C.accent;
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.borderColor = "rgba(10,14,26,0.08)";
                     }}
                   >
                     <img

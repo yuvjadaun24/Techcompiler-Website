@@ -1,3 +1,8 @@
+import RCC1 from "@/assets/Project-Images/RCC-1.png";
+import RCC2 from "@/assets/Project-Images/RCC-2.png";
+import RCC3 from "@/assets/Project-Images/RCC-3.png";
+import RCC4 from "@/assets/Project-Images/RCC-4.png";
+
 const RCCTVStreamDirector = () => {
   return (
     <div className="container mx-auto p-8 rounded-lg">
@@ -44,6 +49,16 @@ const RCCTVStreamDirector = () => {
           and content insertion, live stream monitoring dashboard, content library with metadata tagging, role-based
           access for operators and administrators, and delivery analytics and playback reporting.
         </p>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-4xl font-light text-gray-800 mb-8">Platform Gallery</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <img src={RCC1} alt="RCC TV Stream Director Dashboard" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={RCC2} alt="RCC TV Content Scheduling" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={RCC3} alt="RCC TV Stream Management" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={RCC4} alt="RCC TV Analytics" className="rounded-lg shadow-lg w-full h-auto" />
+        </div>
       </section>
 
       <section className="mb-16">

@@ -1,3 +1,8 @@
+import Emerge1 from "@/assets/Project-Images/Emerge-1.jpg";
+import Emerge2 from "@/assets/Project-Images/Emerge-2.png";
+import Emerge3 from "@/assets/Project-Images/Emerge-3.png";
+import Emerge4 from "@/assets/Project-Images/Emerge-4.png";
+
 const Emerge360 = () => {
   return (
     <div className="container mx-auto p-8 rounded-lg">
@@ -42,6 +47,16 @@ const Emerge360 = () => {
           Key features delivered include: AI-driven KPI tracking, customizable reporting dashboards, client portfolio
           management, automated alerts and recommendations, multi-tenant architecture, and secure client data isolation.
         </p>
+      </section>
+
+      <section className="mb-16">
+        <h2 className="text-4xl font-light text-gray-800 mb-8">Platform Gallery</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <img src={Emerge1} alt="Emerge 360 Dashboard" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={Emerge2} alt="Emerge 360 Analytics" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={Emerge3} alt="Emerge 360 Insights" className="rounded-lg shadow-lg w-full h-auto" />
+          <img src={Emerge4} alt="Emerge 360 Reporting" className="rounded-lg shadow-lg w-full h-auto" />
+        </div>
       </section>
 
       <section className="mb-16">
