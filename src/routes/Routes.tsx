@@ -1,7 +1,7 @@
 import Container from "@/layout/Container"
 import { MainByAnima } from "@/screens/Container/sections/Hero Element";
 import ServicePage from "@/screens/Services Page";
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, Navigate } from "react-router-dom"
 import ContactUs from "@/screens/ContactUs/ContactUs";
 import UiUxDesigning from "@/screens/Services Page/components/UiUxDesign";
 import InfraServices from "@/screens/Services Page/components/InfrastructureServices";
@@ -383,6 +383,9 @@ const AllRoutes = () => {
                     path="/ai-agent"
                     element={<Container children={<AIAgentPage />} />}
                 />
+
+                {/* Catch-all: redirect unknown routes to home */}
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Route>    
         </Routes>
     );

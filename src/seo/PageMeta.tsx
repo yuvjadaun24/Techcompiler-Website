@@ -2,12 +2,12 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { getRouteMeta, type RouteMeta } from "./seoConfig";
 
-const BASE_URL = "https://techcompiler.com";
+const BASE_URL = "https://www.techcompiler.com";
 
 /** Solution routes that sit under an implicit /Solutions category */
 const SOLUTION_PATHS = new Set([
   "/Product-Engineering",
-  "/Mobile-App-Development",
+  "/Mobile-Applications",
   "/Big-Data-Analytics",
   "/Google-Apps-for-Business",
   "/Social-Integration",
@@ -114,6 +114,7 @@ export default function PageMeta({ overrides }: PageMetaProps = {}) {
       <title>{meta.title}</title>
       <meta name="description" content={meta.description} />
       {meta.keywords && <meta name="keywords" content={meta.keywords} />}
+      <meta name="robots" content="index, follow" />
       <link rel="canonical" href={canonicalUrl} />
 
       {/* ── Open Graph ──────────────────────────────────────── */}

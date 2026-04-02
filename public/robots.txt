@@ -1,0 +1,8 @@
+# robots.txt — TechCompiler DataSystems
+# https://www.techcompiler.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.techcompiler.com/sitemap.xml

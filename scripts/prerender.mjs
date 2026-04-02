@@ -50,12 +50,12 @@ const { routeSeoConfig, SITE_DEFAULTS } = await import(pathToFileURL(tmpOut).hre
 
 try { fs.unlinkSync(tmpOut); } catch { /* ignore */ }
 
-const BASE_URL = "https://techcompiler.com";
+const BASE_URL = "https://www.techcompiler.com";
 
 // ── Solution routes (sit under implicit /Solutions breadcrumb) ────────────────
 const SOLUTION_PATHS = new Set([
   "/Product-Engineering",
-  "/Mobile-App-Development",
+  "/Mobile-Applications",
   "/Big-Data-Analytics",
   "/Google-Apps-for-Business",
   "/Social-Integration",
@@ -166,6 +166,7 @@ function buildMetaBlock(routePath) {
   return `
     <title>${title}</title>
     <meta name="description" content="${desc}" />${kwLine}
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="${canonical}" />
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${desc}" />
@@ -187,6 +188,7 @@ function injectMeta(html, routePath) {
     .replace(/<title>[^<]*<\/title>/gi, "")
     .replace(/<meta\s+name="description"[^>]*>/gi, "")
     .replace(/<meta\s+name="keywords"[^>]*>/gi, "")
+    .replace(/<meta\s+name="robots"[^>]*>/gi, "")
     .replace(/<link\s+rel="canonical"[^>]*>/gi, "")
     .replace(/<meta\s+property="og:[^>]*>/gi, "")
     .replace(/<meta\s+name="twitter:[^>]*>/gi, "")

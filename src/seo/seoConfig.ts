@@ -18,7 +18,7 @@ export interface RouteMeta {
 }
 
 const SITE_NAME = "TechCompiler DataSystems";
-const BASE_URL = "https://techcompiler.com";
+const BASE_URL = "https://www.techcompiler.com";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-default.png`;
 
 export const SITE_DEFAULTS: RouteMeta = {
@@ -584,7 +584,7 @@ export const routeSeoConfig: Record<string, RouteMeta> = {
       url: `${BASE_URL}/Product-Engineering`,
     },
   },
-  "/Mobile-App-Development": {
+  "/Mobile-Applications": {
     title: `Mobile App Development — ${SITE_NAME}`,
     description:
       "Native and hybrid mobile applications for iOS and Android, from UX research and design prototyping through to App Store and Google Play Store submission.",
@@ -597,7 +597,7 @@ export const routeSeoConfig: Record<string, RouteMeta> = {
       provider: { "@type": "Organization", name: SITE_NAME, url: BASE_URL },
       serviceType: "Mobile Application Development",
       areaServed: "Worldwide",
-      url: `${BASE_URL}/Mobile-App-Development`,
+      url: `${BASE_URL}/Mobile-Applications`,
     },
   },
   "/Big-Data-Analytics": {
@@ -655,17 +655,17 @@ export const routeSeoConfig: Record<string, RouteMeta> = {
     description:
       "How TechCompiler engineered and scaled a modern merchandise e-commerce platform for Whirlpool, improving conversion rates, streamlining operational workflows.",
   },
-  "/Shoppers-Drug-Mart": {
+  "/Shopper-Drug-Mart": {
     title: `Shoppers Drug Mart — Case Study — ${SITE_NAME}`,
     description:
       "How TechCompiler modernised the Shoppers Drug Mart digital loyalty and omnichannel commerce platform to serve millions of Canadian customers more reliably.",
   },
-  "/JLL-Presentation": {
+  "/Jll-Presentation": {
     title: `JLL Presentation Platform — Case Study — ${SITE_NAME}`,
     description:
       "How TechCompiler built an interactive data presentation tool for JLL's global commercial real estate teams, enhancing productivity across international markets.",
   },
-  "/Yepme-Ecommerce": {
+  "/YepMe-Ecommerce": {
     title: `Yepme E-Commerce — Case Study — ${SITE_NAME}`,
     description:
       "How TechCompiler engineered a scalable e-commerce platform for Yepme's online fashion brand, handling peak traffic spikes and rapid product catalogue growth.",
@@ -675,17 +675,17 @@ export const routeSeoConfig: Record<string, RouteMeta> = {
     description:
       "How TechCompiler built a mobile-first wedding planning app with rich media content, vendor discovery, and social sharing features for engaged couples globally.",
   },
-  "/ISA-Application": {
+  "/ISAA-Web-Application": {
     title: `ISA Application — Case Study — ${SITE_NAME}`,
     description:
       "How TechCompiler delivered a robust enterprise web application for ISA, streamlining compliance tracking, reporting workflows, and management processes.",
   },
-  "/News-Been-Media": {
+  "/Newsbeen-Application": {
     title: `NewsBeen Media — Case Study — ${SITE_NAME}`,
     description:
       "How TechCompiler built a high-traffic news aggregation app for NewsBeen, delivering real-time articles and personalised content feeds to readers globally.",
   },
-  "/Go-Emerge": {
+  "/GoEmerge-Application": {
     title: `GoEmerge Mobile App — Case Study — ${SITE_NAME}`,
     description:
       "How TechCompiler built GoEmerge — a cross-platform mobile app connecting users with local on-demand service providers through real-time discovery and booking.",
@@ -729,6 +729,41 @@ export const routeSeoConfig: Record<string, RouteMeta> = {
     title: `RCC TV Stream Director — Case Study — ${SITE_NAME}`,
     description:
       "How TechCompiler built live broadcast stream management and director tooling for RCC TV, enabling seamless multi-source production and on-air workflows.",
+  },
+  "/PWG-Mobile": {
+    title: `Perfect Wedding Guide Mobile — Case Study — ${SITE_NAME}`,
+    description:
+      "How TechCompiler designed and developed a mobile-first wedding planning app with vendor discovery, rich media galleries, and social sharing for engaged couples.",
+  },
+  "/IWIGT-iPad": {
+    title: `IWIGT iPad App — Case Study — ${SITE_NAME}`,
+    description:
+      "How TechCompiler built an interactive iPad application for Imaginative Minds, delivering immersive educational content and creative storytelling experiences.",
+  },
+  "/Blogmint-Application": {
+    title: `Blogmint — Case Study — ${SITE_NAME}`,
+    description:
+      "How TechCompiler engineered Blogmint, an influencer marketing platform connecting brands with content creators for scalable, data-driven digital campaigns.",
+  },
+  "/Abscbn-News": {
+    title: `ABS-CBN News — Case Study — ${SITE_NAME}`,
+    description:
+      "How TechCompiler built a high-traffic mobile news application for ABS-CBN, delivering real-time breaking news and personalised content feeds to millions.",
+  },
+  "/Teenbeen-Media": {
+    title: `TeenBeen Media — Case Study — ${SITE_NAME}`,
+    description:
+      "How TechCompiler developed TeenBeen Media, a youth-focused social content platform with personalised feeds, user-generated content, and community features.",
+  },
+  "/Prune-Digital": {
+    title: `Prune Digital — Case Study — ${SITE_NAME}`,
+    description:
+      "How TechCompiler partnered with Prune Digital to build custom mobile applications and digital marketing tools that accelerate client acquisition and growth.",
+  },
+  "/ISAWeb-Application": {
+    title: `ISA Web Application — Case Study — ${SITE_NAME}`,
+    description:
+      "How TechCompiler delivered an integrated web application for ISA, automating compliance workflows, document management, and stakeholder reporting.",
   },
 
   // ── Other pages ─────────────────────────────────────────────
