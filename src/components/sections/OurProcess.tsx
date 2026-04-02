@@ -15,10 +15,10 @@ const C = {
 };
 
 const PROCESS_STEPS = [
-  { title: "Discover", desc: "We dive deep into your goals, audience, and infrastructure to understand the full picture." },
-  { title: "Design", desc: "We architect solutions that are technically sound, scalable, and aligned to your vision." },
-  { title: "Refine", desc: "Every detail is fine-tuned through testing, iteration, and stakeholder feedback loops." },
-  { title: "Deliver", desc: "We launch, hand off, and support — ensuring lasting impact beyond go-live." },
+  { title: "Discovery", desc: "We analyse your goals, systems, and data landscape to define requirements and identify the highest-impact opportunities." },
+  { title: "Architecture", desc: "We design scalable, secure architectures — selecting the right tech stack, APIs, and infrastructure for long-term success." },
+  { title: "Development", desc: "Our engineers build iteratively with CI/CD, code reviews, and automated testing baked into every sprint." },
+  { title: "Deployment", desc: "We release, monitor, and optimise in production — ensuring reliability, performance, and seamless handover." },
 ];
 
 export default function OurProcess(): JSX.Element {
@@ -86,7 +86,7 @@ export default function OurProcess(): JSX.Element {
             </div>
             <h2 ref={headlineRef} style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, color: C.ink }}>Our <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>process</span></h2>
           </div>
-          <div ref={descRef} style={{ maxWidth: 320, fontSize: '0.88rem', color: C.inkMuted, lineHeight: 1.72 }}>Clear, collaborative, and built for impact — ensuring every step brings your vision to life.</div>
+          <div ref={descRef} style={{ maxWidth: 320, fontSize: '0.88rem', color: C.inkMuted, lineHeight: 1.72 }}>A structured, transparent engineering process — from strategy through deployment — built for enterprise-grade software and AI solutions.</div>
         </div>
 
         <div style={{ position: 'relative' }}>

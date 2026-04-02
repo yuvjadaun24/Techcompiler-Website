@@ -32,20 +32,20 @@ const C = {
 };
 
 const row1Logos = [
-  { src: client1, alt: "Client 1" },
-  { src: client2, alt: "Client 2" },
-  { src: client3, alt: "Client 3" },
-  { src: client4, alt: "Client 4" },
-  { src: client5, alt: "Client 5" },
-  { src: client6, alt: "Client 6" },
+  { src: client1, alt: "Yepme" },
+  { src: client2, alt: "Onix Networking" },
+  { src: client3, alt: "Perfect Wedding Guide" },
+  { src: client4, alt: "Imaginative Minds" },
+  { src: client5, alt: "Sparkloft" },
+  { src: client6, alt: "HT Media" },
 ];
 const row2Logos = [
-  { src: client7, alt: "Client 7" },
-  { src: client8, alt: "Client 8" },
-  { src: client9, alt: "Client 9" },
-  { src: client10, alt: "Client 10" },
-  { src: client11, alt: "Client 11" },
-  { src: client12, alt: "Client 12" },
+  { src: client7, alt: "ABS-CBN" },
+  { src: client8, alt: "Guavus" },
+  { src: client9, alt: "Shoppers Drug Mart" },
+  { src: client10, alt: "IBM" },
+  { src: client11, alt: "JLL" },
+  { src: client12, alt: "Whirlpool Corporation" },
 ];
 
 const STATS_HERO = [
