@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 import { getRouteMeta, type RouteMeta } from "./seoConfig";
 
-const BASE_URL = "https://www.techcompiler.com";
+const BASE_URL = "https://techcompiler.com";
 
 /** Solution routes that sit under an implicit /Solutions category */
 const SOLUTION_PATHS = new Set([

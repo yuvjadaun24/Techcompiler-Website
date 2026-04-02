@@ -18,7 +18,7 @@ export interface RouteMeta {
 }
 
 const SITE_NAME = "TechCompiler DataSystems";
-const BASE_URL = "https://www.techcompiler.com";
+const BASE_URL = "https://techcompiler.com";
 const DEFAULT_OG_IMAGE = `${BASE_URL}/og-default.png`;
 
 export const SITE_DEFAULTS: RouteMeta = {

@@ -32,7 +32,7 @@ export const JSON_LD = {
   publisher: {
     "@type": "Organization",
     name: "TechCompiler DataSystems",
-    url: "https://www.techcompiler.com",
+    url: "https://techcompiler.com",
   },
 };
 

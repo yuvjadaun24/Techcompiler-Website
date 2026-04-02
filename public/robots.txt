@@ -1,8 +1,21 @@
-# robots.txt — TechCompiler DataSystems
-# https://www.techcompiler.com
+# robots.txt — techcompiler.com
+# Updated: April 2026
+# Canonical domain: https://techcompiler.com (non-www)
 
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.techcompiler.com/sitemap.xml
+# Block any leftover legacy paths from being re-crawled
+# (All .html paths 301-redirect to new routes — this prevents
+#  crawlers from wasting budget on the redirect chain itself)
+Disallow: /2.0/
+Disallow: /mobile_solutions/
+Disallow: /product_engineering/
+Disallow: /case_study/
+
+# Block non-content utility paths
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+Sitemap: https://techcompiler.com/sitemap.xml

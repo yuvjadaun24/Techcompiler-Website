@@ -50,7 +50,7 @@ const { routeSeoConfig, SITE_DEFAULTS } = await import(pathToFileURL(tmpOut).hre
 
 try { fs.unlinkSync(tmpOut); } catch { /* ignore */ }
 
-const BASE_URL = "https://www.techcompiler.com";
+const BASE_URL = "https://techcompiler.com";
 
 // ── Solution routes (sit under implicit /Solutions breadcrumb) ────────────────
 const SOLUTION_PATHS = new Set([
