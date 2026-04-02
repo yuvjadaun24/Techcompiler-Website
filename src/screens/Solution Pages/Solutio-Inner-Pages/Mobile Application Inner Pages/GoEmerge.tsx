@@ -26,7 +26,7 @@ const GoEmerge = () => {
             <section className="mb-12">
                 <h2 className="text-4xl font-light text-gray-800 mb-6">TechCompiler Solution</h2>
                 <p className="text-gray-700 leading-relaxed text-lg">
-                    Tech Compiler designed and developed a SaaS-based architecture for the Aktiv8 App to develop an iOS-based app. The Aktiv8 dashboard displays workout information from Garmin Connect and Fitbit devices.
+                    TechCompiler designed and developed a SaaS-based architecture for the Aktiv8 App to develop an iOS-based app. The Aktiv8 dashboard displays workout information from Garmin Connect and Fitbit devices.
                 </p>
                 <p className="text-gray-700 leading-relaxed text-lg">
                     The Aktiv8 App provides backward compatibility and runs on any iOS version.

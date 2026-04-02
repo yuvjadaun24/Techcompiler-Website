@@ -123,11 +123,8 @@ const ContactUs = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!errors.email && !errors.phone) {
-      console.log("Form submitted successfully:", formData);
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3500);
-    } else {
-      console.log("Form has errors. Please fix them.");
     }
   };
 

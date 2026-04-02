@@ -34,6 +34,14 @@ const serviceCategories = [
     ],
   },
   {
+    title: 'Strategy & Consulting',
+    icon: web,
+    links: [
+      { name: 'Digital Transformation', href: '/services/Digital-Transformation' },
+      { name: 'IT Consulting', href: '/services/IT-Consulting' },
+    ],
+  },
+  {
     title: 'Design',
     icon: design,
     links: [

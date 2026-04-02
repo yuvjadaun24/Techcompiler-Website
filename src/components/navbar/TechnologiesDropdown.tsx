@@ -36,7 +36,7 @@ const techCategories = [
       { name: '.NET Core', href: '/Technologies/Dot-Net-Core' },
       { name: 'PHP', href: '/Technologies/PHP' },
       { name: 'JAVA', href: '/Technologies/Java' },
-      { name: 'Node.Js', href: '/Technologies/Node-JS' },
+      { name: 'Node.Js', href: '/Technologies/Node-Js' },
     ],
   },
   {

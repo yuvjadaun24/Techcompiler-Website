@@ -30,6 +30,13 @@ const serviceCategories = [
     ],
   },
   {
+    title: 'Strategy & Consulting',
+    links: [
+      { name: 'Digital Transformation', href: '/services/Digital-Transformation' },
+      { name: 'IT Consulting', href: '/services/IT-Consulting' },
+    ],
+  },
+  {
     title: 'Design',
     links: [
       { name: 'UI/UX Design', href: '/services/UI-UX-Designing' },
@@ -71,7 +78,7 @@ const techCategories = [
       { name: '.NET Core', href: '/Technologies/Dot-Net-Core' },
       { name: 'PHP', href: '/Technologies/PHP' },
       { name: 'JAVA', href: '/Technologies/Java' },
-      { name: 'Node.Js', href: '/Technologies/Node-JS' },
+      { name: 'Node.Js', href: '/Technologies/Node-Js' },
     ],
   },
   {

@@ -1,9 +1,10 @@
-﻿import { useRef, useState, useEffect, useCallback, ReactNode } from "react";
+﻿import { useRef, useState, useEffect, useCallback } from "react";
 import logo from "@/assets/TC-Logo-Main.png";
 import { useDropdown } from "@/context/DropdownContext";
 import { useNavigate } from "react-router-dom";
 
 /* â”€â”€â”€ BARE SOCIAL ICON â€” no container, raw SVG â”€â”€â”€ */
+// @ts-expect-error — SocialIcon kept for when social links are uncommented
 function SocialIcon({ children, href }: { children: ReactNode; href: string }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -64,6 +65,7 @@ function FooterLink({ label, onClick }: { label: string; onClick: () => void }) 
 }
 
 /* â”€â”€â”€ LEGAL LINK â”€â”€â”€ */
+// @ts-expect-error — LegalLink kept for when legal links are uncommented
 function LegalLink({ label }: { label: string }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -172,12 +174,12 @@ export const FooterByAnima = (): JSX.Element => {
 
   const navLinks = ["Home", "Services", "Technologies", "Clients", "Careers", "Contact Us"];
   const serviceLinks = [
-    "Custom AI Agent",
-    "Web Development",
-    "Mobile Apps",
-    "UI/UX Design",
-    "Data Engineering",
-    "Cloud Solutions",
+    { label: "Custom AI Agent", href: "/ai-agent" },
+    { label: "Web Development", href: "/services/web-dev" },
+    { label: "Mobile Apps", href: "/Mobile-Applications" },
+    { label: "UI/UX Design", href: "/services/UI-UX-Designing" },
+    { label: "Data Engineering", href: "/services/Data-Analytics" },
+    { label: "Cloud Solutions", href: "/services/Infrastructure-Services" },
   ];
 
   // â”€â”€ Scroll-in animations â”€â”€
@@ -283,22 +285,7 @@ export const FooterByAnima = (): JSX.Element => {
             <br />
             that redefine brands
           </p>
-          {/* <div style={{ display: "flex", gap: 8 }}> */}
-            {/* LinkedIn */}
-            {/* <SocialIcon href="https://linkedin.com">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
-            </SocialIcon> */}
-            {/* Twitter/X */}
-            {/* <SocialIcon href="https://x.com">
-              <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 10.768L20 4" />
-            </SocialIcon> */}
-            {/* GitHub */}
-            {/* <SocialIcon href="https://github.com">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-            </SocialIcon>
-          </div> */}
+
         </div>
 
         {/* Col 2 â€” Navigate */}
@@ -347,11 +334,11 @@ export const FooterByAnima = (): JSX.Element => {
             Services
           </div>
           <div>
-            {serviceLinks.map((link) => (
+            {serviceLinks.map((sl) => (
               <FooterLink
-                key={link}
-                label={link}
-                onClick={() => navigate("/Services")}
+                key={sl.label}
+                label={sl.label}
+                onClick={() => navigate(sl.href)}
               />
             ))}
           </div>
@@ -458,7 +445,7 @@ export const FooterByAnima = (): JSX.Element => {
             color: "rgba(255,255,255,0.22)",
           }}
         >
-          TechCompiler Data Systems Pvt. Ltd.
+          TechCompiler DataSystems Pvt. Ltd.
         </span>
         {/* <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <LegalLink label="Privacy Policy" />
@@ -474,7 +461,7 @@ export const FooterByAnima = (): JSX.Element => {
             color: "rgba(255,255,255,0.22)",
           }}
         >
-          Â© 2025 All Rights Reserved
+          © {new Date().getFullYear()} All Rights Reserved
         </span>
       </div>
     </footer>

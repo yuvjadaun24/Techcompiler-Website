@@ -6,18 +6,12 @@ const ServicePage = () => {
 
     const location = useLocation();
 
-    console.log(location.pathname)
     return (
         <div>
             <PageMeta />
             {
                 location.pathname === "/services/web-dev" &&
                 <TempWebDev />
-            }
-
-{
-                location.pathname === "/services/test" &&
-                <h1>Test Page</h1>
             }
         </div>
     )

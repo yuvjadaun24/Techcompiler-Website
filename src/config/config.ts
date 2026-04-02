@@ -1,3 +1,3 @@
 export const apiPath = {
-    apiUrl : "https://103.231.43.163/api"
+    apiUrl: import.meta.env.VITE_API_URL || "https://api.techcompiler.com/api"
 }

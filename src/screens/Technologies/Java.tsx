@@ -43,35 +43,35 @@ const data: TechPageData = {
       name: "Java Web Development Services",
       subtitle: "Dynamic web solutions powered by Java",
       description:
-        "At Tech Compiler, we leverage Java's flexibility and the robust Spring framework to engineer dynamic web solutions. Our seasoned Java developers adeptly navigate Java web architecture, delivering bespoke platforms that are scalable, secure, and optimized for superior user experience.",
+        "At TechCompiler, we leverage Java's flexibility and the robust Spring framework to engineer dynamic web solutions. Our seasoned Java developers adeptly navigate Java web architecture, delivering bespoke platforms that are scalable, secure, and optimized for superior user experience.",
       image: "/images/java/web-development.png",
     },
     {
       name: "Java Mobile App Development Services",
       subtitle: "Feature-rich mobile applications",
       description:
-        "Experience the power of Java in the palm of your hand with Tech Compiler's mobile app development expertise. Our proficient team crafts intuitive, feature-rich mobile applications using Java, ensuring swift performance and seamless integration across platforms.",
+        "Experience the power of Java in the palm of your hand with TechCompiler's mobile app development expertise. Our proficient team crafts intuitive, feature-rich mobile applications using Java, ensuring swift performance and seamless integration across platforms.",
       image: "/images/java/mobile-app-development.png",
     },
     {
       name: "Java API Development Services",
       subtitle: "High-performing APIs tailored to your needs",
       description:
-        "Tech Compiler excels in crafting lightweight, high-performing APIs tailored to your specific needs. Leveraging frameworks like Spring MVC and RESTEasy, our Java developers architect robust API solutions that seamlessly integrate with third-party applications.",
+        "TechCompiler excels in crafting lightweight, high-performing APIs tailored to your specific needs. Leveraging frameworks like Spring MVC and RESTEasy, our Java developers architect robust API solutions that seamlessly integrate with third-party applications.",
       image: "/images/java/api-development.png",
     },
     {
       name: "Java Integration and Migration",
       subtitle: "Seamless transition to Java",
       description:
-        "Seamlessly transition your existing business applications to Java with Tech Compiler's integration and migration services. Our expert team handles the intricacies of migration, ensuring minimal downtime and maximum data integrity.",
+        "Seamlessly transition your existing business applications to Java with TechCompiler's integration and migration services. Our expert team handles the intricacies of migration, ensuring minimal downtime and maximum data integrity.",
       image: "/images/java/integration-migration.png",
     },
     {
       name: "Java Game Development Services",
       subtitle: "Immersive gaming experiences",
       description:
-        "Unleash your creativity with Tech Compiler's Java game development expertise. Our seasoned programmers bring your gaming ideas to life, leveraging Java's robust features to create immersive and engaging experiences across platforms.",
+        "Unleash your creativity with TechCompiler's Java game development expertise. Our seasoned programmers bring your gaming ideas to life, leveraging Java's robust features to create immersive and engaging experiences across platforms.",
       image: "/images/java/game-development.png",
     },
     {
@@ -85,14 +85,14 @@ const data: TechPageData = {
       name: "Java Cloud Development Services",
       subtitle: "Microservice-based architectures",
       description:
-        "Embrace the future of computing with Tech Compiler's cloud development expertise. Our Java developers harness the Spring Boot and Spring Cloud frameworks to create microservice-based architectures that scale effortlessly in the cloud.",
+        "Embrace the future of computing with TechCompiler's cloud development expertise. Our Java developers harness the Spring Boot and Spring Cloud frameworks to create microservice-based architectures that scale effortlessly in the cloud.",
       image: "/images/java/cloud-development.png",
     },
     {
       name: "Java Maintenance and Support",
       subtitle: "Comprehensive support for your Java applications",
       description:
-        "Ensure the smooth operation of your Java applications with Tech Compiler's maintenance and support services. Our skilled engineers provide comprehensive support, from setting up and deploying applications to adding new features.",
+        "Ensure the smooth operation of your Java applications with TechCompiler's maintenance and support services. Our skilled engineers provide comprehensive support, from setting up and deploying applications to adding new features.",
       image: "/images/java/maintenance-support.png",
     },
   ],
