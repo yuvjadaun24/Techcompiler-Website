@@ -81,7 +81,7 @@ export default function OurProcess(): JSX.Element {
           <div>
             <div className="flex items-center gap-3 mb-3">
               <div style={{ width: 24, height: 1, background: C.accent }} />
-              <div style={{ color: C.inkMuted, fontSize: '0.62rem', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase' }}>HOW WE WORK</div>
+              <div style={{ color: C.inkMuted, fontSize: '0.9rem', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase' }}>HOW WE WORK</div>
               <div style={{ width: 24, height: 1, background: C.accent }} />
             </div>
             <h2 ref={headlineRef} style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 900, color: C.ink }}>Our <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}>process</span></h2>
@@ -101,7 +101,7 @@ export default function OurProcess(): JSX.Element {
                 <div style={{ marginBottom: 14 }}>
                   <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#FFFFFF', border: `2px solid ${C.accent}`, marginBottom: 12 }} />
                   <p style={{ fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.18em', color: C.accent, textTransform: 'uppercase', marginBottom: 14, fontFamily: "'Syne', sans-serif" }}>0{String(i + 1)}</p>
-                  <h3 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 900, color: C.ink, marginBottom: 14, fontFamily: "'Syne', sans-serif" }}>{step.title}</h3>
+                  <h3 style={{ fontSize: 'clamp(1.5rem, 1vw, 2rem)', fontWeight: 900, color: C.ink, marginBottom: 14, fontFamily: "'Syne', sans-serif" }}>{step.title}</h3>
                   <p style={{ fontSize: '0.82rem', color: C.inkMuted, lineHeight: 1.72, maxWidth: 240, fontFamily: "'Syne', sans-serif" }}>{step.desc}</p>
                 </div>
 
